@@ -9,52 +9,51 @@ import News from "../components/News";
 
 function PS5() {
   return (
-    <div className="w-[79vw] m-auto py-7">
+    <div className="w-[90vw] md:w-[79vw] m-auto py-7">
       <div>
         <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
           <img
             src="/src/assets/Images/cod.png"
-            className="w-[50vw] w-[170px] md:w-[300px] absolute right-[-12px] md:right-30 -top-0 md:-top-3 z-20 drop-shadow-2xl"
+            className="w-[130px] sm:w-[220px] md:w-[306px] absolute right-[10px] sm:right-[4px] md:right-[2vw] -top-0  md:-top-[-4] z-20 drop-shadow-2xl"
             alt=""
           />
 
           <div
             className="w-full flex justify-between h-65 md:h-80 relative 
-                  rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 
-                  overflow-hidden"
+                      rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 
+                      overflow-hidden"
           >
             <div
               className={`absolute -top-10 -left-10 w-52 h-52 bg-red-600 blur-3xl opacity-40 rounded-full`}
             ></div>
             <div
-              className={`absolute top-20 -right-10 w-60 h-60 bg-red-500 blur-[90px] opacity-30 rounded-full`}
+              className={`absolute top-20 -right-10 w-60 h-60 bg-red-500 blur-[90px] opacity-40 rounded-full`}
             ></div>
             <div
-              className={`absolute bottom-0 left-1/2 w-48 h-48 bg-red-700 blur-[100px] opacity-20 rounded-full`}
+              className={`absolute bottom-0 left-1/2 w-48 h-48 bg-red-700 blur-[150px] opacity-30 rounded-full`}
             ></div>
 
             <div className="flex h-20 flex-col p-5 md:p-18 md:pt-7 relative z-10">
               <span
-                className={`text-[12px] md:text-xl px-3 py-1 text-black font-semibold rounded bg-red-400 w-fit mt-1`}
+                className={`text-[12px] md:text-xl px-3 py-1 text-black font-semibold rounded bg-red-400 w-fit mt-4`}
               >
                 New
               </span>
 
-              <span className="md:text-5xl mt-1 font-bold">
-                Call of Duty: <br />
-                Modern Warfare III
+              <span className="sm:text-[20px] md:text-3xl mt-2 sm:mt-2 md:mt-7 font-bold">
+                Call of Duty: <br /> Modern Warfare III
               </span>
 
-              <span className={`text-red-400 md:text-xl mt-4`}>₹ 4,000</span>
+              <span className={`text-red-400 md:text-xl mt-4`}>₹ 3,000</span>
 
-              <div className="p-2 px-3 w-52  md:w-fit mt-4 rounded-md bg-white/10 flex gap-2">
+              <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">
                 <span
-                  className={`text-[12px] md:text-xl p-2.5 px-4 bg-red-400 text-black rounded font-bold cursor-pointer`}
+                  className={`text-[16px] md:text-xl p-2.5 px-4 bg-red-400 text-black rounded font-bold cursor-pointer`}
                 >
                   Purchase
                 </span>
                 <span
-                  className={`text-[12px] md:text-xl p-2.5 px-3 rounded text-red-400 font-bold cursor-pointer hover:bg-white/20`}
+                  className={`text-[16px] md:text-xl p-2.5 px-3 rounded text-red-400 font-bold cursor-pointer hover:bg-white/20`}
                 >
                   Add To Cart
                 </span>

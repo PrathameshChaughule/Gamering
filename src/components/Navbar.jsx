@@ -7,7 +7,7 @@ function Navbar() {
     <div className="bg-[#181A1E] py-4">
       <div className="flex items-center justify-around w-[85vw] m-auto">
         <img src="/src/assets/Images/logo.png" className="w-[15vw]" alt="" />
-        <ul className="flex items-center justify-around w-100">
+        <ul className="flex text-sm md:text-xl items-center justify-around w-100">
           <NavLink to="/" className="cursor-pointer hover:text-gray-400">
             PC
           </NavLink>

@@ -206,7 +206,7 @@ export const ps5Games = [
   {
     id: 1,
     title: "Marvel’s Spider-Man 2",
-    company: "Insomniac Games / Sony",
+    company: "Insomniac Games ",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSgkrYsVQkBwTJ6YQ8JtkT-VwyvKnd9xjyeQ&s",
   },
@@ -215,19 +215,19 @@ export const ps5Games = [
     title: "God of War Ragnarök",
     company: "Santa Monica Studio",
     image:
-      "https://upload.wikimedia.org/wikipedia/en/e/ee/God_of_War_Ragnar%C3%B6k_cover.jpg",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2322010/capsule_616x353.jpg?t=1750909504",
   },
   {
     id: 3,
     title: "Horizon Forbidden West",
-    company: "Guerrilla Games / Sony",
+    company: "Guerrilla Games ",
     image:
       "https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/yIa8STLMmCyhj48fGDpaAuRM.jpg",
   },
   {
     id: 4,
     title: "Demon’s Souls (Remake)",
-    company: "Bluepoint Games / Sony",
+    company: "Bluepoint Games ",
     image:
       "https://image.api.playstation.com/vulcan/img/rnd/202011/1717/M8cxD6UPmsU551lmNq9Lat9Y.png",
   },
@@ -248,21 +248,21 @@ export const ps5Games = [
   {
     id: 7,
     title: "The Last of Us Part I",
-    company: "Naughty Dog / Sony",
+    company: "Naughty Dog ",
     image:
       "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/header.jpg?t=1750959031",
   },
   {
     id: 8,
     title: "Ghost of Tsushima: Director’s Cut",
-    company: "Sucker Punch / Sony",
+    company: "Sucker Punch",
     image:
       "https://cdn1.epicgames.com/offer/6e6aa039c73347b885803de65ac5d3db/EGS_GhostofTsushima_SuckerPunchProductions_S1_2560x1440-c33a63e5da4518de6e32299bedf7efab",
   },
   {
     id: 9,
     title: "Ratchet & Clank: Rift Apart",
-    company: "Insomniac Games / Sony",
+    company: "Insomniac Games",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGgEMnB62PDdgiwyENZIJShLyO9ohb0A3Rkw&s",
   },
@@ -297,7 +297,7 @@ export const ps5Games = [
   {
     id: 14,
     title: "Returnal",
-    company: "Housemarque / Sony",
+    company: "Housemarque",
     image:
       "https://image.api.playstation.com/vulcan/ap/rnd/202011/1621/fYZQHZ42eXXUt7c6D5YjLrq5.png",
   },
@@ -342,5 +342,288 @@ export const ps5Games = [
     company: "Respawn Entertainment",
     image:
       "https://image.api.playstation.com/vulcan/ap/rnd/202304/1016/66eb1ad90edf540651444d04f0476a463a80a81ba0b46ea0.png",
+  },
+];
+
+export const ps4Games = [
+  {
+    id: 1,
+    title: "The Last of Us Part II",
+    company: "Naughty Dog",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/header.jpg?t=1750959180",
+  },
+  {
+    id: 2,
+    title: "God of War (2018)",
+    company: "Santa Monica Studio",
+    image:
+      "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/LsaRVLF2IU2L1FNtu9d3MKLq.jpg",
+  },
+  {
+    id: 3,
+    title: "Uncharted 4: A Thief’s End",
+    company: "Naughty Dog",
+    image: "https://i.ytimg.com/vi_webp/Ow2cL-pp6p8/maxresdefault.webp",
+  },
+  {
+    id: 4,
+    title: "Marvel’s Spider-Man",
+    company: "Insomniac Games",
+    image:
+      "https://i.guim.co.uk/img/media/892fa5c71f29ce088247397726f32ca83b8231d0/79_0_3386_2031/master/3386.jpg?width=1200&quality=85&auto=format&fit=max&s=f4abd83f4c0bebb2099b844cc144ccac",
+  },
+  {
+    id: 5,
+    title: "Horizon Zero Dawn",
+    company: "Guerrilla Games",
+    image:
+      "https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_wide-2560x1440-bd312be05c49cf339097777c493cb899.jpg",
+  },
+  {
+    id: 6,
+    title: "Red Dead Redemption 2",
+    company: "Rockstar Games",
+    image:
+      "https://store-images.s-microsoft.com/image/apps.58752.68182501197884443.ac728a87-7bc1-4a0d-8bc6-0712072da93c.0cf58754-9802-46f8-8557-8d3ff32a627a?q=90&w=480&h=270",
+  },
+  {
+    id: 7,
+    title: "Bloodborne",
+    company: "FromSoftware",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4N6CC3X6NwZhz5b8vnzD_7hskAnHx8P5CGg&s",
+  },
+  {
+    id: 8,
+    title: "Ghost of Tsushima",
+    company: "Sucker Punch",
+    image:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/capsule_616x353.jpg?t=1763409398",
+  },
+  {
+    id: 9,
+    title: "The Witcher 3: Wild Hunt",
+    company: "CD Projekt",
+    image:
+      "https://cdn2.unrealengine.com/egs-thewitcher3redkit-cdprojektred-dlc-s1-2560x1440-a65f0eb69f14.jpg?resize=1&w=480&h=270&quality=medium",
+  },
+  {
+    id: 10,
+    title: "Grand Theft Auto V",
+    company: "Rockstar Games",
+    image: "https://i.ytimg.com/vi_webp/FZD_yAJg8uY/maxresdefault.webp",
+  },
+  {
+    id: 11,
+    title: "Persona 5",
+    company: "Atlus",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/capsule_616x353.jpg?t=1763530018",
+  },
+  {
+    id: 12,
+    title: "Sekiro: Shadows Die Twice",
+    company: "FromSoftware",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/capsule_616x353.jpg?t=1762888662",
+  },
+  {
+    id: 13,
+    title: "Assassin’s Creed Odyssey",
+    company: "Ubisoft",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnV2fPULX7vTBn5idv3tZRepsAqQTca68z4w&s",
+  },
+  {
+    id: 14,
+    title: "FIFA 23 (PS4)",
+    company: "EA Sports",
+    image: "https://i.ytimg.com/vi/X2kcBQegPV4/maxresdefault.jpg",
+  },
+  {
+    id: 15,
+    title: "Call of Duty: Warzone",
+    company: "Activision",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962663/54bd6a40eb3759aca46966aadd4c4d0d84b2713e/header.jpg?t=1763146019",
+  },
+  {
+    id: 16,
+    title: "Cyberpunk 2077 (PS4)",
+    company: "CD Projekt",
+    image:
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.t3.com%2Fnews%2Fcd-projekt-cyberpunk-2077-ps4-and-xbox-one-fixes-incoming-whatever-the-cost&psig=AOvVaw3hp9cU1hLScan42wGznXlZ&ust=1764422612669000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNif8dT4lJEDFQAAAAAdAAAAABAE",
+  },
+  {
+    id: 17,
+    title: "Resident Evil 2 Remake",
+    company: "Capcom",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202206/0204/22MNn4z9dJnDmEAtmV4rw3Zq.jpg",
+  },
+  {
+    id: 18,
+    title: "Fortnite",
+    company: "Epic Games",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtS4sZv_gqhio9QZzxMRwwuCzSyWUiqZxAvw&s",
+  },
+  {
+    id: 19,
+    title: "Apex Legends",
+    company: "Respawn Entertainment",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/1eab2d507fbc0cfbfac0a4e2da51edc19703f4e4/capsule_616x353.jpg?t=1762457261",
+  },
+  {
+    id: 20,
+    title: "Battlefield 1",
+    company: "EA DICE",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmkGd45ORcbYfVOgaCOUizEYI5qDTm3fiOqA&s",
+  },
+];
+
+export const xboxGames = [
+  {
+    id: 1,
+    title: "Halo Infinite",
+    company: "343 Industries",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlQpqYnm1u_8lcPWbOSzmWD3vO9oUYgKXH0g&s",
+  },
+  {
+    id: 2,
+    title: "Forza Horizon 5",
+    company: "Playground Games",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnwsa0CZgM6cGiSCGfKOX4qH2-RGyov6EcqQ&s",
+  },
+  {
+    id: 3,
+    title: "Gears 5",
+    company: "The Coalition",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1097840/capsule_616x353.jpg?t=1684425784",
+  },
+  {
+    id: 4,
+    title: "Sea of Thieves",
+    company: "Rare",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLhRTMtSuAzDSt8rX7u44OCDEWK0kePn001Q&s",
+  },
+  {
+    id: 5,
+    title: "Microsoft Flight Simulator",
+    company: "Asobo Studio",
+    image:
+      "https://developer.microsoft.com/content/dam/microsoftgamedev/blogs/images/legacy/FlightSim.png",
+  },
+  {
+    id: 6,
+    title: "Red Dead Redemption 2",
+    company: "Rockstar Games",
+    image:
+      "https://store-images.s-microsoft.com/image/apps.58752.68182501197884443.ac728a87-7bc1-4a0d-8bc6-0712072da93c.0cf58754-9802-46f8-8557-8d3ff32a627a?q=90&w=480&h=270",
+  },
+  {
+    id: 7,
+    title: "Elden Ring",
+    company: "FromSoftware",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_616x353.jpg?t=1748630546",
+  },
+  {
+    id: 8,
+    title: "Assassin’s Creed Valhalla",
+    company: "Ubisoft",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEM3YDo4V9W05nElRAvQZyPsGxy73vABYe3A&s",
+  },
+  {
+    id: 9,
+    title: "Cyberpunk 2077",
+    company: "CD Projekt",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5UpvfCuJ8tJMei0YmoWow-WzlKIUHZFpB_A&s",
+  },
+  {
+    id: 10,
+    title: "FIFA 23",
+    company: "EA Sports",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzKAKYcDPBxBIEudWlDZ3xl_6fyydrFvgMFw&s",
+  },
+  {
+    id: 11,
+    title: "Call of Duty: Modern Warfare II",
+    company: "Activision",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3595230/03a32ef57a71955100af89dc40add1c4535fd813/capsule_616x353.jpg?t=1763414032",
+  },
+  {
+    id: 12,
+    title: "Starfield",
+    company: "Bethesda Game Studios",
+    image:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_616x353.jpg?t=1749757928",
+  },
+  {
+    id: 13,
+    title: "The Witcher 3: Wild Hunt",
+    company: "CD Projekt",
+    image:
+      "https://cdn2.unrealengine.com/egs-thewitcher3redkit-cdprojektred-dlc-s1-2560x1440-a65f0eb69f14.jpg?resize=1&w=480&h=270&quality=medium",
+  },
+  {
+    id: 14,
+    title: "Resident Evil 4 Remake",
+    company: "Capcom",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMiHDzXrYn4fvoRk12BCOu2c3QGu8zt3tNw&s",
+  },
+  {
+    id: 15,
+    title: "Apex Legends",
+    company: "Respawn Entertainment",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxXfREm7vGbx4U-ePQcjj_qjV9txk816NGPA&s",
+  },
+  {
+    id: 16,
+    title: "Fortnite",
+    company: "Epic Games",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6i0wwFmBp6gwwdZyqpHMzkmrKh_TFCS4_Og&s",
+  },
+  {
+    id: 17,
+    title: "Battlefield V",
+    company: "EA DICE",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi23EpOEyuzWfn1LLQudMHJW4ZCDxo6GsWCg&s",
+  },
+  {
+    id: 18,
+    title: "Doom Eternal",
+    company: "id Software",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1BQREioBJ9NlZ-ap7xAbnM0nme5C-W8JkwA&s",
+  },
+  {
+    id: 19,
+    title: "Mortal Kombat 11",
+    company: "NetherRealm Studios",
+    image:
+      "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/40594.jpeg.webp",
+  },
+  {
+    id: 20,
+    title: "Skyrim Special Edition",
+    company: "Bethesda",
+    image:
+      "https://cdn2.unrealengine.com/egs-theelderscrollsvskyrimanniversaryedition-bethesdagamestudios-editions-s1-2560x1440-0c02a73f3e1e.jpg?resize=1&w=480&h=270&quality=medium",
   },
 ];

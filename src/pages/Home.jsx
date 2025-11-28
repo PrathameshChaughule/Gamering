@@ -9,12 +9,12 @@ import News from "../components/News";
 
 function Home() {
   return (
-    <div className="w-[79vw] m-auto py-7">
+    <div className="w-[90vw] md:w-[79vw] m-auto py-7">
       <div>
         <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
           <img
             src="/src/assets/Images/Cyberpunk.png"
-            className="w-[50vw] w-[170px] md:w-[350px] absolute right-[-12px] md:right-30 -top-7 md:-top-13 z-20 drop-shadow-2xl"
+            className="w-[160px] min-[529px]:w-[240px] md:w-[350px] absolute right-[-12px] md:right-[2vw] -top-3 sm:-top-7 md:-top-13 z-20 drop-shadow-2xl"
             alt=""
           />
 
@@ -46,14 +46,14 @@ function Home() {
 
               <span className={`text-yellow-400 md:text-xl mt-4`}>₹ 3,000</span>
 
-              <div className="p-2 px-3 w-52  md:w-fit mt-4 rounded-md bg-white/10 flex gap-2">
+              <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">
                 <span
-                  className={`text-[12px] md:text-xl p-2.5 px-4 bg-yellow-400 text-black rounded font-bold cursor-pointer`}
+                  className={`text-[16px] md:text-xl p-2.5 px-4 bg-yellow-400 text-black rounded font-bold cursor-pointer`}
                 >
                   Purchase
                 </span>
                 <span
-                  className={`text-[12px] md:text-xl p-2.5 px-3 rounded text-yellow-400 font-bold cursor-pointer hover:bg-white/20`}
+                  className={`text-[16px] md:text-xl p-2.5 px-3 rounded text-yellow-400 font-bold cursor-pointer hover:bg-white/20`}
                 >
                   Add To Cart
                 </span>
