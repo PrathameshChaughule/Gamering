@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <div className="bg-[#181A1E] py-13 flex flex-col justify-center gap-10 items-center">
-      <img src="/src/assets/Images/logo.png" className="w-50" alt="" />
+      <img src="../src/assets/Images/logo.png" className="w-50" alt="" />
       <div className="flex gap-5 md:gap-10 items-center flex-col md:flex-row text-lg justify-center">
         <ul className="flex gap-10 items-center">
           <NavLink to="/" className="cursor-pointer hover:text-gray-400">

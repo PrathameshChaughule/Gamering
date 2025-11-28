@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="bg-[#181A1E] py-4">
       <div className="flex items-center justify-around w-[85vw] m-auto">
-        <img src="/src/assets/Images/logo.png" className="w-[15vw]" alt="" />
+        <img src="../src/assets/Images/logo.png" className="w-[15vw]" alt="" />
         <ul className="flex text-sm md:text-xl items-center justify-around w-100">
           <NavLink to="/" className="cursor-pointer hover:text-gray-400">
             PC
@@ -34,7 +34,7 @@ function Navbar() {
           </div>
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/Images/user.jpg"
+              src="../src/assets/Images/user.png"
               className="w-11 cursor-pointer h-11 border-4 shadow hover:shadow-md shadow-blue-500 border-blue-500 rounded-full"
               alt=""
             />

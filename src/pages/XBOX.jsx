@@ -14,7 +14,7 @@ function XBOX() {
           <div>
             <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
               <img
-                src="/src/assets/Images/cod1.png"
+                src="../src/assets/Images/cod1.png"
                 className="w-[200px] min-[703px]:w-[350px] md:w-[440px] absolute right-[0px] sm:right-[4px] md:right-[0vw] -top-[-20px] sm:-top-[-5px] md:-top-[-40px] z-20 drop-shadow-2xl"
                 alt=""
               />

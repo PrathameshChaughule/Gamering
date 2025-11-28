@@ -13,7 +13,7 @@ function PS5() {
       <div>
         <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
           <img
-            src="/src/assets/Images/cod.png"
+            src="../src/assets/Images/cod.png"
             className="w-[130px] sm:w-[220px] md:w-[306px] absolute right-[10px] sm:right-[4px] md:right-[2vw] -top-0  md:-top-[-4] z-20 drop-shadow-2xl"
             alt=""
           />
