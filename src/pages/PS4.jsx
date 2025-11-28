@@ -46,7 +46,7 @@ function PS4() {
                 </span>
 
                 <span className={`text-[#AF996A] md:text-xl mt-4`}>
-                  ₹ 3,000
+                  ₹ 2,399
                 </span>
 
                 <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">

@@ -47,7 +47,7 @@ function XBOX() {
                   </span>
 
                   <span className={`text-[#86CF2B] md:text-xl mt-4`}>
-                    ₹ 3,000
+                    ₹ 1,999
                   </span>
 
                   <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">

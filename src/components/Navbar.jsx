@@ -11,16 +11,52 @@ function Navbar() {
       <div className="flex items-center justify-around w-[85vw] m-auto">
         <img src={logo} className="w-[15vw]" alt="" />
         <ul className="flex text-sm md:text-xl items-center justify-around w-100">
-          <NavLink to="/" className="cursor-pointer hover:text-gray-400">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-gray-400 pb-1 ${
+                isActive
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-300"
+              }`
+            }
+          >
             PC
           </NavLink>
-          <NavLink to="/ps5" className="cursor-pointer hover:text-gray-400">
+          <NavLink
+            to="/ps5"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-gray-400 pb-1 ${
+                isActive
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-300"
+              }`
+            }
+          >
             PS5
           </NavLink>
-          <NavLink to="ps4" className="cursor-pointer hover:text-gray-400">
+          <NavLink
+            to="ps4"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-gray-400 pb-1 ${
+                isActive
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-300"
+              }`
+            }
+          >
             PS4
           </NavLink>
-          <NavLink to="xbox" className="cursor-pointer hover:text-gray-400">
+          <NavLink
+            to="xbox"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-gray-400 pb-1 ${
+                isActive
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-300"
+              }`
+            }
+          >
             XBOX
           </NavLink>
         </ul>

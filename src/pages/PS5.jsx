@@ -45,7 +45,7 @@ function PS5() {
                 Call of Duty: <br /> Modern Warfare III
               </span>
 
-              <span className={`text-red-400 md:text-xl mt-4`}>₹ 3,000</span>
+              <span className={`text-red-400 md:text-xl mt-4`}>₹ 2,799</span>
 
               <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">
                 <span
