@@ -205,6 +205,7 @@ function XBOX() {
               {filteredGames.map((val) => (
                 <Card
                   key={val.id}
+                  id={val.id}
                   name={val.title}
                   com={val.company}
                   img={val.image}

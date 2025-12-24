@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import Details from "./components/Details";
 
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -33,6 +34,7 @@ function App() {
             <Route path="/ps5" element={<PS5 />} />
             <Route path="/ps4" element={<PS4 />} />
             <Route path="/xbox" element={<XBOX />} />
+            <Route path="/details/:id" element={<Details />} />
           </Routes>
           <Footer />
         </Suspense>
