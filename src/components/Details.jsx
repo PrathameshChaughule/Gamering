@@ -76,20 +76,6 @@ function Details() {
     updateCartCount();
   };
 
-  const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. At non
-            corporis nostrum blanditiis. Ut eius corrupti ipsum adipisci natus
-            sunt. Consequatur laboriosam voluptates voluptatum distinctio
-            praesentium laborum unde ipsum cumque quaerat quibusdam sint neque
-            alias quod nulla, impedit maxime quas eius doloribus ipsam
-            aspernatur saepe qui assumenda omnis? Recusandae sit quod inventore
-            ipsum blanditiis. Eum iste adipisci repellat earum laborum tempora
-            exercitationem quos recusandae natus, corporis perspiciatis
-            obcaecati eos iusto! Suscipit, pariatur ullam nihil nam tenetur
-            explicabo minus esse officia cupiditate molestiae accusantium dicta
-            numquam assumenda commodi at expedita placeat laborum deleniti
-            blanditiis ducimus, perspiciatis perferendis tempore aliquid. Ea,
-            ex?`;
-
   const videoId = getYouTubeId(game.youtube);
   const safeRating = Math.round((game.rating || 0) * 2) / 2;
 
@@ -107,7 +93,11 @@ function Details() {
                 </span>{" "}
                 &#62;{" "}
                 <span
-                  onClick={() => nav(`/${game.category}`)}
+                  onClick={() => {
+                    game.category === "pcGames"
+                      ? nav("/")
+                      : nav(`/${game.category}`);
+                  }}
                   className="cursor-pointer"
                 >
                   {game.category}
@@ -124,7 +114,7 @@ function Details() {
                 <div className="w-0.5 h-4.5 bg-gray-500"></div>{" "}
                 <span className="flex items-center gap-2">
                   <FaEarthAmericas />
-                  Multi Language : <span className="text-white/80">Yes</span>
+                  Mode : <span className="text-white/80">{game.mode}</span>
                 </span>
                 <div className="w-0.5 h-4.5 bg-gray-500"></div>{" "}
                 <span className="flex items-center gap-2">
@@ -153,25 +143,25 @@ function Details() {
 
                   <LazyLoadImage
                     effect="blur"
-                    src={game.image1}
+                    src={game.image[1]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot("image1")}
                   />
                   <LazyLoadImage
                     effect="blur"
-                    src={game.image2}
+                    src={game.image[2]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot("image2")}
                   />
                   <LazyLoadImage
                     effect="blur"
-                    src={game.image3}
+                    src={game.image[3]}
                     className="w-40 h-20  rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot("image3")}
                   />
                   <LazyLoadImage
                     effect="blur"
-                    src={game.image4}
+                    src={game.image[4]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot("image4")}
                   />
@@ -202,9 +192,11 @@ function Details() {
               <hr className="my-3 border-[#292b26]" />
               <div className="mx-2">
                 <span className="text-[#848484]">
-                  {show ? text : text.slice(0, 330)}
+                  {show
+                    ? `${game.description}`
+                    : `${game.description}`.slice(0, 330)}
                 </span>
-                {text.length > 330 && (
+                {`${game.description}`.length > 330 && (
                   <span
                     onClick={() => setShow(!show)}
                     className="mx-1 cursor-pointer hover:text-white/70 text-white"
@@ -214,48 +206,41 @@ function Details() {
                 )}
               </div>
             </div>
-            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex items-center justify-between">
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[0]].image}
-                onClick={() => nav(`/details/${random[0]}`)}
-                className="w-57 h-45 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[1]].image}
-                onClick={() => nav(`/details/${random[1]}`)}
-                className="w-57 h-45 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[2]].image}
-                onClick={() => nav(`/details/${random[2]}`)}
-                className="w-57 h-45 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[3]].image}
-                onClick={() => nav(`/details/${random[3]}`)}
-                className="w-57 h-45 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
+            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex gap-2 items-center justify-between">
+              {games.length > 0 && random.length > 0 && games[random[0]] && (
+                <>
+                  {random.map((val, index) => (
+                    <LazyLoadImage
+                      key={index}
+                      effect="blur"
+                      src={games[val]?.image[0]}
+                      onClick={() => nav(`/details/${games[val]?.id}`)}
+                      className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                    />
+                  ))}
+                </>
+              )}
             </div>
           </div>
           <div className="w-[27%] p-5 mt-22 flex flex-col gap-6">
             <div className="bg-[#18181872] border-2 border-[#292b26]/50  rounded-xl p-5 flex flex-col gap-3">
               <LazyLoadImage
                 effect="blur"
-                src={game.image}
+                src={game.image[0]}
                 className="w-full h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
               />
               <div className="flex justify-between">
                 <div className="flex flex-col">
-                  <s className="text-gray-400 text-lg">₹{game.price}</s>
+                  <s className="text-gray-400 text-lg">₹{game.discountPrice}</s>
                   <span className="text-3xl font-semibold">₹{game.price}</span>
                 </div>
                 <div className="flex flex-col gap-3">
                   <span className="bg-[#502519] text-[#CF8485] py-[2px] px-4 rounded-lg text-[12px] text-center">
-                    Save 31% on sale
+                    Save{" "}
+                    {Math.round(
+                      ((game.price - game.discountPrice) / game.price) * 100
+                    )}
+                    % on sale
                   </span>
                   <span className="bg-[#352F28] text-[#FFFDF6] py-[2px] flex items-center gap-1.5 px-4 rounded-lg text-[12px] text-center">
                     <IoIosTimer className="text-[15px]" />
@@ -323,7 +308,7 @@ function Details() {
                     })}
                   </div>
                   <span className="text-lg text-gray-500 font-semibold">
-                    234 review
+                    {game.totalReviews} review
                   </span>
                 </div>
               </div>
@@ -333,7 +318,7 @@ function Details() {
                     <span className="flex text-white/60 items-end text-xl mb-1 font-semibold gap-0.5">
                       5{" "}
                       <span className="text-gray-500 font-normal text-[16px] mb-[1px]">
-                        (94%)
+                        ({game.reviewsPercent[5]}%)
                       </span>
                     </span>
                   </div>
@@ -341,7 +326,7 @@ function Details() {
                   <div className="w-full h-2 bg-[#252525] rounded">
                     <div
                       className="h-full bg-[#F5B736]/60 rounded"
-                      style={{ width: `94%` }}
+                      style={{ width: `${game.reviewsPercent[5]}%` }}
                     ></div>
                   </div>
                 </div>
@@ -350,14 +335,14 @@ function Details() {
                     <span className="flex text-white/60  items-end text-xl mb-1 font-semibold gap-0.5">
                       4{" "}
                       <span className="text-gray-500 font-normal text-[16px] mb-[1px]">
-                        (30%)
+                        ({game.reviewsPercent[4]}%)
                       </span>
                     </span>
                   </div>
                   <div className="w-full h-2 bg-[#252525] rounded">
                     <div
                       className="h-full bg-[#F5B736]/60 rounded"
-                      style={{ width: `30%` }}
+                      style={{ width: `${game.reviewsPercent[4]}%` }}
                     ></div>
                   </div>
                 </div>
@@ -366,7 +351,7 @@ function Details() {
                     <span className="flex text-white/60  items-end text-xl mb-1 font-semibold gap-0.5">
                       3{" "}
                       <span className="text-gray-500 font-normal text-[16px] mb-[1px]">
-                        (5%)
+                        ({game.reviewsPercent[3]}%)
                       </span>
                     </span>
                   </div>
@@ -374,7 +359,7 @@ function Details() {
                   <div className="w-full h-2 bg-[#252525] rounded">
                     <div
                       className="h-full bg-[#F5B736]/60 rounded"
-                      style={{ width: `5%` }}
+                      style={{ width: `${game.reviewsPercent[3]}%` }}
                     ></div>
                   </div>
                 </div>
@@ -383,7 +368,7 @@ function Details() {
                     <span className="flex text-white/60  items-end text-xl mb-1 font-semibold gap-0.5">
                       2{" "}
                       <span className="text-gray-500 font-normal text-[16px] mb-[1px]">
-                        (0%)
+                        ({game.reviewsPercent[2]}%)
                       </span>
                     </span>
                   </div>
@@ -391,7 +376,7 @@ function Details() {
                   <div className="w-full h-2 bg-[#252525] rounded">
                     <div
                       className="h-full bg-[#F5B736]/60 rounded"
-                      style={{ width: `0%` }}
+                      style={{ width: `${game.reviewsPercent[2]}%` }}
                     ></div>
                   </div>
                 </div>
@@ -400,7 +385,7 @@ function Details() {
                     <span className="flex text-white/60  items-end text-xl mb-1 font-semibold gap-0.5">
                       1{" "}
                       <span className="text-gray-500 font-normal text-[16px] mb-[1px]">
-                        (0%)
+                        ({game.reviewsPercent[1]}%)
                       </span>
                     </span>
                   </div>
@@ -408,7 +393,7 @@ function Details() {
                   <div className="w-full h-2 bg-[#252525] rounded">
                     <div
                       className="h-full bg-[#F5B736]/60 rounded"
-                      style={{ width: `0%` }}
+                      style={{ width: `${game.reviewsPercent[1]}%` }}
                     ></div>
                   </div>
                 </div>

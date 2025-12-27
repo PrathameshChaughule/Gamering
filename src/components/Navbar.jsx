@@ -1,4 +1,4 @@
-import { FaCrown, FaWindows } from "react-icons/fa";
+import { FaCrown, FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Images/logo.png";
 import user from "../assets/Images/user.png";
@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { GameContext } from "./GameContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MdMonitor } from "react-icons/md";
 
 function Navbar() {
   const { cartCount } = useContext(GameContext);
@@ -24,49 +25,53 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `cursor-pointer hover:text-gray-400 pb-1 ${
+              `cursor-pointer hover:text-gray-400 pb-1 flex items-center gap-2 ${
                 isActive
                   ? "text-white border-b-2 border-white"
                   : "text-gray-300"
               }`
             }
           >
+            <MdMonitor />
             PC
           </NavLink>
           <NavLink
             to="/ps5Games"
             className={({ isActive }) =>
-              `cursor-pointer hover:text-gray-400 pb-1 ${
+              `cursor-pointer hover:text-gray-400 pb-1 flex items-center gap-2 ${
                 isActive
                   ? "text-white border-b-2 border-white"
                   : "text-gray-300"
               }`
             }
           >
+            <FaPlaystation />
             PS5
           </NavLink>
           <NavLink
             to="/ps4Games"
             className={({ isActive }) =>
-              `cursor-pointer hover:text-gray-400 pb-1 ${
+              `cursor-pointer hover:text-gray-400 pb-1 flex items-center gap-2 ${
                 isActive
                   ? "text-white border-b-2 border-white"
                   : "text-gray-300"
               }`
             }
           >
+            <FaPlaystation />
             PS4
           </NavLink>
           <NavLink
             to="/xboxGames"
             className={({ isActive }) =>
-              `cursor-pointer hover:text-gray-400 pb-1 ${
+              `cursor-pointer hover:text-gray-400 pb-1 flex items-center gap-2 ${
                 isActive
                   ? "text-white border-b-2 border-white"
                   : "text-gray-300"
               }`
             }
           >
+            <FaXbox />
             XBOX
           </NavLink>
         </ul>

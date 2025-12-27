@@ -122,7 +122,7 @@ function XBOX() {
                 {games.length > 81 && (
                   <LazyLoadImage
                     effect="blur"
-                    src={games[45].image}
+                    src={games[45].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
                     alt={games[45].title}
                   />
@@ -130,7 +130,7 @@ function XBOX() {
                 {games.length > 81 && (
                   <LazyLoadImage
                     effect="blur"
-                    src={games[49].image}
+                    src={games[49].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
                     alt={games[49].title}
                   />
@@ -138,7 +138,7 @@ function XBOX() {
                 {games.length > 81 && (
                   <LazyLoadImage
                     effect="blur"
-                    src={games[53].image}
+                    src={games[53].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
                     alt={games[53].title}
                   />
@@ -146,7 +146,7 @@ function XBOX() {
                 {games.length > 81 && (
                   <LazyLoadImage
                     effect="blur"
-                    src={games[58].image}
+                    src={games[58].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
                     alt={games[58].title}
                   />
@@ -154,7 +154,7 @@ function XBOX() {
                 {games.length > 81 && (
                   <LazyLoadImage
                     effect="blur"
-                    src={games[61].image}
+                    src={games[61].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
                     alt={games[61].title}
                   />

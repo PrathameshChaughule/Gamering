@@ -33,7 +33,10 @@ function Cart() {
     toast.info("Item removed from cart");
     updateCartCount();
   };
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce(
+    (sum, item) => sum + item.discountPrice * item.quantity,
+    0
+  );
 
   return (
     <div className="w-[90vw] my-8 m-auto h-fit flex justify-between">
@@ -65,7 +68,7 @@ function Cart() {
               >
                 <div className="flex gap-8 p-5 rounded-xl bg-[#212121c8]/60">
                   <LazyLoadImage
-                    src={item.image}
+                    src={item.image[0]}
                     effect="blur"
                     className="w-90 h-70 rounded-xl"
                   />
@@ -76,9 +79,14 @@ function Cart() {
                           <span className="block h-fit px-2 text-white/70 font-bold bg-[#393939] pb-0.5 rounded text-[12px]">
                             {item.company}
                           </span>
-                          <span className="block h-fit px-2 text-white/70 font-bold bg-[#393939] pt-0.5 rounded text-[12px]">
-                            {item.category}
-                          </span>
+                          {item.tags.map((val, index) => (
+                            <span
+                              key={index}
+                              className="block h-fit px-2 text-white/70 font-bold bg-[#393939] pt-0.5 rounded text-[12px]"
+                            >
+                              {val}
+                            </span>
+                          ))}
                         </div>
                         <div>
                           <h1 className="font-semibold text-3xl text-white/90">
@@ -88,26 +96,29 @@ function Cart() {
                       </div>
                       <div>
                         <span className="font-bold text-xl text-white/90">
-                          ₹{item.price}
+                          ₹{item.discountPrice}
                         </span>
                       </div>
                     </div>
-                    <div className="flex justify-between gap-6">
-                      <div className="w-45 h-20">
+                    <div className="flex justify-between gap-5">
+                      <div className="w-20 h-20">
                         <LazyLoadImage
-                          src="assets/xbox.png"
-                          className="w-45 h-16 rounded-xl"
+                          src={`assets/${
+                            item.category === "ps4Games" ||
+                            item.category === "ps4Games"
+                              ? `ps4.jpg`
+                              : item.category === "xboxGames"
+                              ? `xbox.png`
+                              : `pc.png`
+                          }`}
+                          className="w-20 h-16 rounded-xl"
                           effect="blur"
                         />
                       </div>
 
-                      <div className="mt-1">
+                      <div className="mt-1 w-full">
                         <span className="text-[16px] text-gray-400">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Obcaecati rerum doloribus nam fugit quibusdam
-                          animi ex dolorum facere exercitationem non, officiis
-                          ut, blanditiis corrupti repellendus commodi ullam in
-                          id voluptatibus!
+                          {item.description}
                         </span>
                       </div>
                     </div>
@@ -135,30 +146,15 @@ function Cart() {
         <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex items-center justify-between">
           {games.length > 0 && random.length > 0 && games[random[0]] && (
             <>
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[0]].image}
-                onClick={() => nav(`/details/${random[0]}`)}
-                className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[1]].image}
-                onClick={() => nav(`/details/${random[1]}`)}
-                className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[2]].image}
-                onClick={() => nav(`/details/${random[2]}`)}
-                className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
-              <LazyLoadImage
-                effect="blur"
-                src={games[random[3]].image}
-                onClick={() => nav(`/details/${random[3]}`)}
-                className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-              />
+              {random.map((val, index) => (
+                <LazyLoadImage
+                  key={index}
+                  effect="blur"
+                  src={games[val]?.image[0]}
+                  onClick={() => nav(`/details/${games[val]?.id}`)}
+                  className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                />
+              ))}
             </>
           )}
         </div>
@@ -182,7 +178,10 @@ function Cart() {
                       key={item.id}
                       className="text-[25px] text-white/90 font-semibold"
                     >
-                      {index !== 0 && " + "}₹{item.price || 0}
+                      <span className="text-gray-500">
+                        {index !== 0 && " + "}
+                      </span>
+                      ₹{item.price || 0}
                     </span>
                   ))
                 )}

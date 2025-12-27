@@ -119,7 +119,7 @@ function Home() {
               <LazyLoadImage
                 effect="blur"
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={games[66].image}
+                src={games[66].image[0]}
                 alt={games[66].title}
               />
             )}
@@ -128,7 +128,7 @@ function Home() {
               <LazyLoadImage
                 effect="blur"
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={games[69].image}
+                src={games[69].image[0]}
                 alt={games[69].title}
               />
             )}
@@ -137,7 +137,7 @@ function Home() {
               <LazyLoadImage
                 effect="blur"
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={games[74].image}
+                src={games[74].image[0]}
                 alt={games[74].title}
               />
             )}
@@ -146,7 +146,7 @@ function Home() {
               <LazyLoadImage
                 effect="blur"
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={games[79].image}
+                src={games[79].image[0]}
                 alt={games[79].title}
               />
             )}
@@ -155,7 +155,7 @@ function Home() {
               <LazyLoadImage
                 effect="blur"
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={games[81].image}
+                src={games[81].image[0]}
                 alt={games[81].title}
               />
             )}

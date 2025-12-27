@@ -118,7 +118,7 @@ function PS5() {
             {games.length > 81 && (
               <LazyLoadImage
                 effect="blur"
-                src={games[6].image}
+                src={games[6].image[0]}
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
                 alt={games[6].title}
               />
@@ -126,7 +126,7 @@ function PS5() {
             {games.length > 81 && (
               <LazyLoadImage
                 effect="blur"
-                src={games[9].image}
+                src={games[9].image[0]}
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
                 alt={games[9].title}
               />
@@ -134,7 +134,7 @@ function PS5() {
             {games.length > 81 && (
               <LazyLoadImage
                 effect="blur"
-                src={games[14].image}
+                src={games[14].image[0]}
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
                 alt={games[14].title}
               />
@@ -142,7 +142,7 @@ function PS5() {
             {games.length > 81 && (
               <LazyLoadImage
                 effect="blur"
-                src={games[19].image}
+                src={games[19].image[0]}
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
                 alt={games[19].title}
               />
@@ -150,7 +150,7 @@ function PS5() {
             {games.length > 81 && (
               <LazyLoadImage
                 effect="blur"
-                src={games[11].image}
+                src={games[11].image[0]}
                 className="w-[25vw] md:w-40 h-25 rounded-2xl"
                 alt={games[11].title}
               />

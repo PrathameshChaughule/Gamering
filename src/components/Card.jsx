@@ -11,7 +11,7 @@ function Card({ id, name, com, img }) {
       className="flex flex-col items-center w-35 h-40 lg:h-fit lg:w-fit cursor-pointer hover:bg-white/10 p-3 rounded-xl"
     >
       <LazyLoadImage
-        src={img}
+        src={img[0]}
         effect="blur"
         className="h-[100px] md:w-50 md:h-40 lg:rounded-3xl"
         alt={name}

@@ -121,7 +121,7 @@ function PS4() {
               {games.length > 81 && (
                 <LazyLoadImage
                   effect="blur"
-                  src={games[25].image}
+                  src={games[25].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
                   alt={games[25].title}
                 />
@@ -129,7 +129,7 @@ function PS4() {
               {games.length > 81 && (
                 <LazyLoadImage
                   effect="blur"
-                  src={games[28].image}
+                  src={games[28].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
                   alt={games[28].title}
                 />
@@ -137,7 +137,7 @@ function PS4() {
               {games.length > 81 && (
                 <LazyLoadImage
                   effect="blur"
-                  src={games[31].image}
+                  src={games[31].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
                   alt={games[31].title}
                 />
@@ -145,7 +145,7 @@ function PS4() {
               {games.length > 81 && (
                 <LazyLoadImage
                   effect="blur"
-                  src={games[34].image}
+                  src={games[34].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
                   alt={games[34].title}
                 />
@@ -153,7 +153,7 @@ function PS4() {
               {games.length > 81 && (
                 <LazyLoadImage
                   effect="blur"
-                  src={games[39].image}
+                  src={games[39].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
                   alt={games[39].title}
                 />
