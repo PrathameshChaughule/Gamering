@@ -17,7 +17,7 @@ import { CgSun } from "react-icons/cg";
 import { CiPlay1 } from "react-icons/ci";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { PiBuildingsFill } from "react-icons/pi";
-import { GameContext } from "./GameContext";
+import { GameContext } from "../Context/GameContext";
 import { toast } from "react-toastify";
 
 function Details() {
@@ -231,8 +231,12 @@ function Details() {
               />
               <div className="flex justify-between">
                 <div className="flex flex-col">
-                  <s className="text-gray-400 text-lg">₹{game.discountPrice}</s>
-                  <span className="text-3xl font-semibold">₹{game.price}</span>
+                  <s className="text-gray-400 text-lg">
+                    ₹{game.price.toFixed(2)}
+                  </s>
+                  <span className="text-3xl font-semibold">
+                    ₹{game.discountPrice.toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex flex-col gap-3">
                   <span className="bg-[#502519] text-[#CF8485] py-[2px] px-4 rounded-lg text-[12px] text-center">
@@ -249,7 +253,13 @@ function Details() {
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="border border-[#F1BD38]/20 bg-[#362A11] hover:bg-[#362A11]/80 rounded-lg flex justify-center p-1 cursor-pointer">
+                <div
+                  onClick={() => {
+                    nav("/checkout");
+                    addToCart(game.id);
+                  }}
+                  className="border border-[#F1BD38]/20 bg-[#362A11] hover:bg-[#362A11]/80 rounded-lg flex justify-center p-1 cursor-pointer"
+                >
                   <span className="flex text-[#F1BD38] items-center gap-2 text-lg">
                     Buy now
                     <FaArrowRightLong />

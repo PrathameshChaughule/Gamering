@@ -2,7 +2,7 @@ import { IoSearch } from "react-icons/io5";
 import { lazy, useContext, useMemo, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "../components/GameContext";
+import { GameContext } from "../Context/GameContext";
 
 const News = lazy(() => import("../components/News"));
 const Card = lazy(() => import("../components/Card"));

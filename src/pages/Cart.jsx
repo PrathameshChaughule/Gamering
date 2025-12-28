@@ -3,15 +3,18 @@ import { LuCircleFadingPlus } from "react-icons/lu";
 import { TbCircleDashedX } from "react-icons/tb";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "./GameContext";
+import { GameContext } from "../Context/GameContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const [cart, setCart] = useState([]);
   const [random, setRandom] = useState([]);
+  const [show, setShow] = useState(false);
   const { games, updateCartCount } = useContext(GameContext);
   const nav = useNavigate();
+
+  console.log(cart);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -33,6 +36,7 @@ function Cart() {
     toast.info("Item removed from cart");
     updateCartCount();
   };
+
   const total = cart.reduce(
     (sum, item) => sum + item.discountPrice * item.quantity,
     0
@@ -96,7 +100,7 @@ function Cart() {
                       </div>
                       <div>
                         <span className="font-bold text-xl text-white/90">
-                          ₹{item.discountPrice}
+                          ₹{item.discountPrice.toFixed(2)}
                         </span>
                       </div>
                     </div>
@@ -115,11 +119,20 @@ function Cart() {
                           effect="blur"
                         />
                       </div>
-
                       <div className="mt-1 w-full">
                         <span className="text-[16px] text-gray-400">
-                          {item.description}
+                          {show
+                            ? `${item.description}`
+                            : `${item.description}`.slice(0, 230)}
                         </span>
+                        {`${item.description}`.length > 330 && (
+                          <span
+                            onClick={() => setShow(!show)}
+                            className="mx-1 cursor-pointer hover:text-white/70 text-white"
+                          >
+                            {!show ? "Read more..." : "Read less"}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="flex justify-end">
@@ -170,18 +183,18 @@ function Cart() {
               <div className="flex flex-col">
                 {cart.length === 0 ? (
                   <span className="text-[25px] text-white/90 font-semibold">
-                    ₹0
+                    ₹0.00
                   </span>
                 ) : (
                   cart.map((item, index) => (
                     <span
                       key={item.id}
-                      className="text-[25px] text-white/90 font-semibold"
+                      className="text-[25px] text-white/90 flex gap-2 font-semibold"
                     >
                       <span className="text-gray-500">
-                        {index !== 0 && " + "}
+                        {index !== 0 ? " + " : <div className="w-4.5"></div>}
                       </span>
-                      ₹{item.price || 0}
+                      ₹{item.discountPrice.toFixed(2) || 0.0}
                     </span>
                   ))
                 )}
@@ -196,10 +209,13 @@ function Cart() {
           <div className="flex justify-between -mt-2 items-center">
             <span className="text-[18px] text-gray-400">Subtotal</span>
             <span className="text-[25px] text-white/90 font-semibold">
-              ₹{total}
+              ₹{total.toFixed(2)}
             </span>
           </div>
-          <div className="text-center p-2.5 rounded-xl font-semibold bg-[#0073E6] cursor-pointer hover:bg-[#0073E6]/90 text-xl">
+          <div
+            onClick={() => nav("/checkout")}
+            className="text-center p-2.5 rounded-xl font-semibold bg-[#0073E6] cursor-pointer hover:bg-[#0073E6]/90 text-xl"
+          >
             <span>CHECKOUT</span>
           </div>
         </div>

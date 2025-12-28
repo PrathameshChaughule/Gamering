@@ -2,14 +2,16 @@ import { FaCrown, FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useContext } from "react";
-import { GameContext } from "./GameContext";
+import { useContext, useState } from "react";
+import { GameContext } from "../Context/GameContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MdMonitor } from "react-icons/md";
+import Profile from "./Profile";
 
 function Navbar() {
   const { cartCount } = useContext(GameContext);
+  const [profileOpen, setProfileOpen] = useState(false);
 
   return (
     <div className="bg-[#181A1E] py-4">
@@ -95,15 +97,21 @@ function Navbar() {
               <p className="mt-[-1px]">{cartCount}</p>
             </div>
           </NavLink>
-          <div className="flex items-center gap-3 relative">
+          <div
+            onClick={() => setProfileOpen(!profileOpen)}
+            className="flex items-center gap-3 relative"
+          >
             <LazyLoadImage
               src="/assets/user.webp"
               className="w-11 cursor-pointer h-11 border-4 shadow hover:shadow-md shadow-blue-500 border-blue-500 rounded-full"
               alt=""
             />
-            <FaCrown className="text-[#F5B736] absolute bottom-0 right-0 z-100" />
+            <FaCrown className="text-[#F5B736] cursor-pointer absolute bottom-0 right-0 z-100" />
           </div>
         </div>
+      </div>
+      <div onClick={() => setProfileOpen(!profileOpen)}>
+        {profileOpen && <Profile />}
       </div>
     </div>
   );
