@@ -1,5 +1,4 @@
 import { IoSearch } from "react-icons/io5";
-import cyber from "../assets/Images/Cyberpunk.png";
 import { lazy, useContext, useMemo, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -64,7 +63,7 @@ function Home() {
       <div>
         <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
           <LazyLoadImage
-            src={cyber}
+            src="/assets/Cyberpunk.webp"
             className="w-[160px] min-[529px]:w-[240px] md:w-[350px] absolute right-[-12px] md:right-[2vw] -top-3 sm:-top-7 md:-top-13 z-20 drop-shadow-2xl"
             alt=""
           />

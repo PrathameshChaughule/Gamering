@@ -23,7 +23,7 @@ import { toast } from "react-toastify";
 function Details() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
-  const [screenshot, setScreenshot] = useState("youtube");
+  const [screenshot, setScreenshot] = useState(null);
   const [show, setShow] = useState(false);
   const [random, setRandom] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ function Details() {
       num.add(Math.floor(Math.random() * 83) + 1);
     }
     setRandom([...num]);
-  }, []);
+  }, [nav]);
 
   if (!game) {
     return <p>Loading...</p>;
@@ -133,7 +133,7 @@ function Details() {
                       effect="blur"
                       src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
                       className="w-40 h-25 rounded-xl cursor-pointer active:blur-[2px]"
-                      onClick={() => setScreenshot("youtube")}
+                      onClick={() => setScreenshot(null)}
                     />
 
                     <div className="border-2 bg-black/40 z-100 text-2xl w-fit p-1.5 rounded-full text-center absolute top-[32%] left-[36%] cursor-pointer">
@@ -145,29 +145,29 @@ function Details() {
                     effect="blur"
                     src={game.image[1]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-                    onClick={() => setScreenshot("image1")}
+                    onClick={() => setScreenshot(game.image[1])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[2]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-                    onClick={() => setScreenshot("image2")}
+                    onClick={() => setScreenshot(game.image[2])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[3]}
                     className="w-40 h-20  rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-                    onClick={() => setScreenshot("image3")}
+                    onClick={() => setScreenshot(game.image[3])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[4]}
                     className="w-40 h-20 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-                    onClick={() => setScreenshot("image4")}
+                    onClick={() => setScreenshot(game.image[4])}
                   />
                 </div>
                 <div className="rounded-xl">
-                  {screenshot === "youtube" ? (
+                  {screenshot === null ? (
                     <iframe
                       src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&controls=0&modestbranding=1`}
                       title="Game Trailer"
@@ -180,7 +180,7 @@ function Details() {
                   ) : (
                     <LazyLoadImage
                       effect="blur"
-                      src={game[screenshot]}
+                      src={screenshot}
                       className="w-192 h-116 rounded-xl"
                     />
                   )}

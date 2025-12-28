@@ -1,7 +1,5 @@
 import { FaCrown, FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/Images/logo.png";
-import user from "../assets/Images/user.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useContext } from "react";
@@ -20,7 +18,7 @@ function Navbar() {
           <ToastContainer />
         </div>
 
-        <LazyLoadImage src={logo} className="w-[15vw]" alt="" />
+        <LazyLoadImage src="/assets/logo.webp" className="w-[15vw]" alt="" />
         <ul className="flex text-sm md:text-xl items-center justify-around w-100">
           <NavLink
             to="/"
@@ -99,7 +97,7 @@ function Navbar() {
           </NavLink>
           <div className="flex items-center gap-3 relative">
             <LazyLoadImage
-              src={user}
+              src="/assets/user.webp"
               className="w-11 cursor-pointer h-11 border-4 shadow hover:shadow-md shadow-blue-500 border-blue-500 rounded-full"
               alt=""
             />

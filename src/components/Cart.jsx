@@ -46,7 +46,7 @@ function Cart() {
           <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl">
             <div className="flex flex-col items-center justify-center p-1 rounded-xl bg-[#212121c8]/60">
               <LazyLoadImage
-                src="/assets/empty cart.png"
+                src="/assets/empty cart.webp"
                 className="w-130 h-85 mt-1"
                 effect="blur"
               />
@@ -106,10 +106,10 @@ function Cart() {
                           src={`assets/${
                             item.category === "ps4Games" ||
                             item.category === "ps4Games"
-                              ? `ps4.jpg`
+                              ? `ps4.webp`
                               : item.category === "xboxGames"
-                              ? `xbox.png`
-                              : `pc.png`
+                              ? `xbox.webp`
+                              : `pc.webp`
                           }`}
                           className="w-20 h-16 rounded-xl"
                           effect="blur"

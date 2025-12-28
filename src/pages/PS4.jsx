@@ -1,5 +1,4 @@
 import { IoSearch } from "react-icons/io5";
-import got from "../assets/Images/got.png";
 import { lazy, useContext, useMemo, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -65,7 +64,7 @@ function PS4() {
         <div>
           <div className="w-full h-fit md:h-90 flex items-end justify-center relative">
             <LazyLoadImage
-              src={got}
+              src="/assets/got.webp"
               className="max-[496px]:w-[130px] max-[736px]:w-[220px] md:w-[306px] absolute right-[10px] sm:right-[4px] md:right-[2vw] -top-0  md:-top-[-4] z-20 drop-shadow-2xl"
               alt=""
             />
