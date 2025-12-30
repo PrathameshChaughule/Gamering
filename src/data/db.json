@@ -3074,7 +3074,7 @@
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "email": "p@gmail.com",
-      "password": "123456",
+      "password": "12345678",
       "role": "admin",
       "id": 1
     },
@@ -3082,7 +3082,7 @@
       "firstName": "Aryan",
       "lastName": "Chaughule",
       "email": "a@gmail.com",
-      "password": "123456",
+      "password": "12345678",
       "role": "user",
       "id": 2
     }

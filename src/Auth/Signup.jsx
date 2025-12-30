@@ -203,7 +203,7 @@ function Signup() {
                       placeholder="Password"
                       onChange={(e) => formHandle(e)}
                       className="p-2 px-4 w-full outline-none border-none text-[18px] rounded bg-[#e6e3e6c4] placeholder:text-gray-500"
-                      minLength={6}
+                      minLength={8}
                       required
                     />
                   </div>
@@ -218,7 +218,7 @@ function Signup() {
                       placeholder="Password"
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       className="p-2 px-4 w-full outline-none border-none text-[18px] rounded bg-[#e6e3e6c4] placeholder:text-gray-500"
-                      minLength={6}
+                      minLength={8}
                       required
                     />
                   </div>
