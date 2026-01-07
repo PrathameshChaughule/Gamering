@@ -3519,22 +3519,26 @@
         {
           "gameId": 20,
           "orderId": 1,
-          "purchasedAt": "2026-01-06T16:06:14.275Z"
+          "purchasedAt": "2026-01-06T16:06:14.275Z",
+          "installStatus": "Installed"
         },
         {
           "gameId": 69,
           "orderId": 1,
-          "purchasedAt": "2026-01-06T16:06:14.275Z"
+          "purchasedAt": "2026-01-06T16:06:14.275Z",
+          "installStatus": "Not Installed"
         },
         {
           "gameId": 32,
           "orderId": 1,
-          "purchasedAt": "2026-01-06T16:06:14.275Z"
+          "purchasedAt": "2026-01-06T16:06:14.275Z",
+          "installStatus": "Installed"
         },
         {
           "gameId": 42,
           "orderId": 1,
-          "purchasedAt": "2026-01-06T16:06:14.275Z"
+          "purchasedAt": "2026-01-06T16:06:14.275Z",
+          "installStatus": "Installed"
         }
       ],
       "id": 1

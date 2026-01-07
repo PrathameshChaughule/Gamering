@@ -477,7 +477,7 @@ function Details() {
                   </span>
                 </div>
               </div>
-              <div className="p-4 rounded-xl flex flex-col gap-2 bg-[#212121c8]">
+              <div className="p-4 rounded-xl flex items-center flex-col gap-2 bg-[#212121c8]">
                 <span className="text-[#FFFDF6] text-md flex items-center gap-2">
                   <FaRegCircleCheck className="text-lg" />
                   Can activate in India
@@ -491,7 +491,7 @@ function Details() {
                   Currently in Stock
                 </span>
               </div>
-              <div className="flex items-center gap-2 p-3 py-2 bg-[#212121c8] rounded-xl">
+              <div className="flex items-center gap-2 justify-center p-3 py-2 bg-[#212121c8] rounded-xl">
                 <div className="p-2.5 text-xl rounded-xl bg-[#373636]">
                   <SlEarphonesAlt />
                 </div>
