@@ -107,14 +107,13 @@ function Cart() {
                     <div className="flex justify-between gap-5">
                       <div className="w-20 h-20">
                         <LazyLoadImage
-                          src={`assets/${
-                            item.category === "ps4Games" ||
-                            item.category === "ps4Games"
+                          src={`assets/${item.category === "ps4Games" ||
+                              item.category === "ps4Games"
                               ? `ps4.webp`
                               : item.category === "xboxGames"
-                              ? `xbox.webp`
-                              : `pc.webp`
-                          }`}
+                                ? `xbox.webp`
+                                : `pc.webp`
+                            }`}
                           className="w-20 h-16 rounded-xl"
                           effect="blur"
                         />
@@ -156,7 +155,7 @@ function Cart() {
             ))}{" "}
           </>
         )}
-        <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex items-center justify-between">
+        <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex gap-5 items-center justify-between">
           {games.length > 0 && random.length > 0 && games[random[0]] && (
             <>
               {random.map((val, index) => (
@@ -165,7 +164,7 @@ function Cart() {
                   effect="blur"
                   src={games[val]?.image[0]}
                   onClick={() => nav(`/details/${games[val]?.id}`)}
-                  className="w-52 h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                  className="w-full h-50 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                 />
               ))}
             </>

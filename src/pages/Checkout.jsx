@@ -24,13 +24,13 @@ function Checkout() {
     zipCode: "",
     total: 0,
   });
-  const [order, setOrder] = useState({ userId: userData.userId, games: [], paymentStatus: "paid", orderStatus: "completed", paymentMethod: "", createdAt: new Date().toISOString() })
+  const [order, setOrder] = useState({ userId: userData.userId, userFirstName: userData.firstName, userLastName: userData.lastName, games: [], paymentStatus: "paid", orderStatus: "Processing", paymentMethod: "", createdAt: new Date().toISOString(), total: null })
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setData(storedCart);
-    const gameIds = storedCart.map((val) => val.id);
-    setOrder({ ...order, games: gameIds })
+    const gameIds = storedCart.map((val) => ({ gameId: val.id, title: val.title, price: val.discountPrice }));
+    setOrder({ ...order, games: gameIds, total: total })
   }, [paymentData]);
 
   const removeItem = (id) => {
@@ -73,7 +73,9 @@ function Checkout() {
       const library = data.map((val) => ({
         gameId: val.id,
         orderId: res.data.id,
-        purchasedAt: new Date().toISOString()
+        purchasedAt: new Date().toISOString(),
+        installStatus: "Not Installed",
+        orderStatus: "Processing"
       }))
 
       const updateLibrary = [...(userRes.data.library || []), ...library]
@@ -240,7 +242,7 @@ function Checkout() {
                     </div>
                     <div onClick={() => setOpen(!open)} className="border cursor-pointer relative h-14 border-white/10 bg-[#1D1D1D] flex flex-col  w-full p-0.5 px-2 rounded">
                       <label htmlFor="" className="text-sm flex flex-col text-gray-300/80">
-                        State/Province <p className="text-lg">{paymentData.state}</p>
+                        State/Province <p className="text-lg text-white">{paymentData.state}</p>
                       </label>
                       {open && <div
                         onChange={(e) => formHandle(e)}
