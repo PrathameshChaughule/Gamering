@@ -10,13 +10,11 @@ function Signup() {
     email: "",
     password: "",
     role: "user",
+    totalSpend: 0,
+    library: [],
   });
   const [confirmPassword, setConfirmPassword] = useState("");
   const nav = useNavigate();
-
-  const handleEnd = () => {
-    setCurrentIndex((prev) => (prev + 1) % videos.length);
-  };
 
   const formHandle = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -42,16 +40,21 @@ function Signup() {
         return;
       }
 
-      const res = await axios.post("http://localhost:3000/users", data);
+      const res = await axios.post("http://localhost:3000/users", {
+        ...data,
+        customerId: `CUS-${Date.now().toString().slice(-6)}`,
+        createdAt: new Date().toISOString(),
+        status: "Active"
+      });
 
       const auth = {
-        token: Math.random().toString(36),
+        token: crypto.randomUUID(),
         isAuth: true,
         role: res.data.role,
         userId: res.data.id,
         firstName: res.data.firstName,
         lastName: res.data.lastName,
-        email: res.data.email,
+        email: res.data.email
       };
 
       localStorage.setItem("auth", JSON.stringify(auth));
@@ -61,14 +64,18 @@ function Signup() {
         lastName: "",
         email: "",
         password: "",
-        role: "user",
+        role: "user"
       });
 
+      toast.success("Account created successfully 🎉");
       nav("/checkout");
+
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      toast.error("Something went wrong");
     }
   };
+
 
   return (
     <div className="flex items-center justify-center h-[100vh] w-[100vw]">

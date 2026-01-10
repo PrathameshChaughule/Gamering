@@ -9,7 +9,7 @@ const AdminLayout = () => {
       <AdminNavbar />
       <div className="grid grid-cols-[225px_1fr] overflow-hidden">
         <AdminSidebar />
-        {auth?.role === "admin" ? <div className="overflow-y-auto"><Outlet /></div> : <Navigate to="/admin" />}
+        {auth?.role === "admin" ? <div className="overflow-y-auto"><Outlet /></div> : <Navigate to="/login" />}
       </div>
     </div>
   );

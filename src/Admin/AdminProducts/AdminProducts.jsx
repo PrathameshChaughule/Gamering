@@ -7,7 +7,7 @@ import { LuTrash2 } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import Loading from '../components/Loading'
+import Loading from '../../components/Loading'
 
 function AdminProducts() {
   const [games, setGames] = useState([])

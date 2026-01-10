@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import ProductOverview from './ProductOverview'
-import ProductMedia from './ProductMedia'
+import ProductMedia from './AdminProducts'
 import Loading from '../../components/Loading'
 import { useEffect, useState } from 'react'
 import axios from 'axios';

@@ -7,6 +7,7 @@ import { ImCross } from 'react-icons/im'
 import { IoGameController } from 'react-icons/io5'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loading from '../../components/Loading'
+import { toast } from 'react-toastify'
 
 function OrdersDetails() {
     const { id } = useParams()
@@ -55,6 +56,7 @@ function OrdersDetails() {
                 { library: updatedLibrary }
             )
             setOrder(res.data)
+            toast.success(`Order Status of ${order?.orderId} Updated`)
         } catch (error) {
             console.log(error);
         }
@@ -111,7 +113,7 @@ function OrdersDetails() {
                                 <div className='border flex items-start rounded dark:bg-[#030318] bg-white p-4 dark:border-[#042568] border-gray-300'>
                                     <div className='flex flex-col'>
                                         <span className='text-lg flex gap-3 font-semibold'><span className='text-[1.1rem] text-gray-500 font-normal'>Name: </span>{order?.userFirstName} {order?.userLastName}</span>
-                                        <span className='text-black/70 flex gap-2 dark:text-gray-200  font-semibold'><span className='text-[1.1rem] text-gray-500 font-normal'>Email: </span>p@gmail.com</span>
+                                        <span className='text-black/70 flex gap-2 dark:text-gray-200  font-semibold'><span className='text-[1.1rem] text-gray-500 font-normal'>Email: </span>{order?.email}</span>
                                     </div>
                                 </div>
                                 <hr className='border mt-2 dark:border-[#042568] border-gray-300' />

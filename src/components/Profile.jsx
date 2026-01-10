@@ -1,12 +1,21 @@
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const userData = JSON.parse(localStorage.getItem("auth"));
   const nav = useNavigate();
 
-  const logOut = () => {
-    localStorage.removeItem("auth", "cart");
-    nav("/");
+  const logOut = async () => {
+
+    try {
+      await axios.patch(`http://localhost:3000/users/${userData.userId}`, {
+        status: "Inactive"
+      })
+      localStorage.removeItem("auth", "cart");
+      nav("/");
+    } catch (error) {
+      console.log(error);
+    }
     return;
   };
 

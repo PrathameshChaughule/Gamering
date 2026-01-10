@@ -60,7 +60,7 @@ function Checkout() {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    setPaymentData(paymentData.total + total);
+
     if (total === 0) {
       toast.error("Add games to your cart");
       return;
@@ -89,7 +89,9 @@ function Checkout() {
       const updateLibrary = [...(userRes.data.library || []), ...library]
 
       await axios.patch(`http://localhost:3000/users/${userData.userId}`, {
-        library: updateLibrary
+        library: updateLibrary,
+        totalSpend: (userRes.data.totalSpend || 0) + total,
+        totalOrders: (userRes.data.totalOrders || 0) + 1
       })
 
       toast.success("Order placed successfully!");

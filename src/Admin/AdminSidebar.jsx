@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { BsBoxSeam, BsMoonStars } from "react-icons/bs";
+import { BsBoxSeam, BsImages, BsMoonStars } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FiSun, FiTruck, FiUser } from "react-icons/fi";
-import { IoFolderOpenOutline, IoMailOpenOutline } from "react-icons/io5";
+import { IoFolderOpenOutline, IoGameController, IoMailOpenOutline } from "react-icons/io5";
 import { LuLayoutGrid } from "react-icons/lu";
 import { RiMessengerLine } from "react-icons/ri";
 import { SlCalender } from "react-icons/sl";
+import { TbStarsFilled } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 
 function AdminSidebar() {
@@ -71,7 +72,7 @@ function AdminSidebar() {
           Orders
         </NavLink>
         <NavLink
-          to="/adminMarketing"
+          to="/"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"
@@ -79,11 +80,11 @@ function AdminSidebar() {
             }`
           }
         >
-          <FaRegHeart />
-          Marketing
+          <BsImages />
+          Media
         </NavLink>
         <NavLink
-          to="/adminInbox"
+          to="/"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"
@@ -91,12 +92,12 @@ function AdminSidebar() {
             }`
           }
         >
-          <IoMailOpenOutline />
-          Inbox
+          <IoGameController />
+          Featured Games
         </NavLink>
 
         <NavLink
-          to=""
+          to="/"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"
@@ -104,8 +105,8 @@ function AdminSidebar() {
             }`
           }
         >
-          <SlCalender />
-          Calender
+          <TbStarsFilled />
+          Reviews
         </NavLink>
       </ul>
       <div className="w-full flex justify-center items-center">

@@ -2,22 +2,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import OrdersDetails from "./Admin/adminComponents/OrdersDetails";
+
+import OrdersDetails from "./Admin/AdminOrders/OrdersDetails";
+import CustomerDetails from "./Admin/AdminCustomer/CustomerDetails";
 
 const Loading = lazy(() => import("./components/Loading"));
 const AdminDashboard = lazy(() => import("./Admin/AdminDashboard"))
-const AdminCustomer = lazy(() => import("./Admin/AdminCustomer"))
-const AdminInbox = lazy(() => import("./Admin/AdminInbox"))
-const AdminMarketing = lazy(() => import("./Admin/AdminMarketing"))
-const AdminOrders = lazy(() => import("./Admin/AdminOrders"))
-const AdminProducts = lazy(() => import("./Admin/AdminProducts"))
+const AdminCustomer = lazy(() => import("./Admin/AdminCustomer/AdminCustomer"))
+const AdminOrders = lazy(() => import("./Admin/AdminOrders/AdminOrders"))
+const AdminProducts = lazy(() => import("../src/Admin/AdminProducts/AdminProducts"))
 const UserLayout = lazy(() => import("./Layout/UserLayout"))
 const AdminLayout = lazy(() => import("./Layout/AdminLayout"))
 const PublicLayout = lazy(() => import("./Layout/PublicLayout"))
 const Login = lazy(() => import("./Auth/Login"))
 const Signup = lazy(() => import("./Auth/Signup"))
 const ForgotPassword = lazy(() => import("./Auth/ForgotPassword"))
-const ProductsDetails = lazy(() => import("./Admin/adminComponents/ProductsDetails"))
+const ProductsDetails = lazy(() => import("./Admin/AdminProducts/ProductsDetails"))
 const Library = lazy(() => import("./pages/Library"))
 const Checkout = lazy(() => import("./pages/Checkout"));
 const Cart = lazy(() => import("./pages/Cart"));
@@ -72,8 +72,7 @@ function App() {
             <Route element={<AdminLayout />}>
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/adminCustomer" element={<AdminCustomer />} />
-              <Route path="/adminInbox" element={<AdminInbox />} />
-              <Route path="/adminMarketing" element={<AdminMarketing />} />
+              <Route path="/adminCustomer/:id" element={<CustomerDetails />} />
               <Route path="/adminOrders" element={<AdminOrders />} />
               <Route path="/adminOrders/:id" element={<OrdersDetails />} />
               <Route path="/adminProducts" element={<AdminProducts />} />

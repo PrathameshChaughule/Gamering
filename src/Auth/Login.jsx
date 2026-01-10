@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 function Login() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,11 +59,9 @@ function Login() {
       }
 
       const user = userData[0];
-      toast.success("Login Successful!");
-      setLoading(true);
 
       const auth = {
-        token: Math.random().toString(36),
+        token: crypto.randomUUID(),
         isAuth: true,
         role: user.role,
         userId: user.id,
@@ -72,7 +70,13 @@ function Login() {
         email: user.email,
       };
 
+      await axios.patch(`http://localhost:3000/users/${user.id}`, {
+        status: "Active"
+      })
+
       localStorage.setItem("auth", JSON.stringify(auth));
+      toast.success("Login Successful!");
+      setLoading(true);
       setTimeout(() => {
         nav("/checkout");
         setLoading(false);

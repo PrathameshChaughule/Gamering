@@ -3510,168 +3510,172 @@
   ],
   "users": [
     {
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "email": "a@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "totalSpend": 8020.46,
+      "library": [
+        {
+          "gameId": 56,
+          "orderId": 1,
+          "purchasedAt": "2026-01-09T04:11:53.346Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Processing"
+        },
+        {
+          "gameId": 19,
+          "orderId": 1,
+          "purchasedAt": "2026-01-09T04:11:53.346Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Processing"
+        },
+        {
+          "gameId": 14,
+          "orderId": 1,
+          "purchasedAt": "2026-01-09T04:11:53.346Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Processing"
+        }
+      ],
+      "customerId": "CUS-398913",
+      "createdAt": "2026-01-09T03:46:38.913Z",
+      "status": "Inactive",
+      "totalOrders": 1,
+      "id": 1
+    },
+    {
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "email": "p@gmail.com",
       "password": "12345678",
       "role": "admin",
+      "totalSpend": 8610.460000000001,
       "library": [
         {
-          "gameId": 63,
-          "orderId": 1,
-          "purchasedAt": "2026-01-08T19:40:09.090Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 73,
-          "orderId": 1,
-          "purchasedAt": "2026-01-08T19:40:09.090Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 16,
-          "orderId": 1,
-          "purchasedAt": "2026-01-08T19:40:09.090Z",
-          "installStatus": "Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 21,
-          "orderId": 1,
-          "purchasedAt": "2026-01-08T19:40:09.090Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 42,
-          "orderId": 1,
-          "purchasedAt": "2026-01-08T19:40:09.090Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 52,
+          "gameId": 51,
           "orderId": 2,
-          "purchasedAt": "2026-01-08T19:52:40.959Z",
+          "purchasedAt": "2026-01-09T04:14:12.305Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Completed"
+        },
+        {
+          "gameId": 76,
+          "orderId": 2,
+          "purchasedAt": "2026-01-09T04:14:12.305Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Completed"
+        },
+        {
+          "gameId": 53,
+          "orderId": 3,
+          "purchasedAt": "2026-01-09T06:41:34.796Z",
           "installStatus": "Not Installed",
           "orderStatus": "Processing"
         },
         {
-          "gameId": 59,
-          "orderId": 2,
-          "purchasedAt": "2026-01-08T19:52:40.959Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Processing"
-        },
-        {
-          "gameId": 34,
-          "orderId": 2,
-          "purchasedAt": "2026-01-08T19:52:40.959Z",
+          "gameId": 64,
+          "orderId": 3,
+          "purchasedAt": "2026-01-09T06:41:34.796Z",
           "installStatus": "Not Installed",
           "orderStatus": "Processing"
         }
       ],
-      "id": 1
-    },
-    {
-      "firstName": "Aryan",
-      "lastName": "Chaughule",
-      "email": "a@gmail.com",
-      "password": "12345678",
-      "role": "user",
-      "library": [],
+      "customerId": "CUS-007325",
+      "createdAt": "2026-01-09T04:13:27.325Z",
+      "status": "Active",
+      "totalOrders": 2,
       "id": 2
-    },
-    {
-      "firstName": "Rasika",
-      "lastName": "Dhumale",
-      "email": "r@gmail.com",
-      "password": "12345678",
-      "role": "user",
-      "library": [],
-      "id": 3
     }
   ],
   "orders": [
     {
       "userId": 1,
-      "userFirstName": "Prathamesh",
+      "userFirstName": "Aaryan",
       "userLastName": "Chaughule",
-      "email": "p@gmail.com",
+      "email": "a@gmail.com",
       "games": [
         {
-          "gameId": 63,
-          "title": "Cyberpunk 2077",
-          "price": 2999,
-          "discountPrice": 2199
+          "gameId": 56,
+          "title": "Resident Evil 4 Remake",
+          "price": 2499,
+          "discountPrice": 1999
         },
         {
-          "gameId": 73,
-          "title": "Overwatch 2",
-          "price": 1200,
-          "discountPrice": 899
+          "gameId": 19,
+          "title": "FIFA 23",
+          "price": 2799,
+          "discountPrice": 2299
         },
         {
-          "gameId": 16,
-          "title": "Cyberpunk 2077 (PS5 Version)",
-          "price": 2999,
-          "discountPrice": 2399
-        },
-        {
-          "gameId": 21,
-          "title": "Horizon Call of the Mountain",
-          "price": 3499,
-          "discountPrice": 2999
-        },
-        {
-          "gameId": 42,
-          "title": "Persona 5 Royal",
+          "gameId": 14,
+          "title": "Returnal",
           "price": 2999,
           "discountPrice": 2499
         }
       ],
       "paymentStatus": "Paid",
-      "orderStatus": "Completed",
-      "paymentMethod": "Debit Card",
-      "createdAt": "2026-01-08T19:39:51.897Z",
-      "total": 12974.1,
+      "orderStatus": "Processing",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-01-09T04:11:37.511Z",
+      "total": 8020.46,
       "id": 1,
       "orderId": "ORD-000001"
     },
     {
-      "userId": 1,
+      "userId": 2,
       "userFirstName": "Prathamesh",
       "userLastName": "Chaughule",
       "email": "p@gmail.com",
       "games": [
         {
-          "gameId": 52,
-          "title": "FIFA 23",
-          "price": 2799,
-          "discountPrice": 1999
+          "gameId": 51,
+          "title": "Cyberpunk 2077",
+          "price": 2999,
+          "discountPrice": 2199
         },
         {
-          "gameId": 59,
-          "title": "Battlefield V",
-          "price": 1999,
-          "discountPrice": 1499
+          "gameId": 76,
+          "title": "League of Legends",
+          "price": 1300,
+          "discountPrice": 0
+        }
+      ],
+      "paymentStatus": "Paid",
+      "orderStatus": "Completed",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-01-09T04:14:00.722Z",
+      "total": 2594.82,
+      "id": 2,
+      "orderId": "ORD-000002"
+    },
+    {
+      "userId": 2,
+      "userFirstName": "Prathamesh",
+      "userLastName": "Chaughule",
+      "email": "p@gmail.com",
+      "games": [
+        {
+          "gameId": 53,
+          "title": "Call of Duty II",
+          "price": 4999,
+          "discountPrice": 3999
         },
         {
-          "gameId": 34,
-          "title": "Assassin’s Creed Odyssey",
-          "price": 2499,
-          "discountPrice": 1999
+          "gameId": 64,
+          "title": "The Witcher 3: Wild Hunt",
+          "price": 1499,
+          "discountPrice": 1099
         }
       ],
       "paymentStatus": "Paid",
       "orderStatus": "Processing",
       "paymentMethod": "NetBanking",
-      "createdAt": "2026-01-08T19:52:33.162Z",
-      "total": 6486.46,
-      "id": 2,
-      "orderId": "ORD-000002"
+      "createdAt": "2026-01-09T06:41:26.132Z",
+      "total": 6015.64,
+      "id": 3,
+      "orderId": "ORD-000003"
     }
   ]
 }
