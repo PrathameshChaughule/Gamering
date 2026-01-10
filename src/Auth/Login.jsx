@@ -71,7 +71,8 @@ function Login() {
       };
 
       await axios.patch(`http://localhost:3000/users/${user.id}`, {
-        status: "Active"
+        status: "Active",
+        lastLogin: new Date().toISOString()
       })
 
       localStorage.setItem("auth", JSON.stringify(auth));

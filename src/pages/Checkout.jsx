@@ -91,7 +91,8 @@ function Checkout() {
       await axios.patch(`http://localhost:3000/users/${userData.userId}`, {
         library: updateLibrary,
         totalSpend: (userRes.data.totalSpend || 0) + total,
-        totalOrders: (userRes.data.totalOrders || 0) + 1
+        totalOrders: (userRes.data.totalOrders || 0) + 1,
+        lastOrder: new Date().toISOString()
       })
 
       toast.success("Order placed successfully!");

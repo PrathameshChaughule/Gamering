@@ -3541,6 +3541,8 @@
       ],
       "customerId": "CUS-398913",
       "createdAt": "2026-01-09T03:46:38.913Z",
+      "lastOrder": "2026-01-09T03:46:38.913Z",
+      "lastLogin": "2026-01-09T04:13:27.325Z",
       "status": "Inactive",
       "totalOrders": 1,
       "id": 1
@@ -3557,7 +3559,7 @@
           "gameId": 51,
           "orderId": 2,
           "purchasedAt": "2026-01-09T04:14:12.305Z",
-          "installStatus": "Not Installed",
+          "installStatus": "Installed",
           "orderStatus": "Completed"
         },
         {
@@ -3584,6 +3586,8 @@
       ],
       "customerId": "CUS-007325",
       "createdAt": "2026-01-09T04:13:27.325Z",
+      "lastOrder": "2026-01-09T04:13:27.325Z",
+      "lastLogin": "2026-01-10T20:06:51.952Z",
       "status": "Active",
       "totalOrders": 2,
       "id": 2
