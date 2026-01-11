@@ -72,7 +72,7 @@ function AdminSidebar() {
           Orders
         </NavLink>
         <NavLink
-          to="/"
+          to="/adminMedia"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"
@@ -84,7 +84,7 @@ function AdminSidebar() {
           Media
         </NavLink>
         <NavLink
-          to="/"
+          to="/adminFeaturedGames"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"
@@ -97,7 +97,7 @@ function AdminSidebar() {
         </NavLink>
 
         <NavLink
-          to="/"
+          to="/adminReviews"
           className={({ isActive }) =>
             `flex items-center gap-2  p-2 border border-white dark:border-[#030318] hover:border-[#3586FF] dark:hover:text-white hover:text-black cursor-pointer rounded ${isActive
               ? "text-white bg-[#3586FF] hover:text-white"

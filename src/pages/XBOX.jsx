@@ -1,4 +1,3 @@
-import { IoSearch } from "react-icons/io5";
 import { lazy, useContext, useMemo, useState } from "react";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -10,22 +9,17 @@ const Filter = lazy(() => import("../components/Filter"));
 
 function XBOX() {
   const [filter, setFilter] = useState("Newest");
-  const [search, setSearch] = useState("");
   const { games, news, loading } = useContext(GameContext);
 
   const filteredNews = news.filter((item) => item.category === "xboxNews");
 
-  const sortGame = (games, filter, search, category) => {
+  const sortGame = (games, filter, category) => {
     let filtered = [...games];
 
     filtered = filtered.filter((val) => val.status === "Active")
 
     filtered = filtered.filter((game) =>
       category === "all" ? true : game.category === category
-    );
-
-    filtered = filtered.filter((game) =>
-      game.title?.toLowerCase().includes(search.toLowerCase())
     );
 
     filtered.sort((a, b) => {
@@ -57,8 +51,8 @@ function XBOX() {
   };
 
   const filteredGames = useMemo(() => {
-    return sortGame(games, filter, search, "xboxGames");
-  }, [games, filter, search]);
+    return sortGame(games, filter, "xboxGames");
+  }, [games, filter]);
 
   return (
     <div>
@@ -172,16 +166,6 @@ function XBOX() {
               </div>
             </div>
             <div className="flex justify-between items-center mb-2 flex-row">
-              <div className="flex items-center gap-2 w-fit text-sm md:text-[18px] bg-white/15 py-1 px-2 sm:px-4 rounded mr-3">
-                <IoSearch />
-                <input
-                  type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  className="outline-none border-none w-full"
-                  placeholder="Search by game"
-                />
-              </div>
               <span className="text-sm hidden sm:block sm:text-xl text-center md:text-2xl font-bold">
                 Available for acceleration
               </span>

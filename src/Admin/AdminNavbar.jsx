@@ -40,6 +40,12 @@ function AdminNavbar() {
           )}
         </div>
       </div>
+      {profileOpen && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setProfileOpen(false)}
+        />
+      )}
       <div
         className="absolute z-100 right-3 top-18  "
         onClick={() => setProfileOpen(!profileOpen)}

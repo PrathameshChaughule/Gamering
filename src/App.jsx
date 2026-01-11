@@ -5,6 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 import OrdersDetails from "./Admin/AdminOrders/OrdersDetails";
 import CustomerDetails from "./Admin/AdminCustomer/CustomerDetails";
+import AdminMedia from "./Admin/AdminMedia"
+import AdminFeaturedGames from "./Admin/AdminFeaturedGames"
+import AdminReviews from "./Admin/AdminReviews"
 
 const Loading = lazy(() => import("./components/Loading"));
 const AdminDashboard = lazy(() => import("./Admin/AdminDashboard"))
@@ -77,6 +80,9 @@ function App() {
               <Route path="/adminOrders/:id" element={<OrdersDetails />} />
               <Route path="/adminProducts" element={<AdminProducts />} />
               <Route path="/adminProducts/:id" element={<ProductsDetails />} />
+              <Route path="/adminMedia" element={<AdminMedia />} />
+              <Route path="/adminFeaturedGames" element={<AdminFeaturedGames />} />
+              <Route path="/adminReviews" element={<AdminReviews />} />
             </Route>
           </Routes>
         </Suspense>

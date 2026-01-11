@@ -1,18 +1,45 @@
-import { FaAngleDown, FaCrown, FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
+import { FaAngleDown, FaCrown, FaPlaystation, FaSearch, FaWindows, FaXbox } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../Context/GameContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { MdMonitor } from "react-icons/md";
 import Profile from "./Profile";
+import { IoLogoPlaystation, IoLogoXbox, IoSearch } from "react-icons/io5";
+import axios from "axios";
 
 function Navbar() {
   const { cartCount } = useContext(GameContext);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [search, setSearch] = useState("")
+  const [searchResult, setSearchResult] = useState([])
   const userData = JSON.parse(localStorage.getItem("auth"));
   const nav = useNavigate();
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/games");
+
+      const filtered = res.data.filter(game =>
+        game.title.toLowerCase().includes(search.toLowerCase()) ||
+        game.tags?.some(tag =>
+          tag.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+
+      setSearchResult(filtered.slice(0, 3));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [search, searchOpen])
+
 
   return (
     <div className="bg-[#181A1E] relative py-4">
@@ -69,11 +96,14 @@ function Navbar() {
           </NavLink>
         </ul>
         <div className="flex items-center gap-3">
-          <div className="flex hidden md:block items-center gap-2 p-2 px-4 font-semibold bg-[#0190FF] rounded cursor-pointer hover:bg-blue-700">
+          <div className="flex md:block items-center gap-2 p-2 px-4 font-semibold bg-[#0190FF] rounded cursor-pointer hover:bg-blue-700">
             <span className="flex items-center gap-2">
               <FaWindows />
               Download
             </span>
+          </div>
+          <div onClick={() => { setSearchOpen(!searchOpen), setProfileOpen(false) }} className="flex -mr-2.5 items-center gap-1 cursor-pointer p-2.5 rounded text-gray-300 hover:bg-gray-700">
+            <FaSearch className="text-2xl" />
           </div>
           <NavLink
             to="/cart"
@@ -91,7 +121,8 @@ function Navbar() {
           </NavLink>
           <div
             onClick={() => {
-              userData?.isAuth ? setProfileOpen(!profileOpen) : nav("/login");
+              userData?.isAuth ? setProfileOpen(!profileOpen) : nav("/login"),
+                setSearchOpen(false)
             }}
             className="flex items-center gap-3 relative"
           >
@@ -115,13 +146,67 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {profileOpen || searchOpen && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => { setProfileOpen(false), setSearchOpen(false), setSearch("") }}
+        />
+      )}
 
       <div
         className="absolute right-32 top-26 z-100"
-        onClick={() => setProfileOpen(!profileOpen)}
+        onMouseEnter={() => setProfileOpen(true)}
+        onMouseLeave={() => setProfileOpen(false)}
       >
         {profileOpen && <>{userData?.isAuth && <Profile />}</>}
       </div>
+      {searchOpen &&
+        <div className="absolute mt-6 right-[16%] z-100 w-120">
+          <div className="px-4 border-2 bg-[#0f131a] border-blue-400/30 p-2 rounded-lg flex items-center">
+            <IoSearch className="text-2xl text-gray-300" />
+            <input type="text" onChange={(e) => setSearch(e.target.value)} className="outline-none p-1 text-xl w-full px-2" placeholder="Search games, genres, studios..." />
+          </div>
+          <div onClick={() => setSearchOpen(false)} className="border flex flex-col gap-1 p-2.5 rounded h-fit mt-1 bg-[#0f131a] border-gray-700">
+            {searchResult && searchResult.length > 0 ? (searchResult?.map((val, index) =>
+              <div onClick={() => nav(`/details/${val.id}`)} key={index} className="flex items-center gap-3 cursor-pointer hover:bg-blue-950 p-1">
+                <LazyLoadImage
+                  src={val?.image?.[0]}
+                  effect="blur"
+                  className="w-40 h-22 rounded"
+                  alt={val?.title}
+                />
+                <div className="flex flex-col gap-1 w-full">
+                  <div className="flex items-center flex-wrap gap-2 w-fit">
+                    {val?.tags?.map((item, index) =>
+                      <p key={index} className="w-fit text-[12px] px-2 bg-[#0191ffc3] font-semibold rounded">{item}</p>
+                    )}
+                  </div>
+                  <span className="text-xl w-fit">{val?.title}</span>
+                  <div>
+                    {val?.category === "ps4Games" || val?.category === "ps5Games" ? <IoLogoPlaystation className="text-xl" /> : val?.category === "xboxGames" ? <IoLogoXbox className="text-xl" /> : <MdMonitor className="text-xl" />}
+                  </div>
+                </div>
+              </div>
+            )) : (
+              <div className="w-full flex flex-col text-center justify-center items-center">
+                <LazyLoadImage
+                  src="/assets/gameNotFound.webp"
+                  effect="blur"
+                  className="w-60 h-50 rounded opacity-40"
+                  alt="Game Not Found"
+                />
+                <div className="w-full text-center -mt-2 mb-3">
+                  <h3 className="text-3xl font-semibold text-gray-200">
+                    No Games Found
+                  </h3>
+                  <p className="text-lg text-gray-400 mt-1">
+                    Try searching with a different keyword
+                  </p>
+                </div>
+              </div>)}
+          </div>
+        </div>
+      }
     </div>
   );
 }

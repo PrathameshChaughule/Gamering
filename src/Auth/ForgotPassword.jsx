@@ -12,6 +12,7 @@ function ForgotPassword() {
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [timer, setTimer] = useState(0);
+  const [loading, setLoading] = useState(false)
   const nav = useNavigate();
   const OTP_TIME = 30;
 
@@ -112,8 +113,8 @@ function ForgotPassword() {
       toast.error("Password must be at least 8 characters");
       return;
     }
-
     try {
+      setLoading(true)
       const response = await axios.get(
         `http://localhost:3000/users?email=${email}`
       );
@@ -127,6 +128,8 @@ function ForgotPassword() {
       }, 1000);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -316,9 +319,11 @@ function ForgotPassword() {
                     <button
                       type="submit"
                       onClick={() => passwordHandle()}
-                      className="p-2  text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
-                    >
-                      <span>Reset password</span>
+                      className="p-2 flex items-center justify-center text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
+                    >{loading ?
+                      <TbLoader className="animate-[spin_2s_linear_infinite] text-4xl " />
+                      :
+                      <span>Reset password</span>}
                     </button>
                   </div>
                 )}

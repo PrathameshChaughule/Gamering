@@ -24,20 +24,20 @@ function Profile() {
       <p className="text-center text-xl">
         {userData.firstName} {userData.lastName}
       </p>
-      <div className="text-lg flex flex-col gap-2 p-3 py-1">
-        <p className="px-1 rounded hover:bg-[#111315] cursor-pointer">
+      <div className="text-lg flex flex-col gap-1 p-2 py-1">
+        <p className="px-4 py-1 rounded hover:bg-[#111315] cursor-pointer">
           My Orders
         </p>
-        <p className="px-1 rounded hover:bg-[#111315] cursor-pointer">
+        <p className="px-4 py-1 rounded hover:bg-[#111315] cursor-pointer">
           Wishlist
         </p>
-        <p onClick={() => nav("/library")} className="px-1 rounded hover:bg-[#111315] cursor-pointer">
+        <p onClick={() => nav("/library")} className="px-4 py-1 rounded hover:bg-[#111315] cursor-pointer">
           Library
         </p>
         {userData.role === "admin" && (
           <p
             onClick={() => nav("/admin")}
-            className="px-1 rounded hover:bg-[#111315] cursor-pointer"
+            className="px-4 py-1 rounded hover:bg-[#111315] cursor-pointer"
           >
             Admin Dashboard
           </p>
@@ -45,7 +45,7 @@ function Profile() {
 
         <div
           onClick={logOut}
-          className="text-center p-1 mt-1 bg-[#ff04043c]/60 hover:bg-[#ff04043c] font-bold cursor-pointer text-red-600 rounded-xl pb-1.5"
+          className="text-center p-1 mt-2 bg-[#ff04043c]/60 hover:bg-[#ff04043c] font-bold cursor-pointer text-red-600 rounded-xl pb-1.5"
         >
           <span>LogOut</span>
         </div>

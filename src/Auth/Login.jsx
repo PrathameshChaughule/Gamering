@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { TbLoader } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -176,9 +177,12 @@ function Login() {
                 </div>
                 <button
                   type="submit"
-                  className="p-2  text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
-                >
+                  className="p-2 flex justify-center items-center text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
+                >{loading ?
+                  <TbLoader className="animate-[spin_2s_linear_infinite] text-4xl " />
+                  :
                   <span className="flex justify-center">LOG IN NOW </span>
+                  }
                 </button>
               </form>
             </div>

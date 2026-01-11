@@ -40,6 +40,87 @@
       }
     },
     {
+      "id": 70,
+      "title": "Apex Legends",
+      "company": "Respawn Entertainment",
+      "category": "pcGames",
+      "image": [
+        "/assets/images/Apex Legends 5.webp",
+        "/assets/images/Apex Legends 4.webp",
+        "/assets/images/Apex Legends 3.webp",
+        "/assets/images/Apex Legends 2.webp",
+        "/assets/images/Apex Legends 1.webp"
+      ],
+      "price": 1099,
+      "discountPrice": 799,
+      "mode": [
+        "Multi Player"
+      ],
+      "tags": [
+        "Battle Royale",
+        "FPS",
+        "Team-Based",
+        "Competitive"
+      ],
+      "description": "Apex Legends is a squad-based battle royale that emphasizes speed, teamwork, and unique character abilities. Players select Legends with specialized skills that encourage strategic team compositions. The game features smooth movement, responsive gunplay, and dynamic map design. Seasonal updates add new Legends, weapons, and gameplay changes. Apex Legends rewards skill, coordination, and adaptability, making it a favorite among competitive Multi Player fans.",
+      "youtube": "https://www.youtube.com/embed/innmNewjkuk",
+      "releaseDate": "2019-02-04",
+      "popularity": 92,
+      "addedDate": "2025-10-12T10:30:45.123Z",
+      "status": "Active",
+      "rating": 4.4,
+      "totalReviews": 298300,
+      "reviewsPercent": {
+        "1": 1,
+        "2": 2,
+        "3": 5,
+        "4": 16,
+        "5": 76
+      }
+    },
+    {
+      "id": 44,
+      "title": "Forza Horizon 5",
+      "company": "Playground Games",
+      "category": "xboxGames",
+      "image": [
+        "/assets/images/Forza Horizon 5 5.webp",
+        "/assets/images/Forza Horizon 5 4.webp",
+        "/assets/images/Forza Horizon 5 3.webp",
+        "/assets/images/Forza Horizon 5 2.webp",
+        "/assets/images/Forza Horizon 5 1.webp"
+      ],
+      "price": 3499,
+      "discountPrice": 2799,
+      "mode": [
+        [
+          "Single Player"
+        ],
+        " Multi Player"
+      ],
+      "tags": [
+        "Racing",
+        "Open World",
+        "Cars",
+        "Realistic"
+      ],
+      "description": "Forza Horizon 5 is an open-world racing game set in a vibrant and diverse recreation of Mexico. Players can explore deserts, jungles, cities, beaches, and volcanoes while participating in races, stunts, and seasonal events. The game features hundreds of licensed cars, each with realistic handling and deep customization options. Dynamic weather and changing seasons affect road conditions and driving strategies, keeping gameplay fresh. Multi Player integrates seamlessly, allowing players to race, explore, or complete challenges together without interruptions. Forza Horizon 5 balances simulation-level realism with arcade-style accessibility, making it enjoyable for casual players and racing enthusiasts alike. Stunning visuals, smooth performance, and constant content updates make it one of the most polished racing experiences available on Xbox.",
+      "youtube": "https://www.youtube.com/embed/Rv7xLt5yNsM?si=hP7geczZ4aU0kJSP",
+      "releaseDate": "2021-11-09",
+      "popularity": 95,
+      "addedDate": "2025-02-13T10:30:45.123Z",
+      "status": "Active",
+      "rating": 4.7,
+      "totalReviews": 1820,
+      "reviewsPercent": {
+        "1": 0,
+        "2": 1,
+        "3": 3,
+        "4": 11,
+        "5": 85
+      }
+    },
+    {
       "id": 2,
       "title": "God of War Ragnarök",
       "company": "Santa Monica Studio",
@@ -1677,48 +1758,6 @@
       }
     },
     {
-      "id": 44,
-      "title": "Forza Horizon 5",
-      "company": "Playground Games",
-      "category": "xboxGames",
-      "image": [
-        "/assets/images/Forza Horizon 5 5.webp",
-        "/assets/images/Forza Horizon 5 4.webp",
-        "/assets/images/Forza Horizon 5 3.webp",
-        "/assets/images/Forza Horizon 5 2.webp",
-        "/assets/images/Forza Horizon 5 1.webp"
-      ],
-      "price": 3499,
-      "discountPrice": 2799,
-      "mode": [
-        [
-          "Single Player"
-        ],
-        " Multi Player"
-      ],
-      "tags": [
-        "Racing",
-        "Open World",
-        "Cars",
-        "Realistic"
-      ],
-      "description": "Forza Horizon 5 is an open-world racing game set in a vibrant and diverse recreation of Mexico. Players can explore deserts, jungles, cities, beaches, and volcanoes while participating in races, stunts, and seasonal events. The game features hundreds of licensed cars, each with realistic handling and deep customization options. Dynamic weather and changing seasons affect road conditions and driving strategies, keeping gameplay fresh. Multi Player integrates seamlessly, allowing players to race, explore, or complete challenges together without interruptions. Forza Horizon 5 balances simulation-level realism with arcade-style accessibility, making it enjoyable for casual players and racing enthusiasts alike. Stunning visuals, smooth performance, and constant content updates make it one of the most polished racing experiences available on Xbox.",
-      "youtube": "https://www.youtube.com/embed/Rv7xLt5yNsM?si=hP7geczZ4aU0kJSP",
-      "releaseDate": "2021-11-09",
-      "popularity": 95,
-      "addedDate": "2025-02-13T10:30:45.123Z",
-      "status": "Active",
-      "rating": 4.7,
-      "totalReviews": 1820,
-      "reviewsPercent": {
-        "1": 0,
-        "2": 1,
-        "3": 3,
-        "4": 11,
-        "5": 85
-      }
-    },
-    {
       "id": 45,
       "title": "Gears 5",
       "company": "The Coalition",
@@ -2677,6 +2716,7 @@
         "Multi Player"
       ],
       "tags": [
+        "Free",
         "FPS",
         "Tactical Shooter",
         "Competitive",
@@ -2735,45 +2775,6 @@
         "3": 5,
         "4": 15,
         "5": 78
-      }
-    },
-    {
-      "id": 70,
-      "title": "Apex Legends",
-      "company": "Respawn Entertainment",
-      "category": "pcGames",
-      "image": [
-        "/assets/images/Apex Legends 5.webp",
-        "/assets/images/Apex Legends 4.webp",
-        "/assets/images/Apex Legends 3.webp",
-        "/assets/images/Apex Legends 2.webp",
-        "/assets/images/Apex Legends 1.webp"
-      ],
-      "price": 1099,
-      "discountPrice": 799,
-      "mode": [
-        "Multi Player"
-      ],
-      "tags": [
-        "Battle Royale",
-        "FPS",
-        "Team-Based",
-        "Competitive"
-      ],
-      "description": "Apex Legends is a squad-based battle royale that emphasizes speed, teamwork, and unique character abilities. Players select Legends with specialized skills that encourage strategic team compositions. The game features smooth movement, responsive gunplay, and dynamic map design. Seasonal updates add new Legends, weapons, and gameplay changes. Apex Legends rewards skill, coordination, and adaptability, making it a favorite among competitive Multi Player fans.",
-      "youtube": "https://www.youtube.com/embed/innmNewjkuk",
-      "releaseDate": "2019-02-04",
-      "popularity": 92,
-      "addedDate": "2025-10-12T10:30:45.123Z",
-      "status": "Active",
-      "rating": 4.4,
-      "totalReviews": 298300,
-      "reviewsPercent": {
-        "1": 1,
-        "2": 2,
-        "3": 5,
-        "4": 16,
-        "5": 76
       }
     },
     {
@@ -2996,6 +2997,7 @@
         "Multi Player"
       ],
       "tags": [
+        "Free",
         "MOBA",
         "Strategy",
         "Esports",
@@ -3522,21 +3524,21 @@
           "orderId": 1,
           "purchasedAt": "2026-01-09T04:11:53.346Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Completed"
         },
         {
           "gameId": 19,
           "orderId": 1,
           "purchasedAt": "2026-01-09T04:11:53.346Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Completed"
         },
         {
           "gameId": 14,
           "orderId": 1,
           "purchasedAt": "2026-01-09T04:11:53.346Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Completed"
         }
       ],
       "customerId": "CUS-398913",
@@ -3566,7 +3568,7 @@
           "gameId": 76,
           "orderId": 2,
           "purchasedAt": "2026-01-09T04:14:12.305Z",
-          "installStatus": "Not Installed",
+          "installStatus": "Installed",
           "orderStatus": "Completed"
         },
         {
@@ -3587,7 +3589,7 @@
       "customerId": "CUS-007325",
       "createdAt": "2026-01-09T04:13:27.325Z",
       "lastOrder": "2026-01-09T04:13:27.325Z",
-      "lastLogin": "2026-01-10T20:06:51.952Z",
+      "lastLogin": "2026-01-11T05:44:12.169Z",
       "status": "Active",
       "totalOrders": 2,
       "id": 2
@@ -3620,7 +3622,7 @@
         }
       ],
       "paymentStatus": "Paid",
-      "orderStatus": "Processing",
+      "orderStatus": "Completed",
       "paymentMethod": "Credit Card",
       "createdAt": "2026-01-09T04:11:37.511Z",
       "total": 8020.46,

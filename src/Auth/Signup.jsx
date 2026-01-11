@@ -14,6 +14,7 @@ function Signup() {
     library: [],
   });
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false)
   const nav = useNavigate();
 
   const formHandle = (e) => {
@@ -22,6 +23,7 @@ function Signup() {
 
   const formSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     if (data.password !== confirmPassword) {
       toast.error("Password and Confirm Password must be same");
@@ -73,6 +75,8 @@ function Signup() {
     } catch (error) {
       console.error(error);
       toast.error("Something went wrong");
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -209,9 +213,11 @@ function Signup() {
                 </div> */}
                 <button
                   type="submit"
-                  className="p-2 mt-3 text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
-                >
-                  <span>SIGN UP NOW</span>
+                  className="p-2 mt-3 flex items-center justify-center text-[18px] font-bold rounded bg-[#1D232A] text-white cursor-pointer hover:bg-[#1D232A]/90"
+                >{loading ?
+                  <TbLoader className="animate-[spin_2s_linear_infinite] text-4xl " />
+                  :
+                  <span>SIGN UP NOW</span>}
                 </button>
               </form>
             </div>
