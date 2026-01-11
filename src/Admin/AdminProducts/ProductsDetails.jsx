@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import ProductOverview from './ProductOverview'
-import ProductMedia from './AdminProducts'
+import ProductMedia from './ProductMedia'
 import Loading from '../../components/Loading'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
@@ -44,10 +44,9 @@ function ProductsDetails() {
                     </div>
                 </div>
                 <div>
-                    {show === "Overview" ? <ProductOverview game={game} id={id} /> : <ProductMedia game={game} id={id} />}
+                    {show === "Overview" ? <ProductOverview game={game} id={id} /> : show === "Media" && <ProductMedia game={game} id={id} />}
                 </div>
             </div>
-
         </div>
     )
 }
