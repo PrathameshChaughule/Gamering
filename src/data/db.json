@@ -3713,6 +3713,16 @@
       "createdAt": "2026-01-09T03:46:38.913Z",
       "lastOrder": "2026-01-09T03:46:38.913Z",
       "lastLogin": "2026-01-09T04:13:27.325Z",
+      "address": [
+        {
+          "address": "",
+          "city": "",
+          "country": "India",
+          "state": "",
+          "zipCode": ""
+        }
+      ],
+      "mobileNumber": "",
       "status": "Inactive",
       "totalOrders": 1,
       "id": 1
@@ -3758,6 +3768,16 @@
       "createdAt": "2026-01-09T04:13:27.325Z",
       "lastOrder": "2026-01-09T04:13:27.325Z",
       "lastLogin": "2026-01-13T02:56:45.004Z",
+      "address": [
+        {
+          "address": "Ratnagiri, Maharashtra",
+          "city": "Ratnagiri",
+          "country": "India",
+          "state": "Maharashtra",
+          "zipCode": "415612"
+        }
+      ],
+      "mobileNumber": "1234567890",
       "status": "Active",
       "totalOrders": 2,
       "id": 2
@@ -3774,6 +3794,16 @@
       "createdAt": "2026-01-12T07:57:31.053Z",
       "lastLogin": "2026-01-12T07:57:31.053Z",
       "lastOrder": null,
+      "address": [
+        {
+          "address": "",
+          "city": "",
+          "country": "India",
+          "state": "",
+          "zipCode": ""
+        }
+      ],
+      "mobileNumber": "",
       "totalOrders": 0,
       "status": "Inactive",
       "id": 3
@@ -3790,6 +3820,16 @@
       "createdAt": "2026-01-12T07:58:28.770Z",
       "lastLogin": "2026-01-12T07:58:28.770Z",
       "lastOrder": null,
+      "address": [
+        {
+          "address": "",
+          "city": "",
+          "country": "India",
+          "state": "",
+          "zipCode": ""
+        }
+      ],
+      "mobileNumber": "",
       "totalOrders": 0,
       "status": "Inactive",
       "id": 4
@@ -3806,6 +3846,16 @@
       "createdAt": "2026-01-12T08:02:02.806Z",
       "lastLogin": "2026-01-12T08:02:02.806Z",
       "lastOrder": null,
+      "address": [
+        {
+          "address": "",
+          "city": "",
+          "country": "India",
+          "state": "",
+          "zipCode": ""
+        }
+      ],
+      "mobileNumber": "",
       "totalOrders": 0,
       "status": "Inactive",
       "id": 5
@@ -3822,6 +3872,16 @@
       "createdAt": "2026-01-12T08:02:50.970Z",
       "lastLogin": "2026-01-12T08:02:50.970Z",
       "lastOrder": null,
+      "address": [
+        {
+          "address": "",
+          "city": "",
+          "country": "India",
+          "state": "",
+          "zipCode": ""
+        }
+      ],
+      "mobileNumber": "",
       "totalOrders": 0,
       "status": "Inactive",
       "id": 6

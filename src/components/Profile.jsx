@@ -49,19 +49,19 @@ function Profile() {
               <FaUserSecret /> Admin Dashboard
             </p>
           )}
-          <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
+          <p onClick={() => nav("/userAccount")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FaUser />  View Profile
           </p>
           <p onClick={() => nav("/library")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <IoGameController /> My Library
           </p>
-          <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
+          <p onClick={() => nav("/userWishlist")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FaHeart /> Wishlist
           </p>
           <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FaBell /> Notifications
           </p>
-          <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
+          <p onClick={() => nav("/userDownloads")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FiDownload /> Downloads
           </p>
           <hr className="border border-white/10 my-2" />
@@ -70,7 +70,7 @@ function Profile() {
             className="text-center flex items-center gap-3 justify-center w-full p-2 mt-2 bg-[#ff04043c]/60 hover:bg-[#ff04043c] font-bold cursor-pointer text-red-600 rounded-xl pb-1.5"
           >
             <GiPowerButton />
-            <span>LogOut</span>
+            <span>Log Out</span>
           </div>
         </div>
       </div>

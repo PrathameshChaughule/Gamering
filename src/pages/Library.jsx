@@ -25,16 +25,7 @@ function Library() {
     const [sortOpen, setSortOpen] = useState(false)
     const [filterOpen, setFilterOpen] = useState(false)
     const [search, setSearch] = useState("");
-    const [random, setRandom] = useState([]);
     const nav = useNavigate()
-
-    useEffect(() => {
-        const num = new Set();
-        while (num.size < 4) {
-            num.add(Math.floor(Math.random() * 83) + 1);
-        }
-        setRandom([...num]);
-    }, []);
 
     useEffect(() => {
         if (!games || games.length === 0) return;
@@ -161,10 +152,10 @@ function Library() {
     }
 
     return (
-        <div className='w-[90vw] m-auto mb-10 flex-col'>
-            <h1 className="text-4xl font-bold text-white/90 mt-9 -mb-11 ml-3">Library</h1>
-            <div className="mb-8 m-auto h-fit flex justify-between">
-                <div className={`${library?.length === 0 ? 'w-[100%]' : 'w-[76%]'} p-5 h-fit mt-17 flex flex-col gap-7 bg-[#18181872] border-2 border-[#292b26]/50 rounded-xl`}>
+        <div className='w-[70vw] m-auto flex-col'>
+            <h1 className="text-3xl font-semibold text-white/90 text-white/90 -mb-11 ml-3">Library</h1>
+            <div className="m-auto h-fit flex justify-between">
+                <div className={`${library?.length === 0 ? 'w-[100%]' : 'w-[76%]'} p-5 h-fit mt-17 flex flex-col gap-7 bg-[#18181872] border-2 border-[#2f354494] rounded-xl`}>
                     {library?.length === 0 ?
                         <div className='flex flex-col items-center justify-center gap-5'>
                             <LazyLoadImage
@@ -214,7 +205,7 @@ function Library() {
                                     </div>
                                 </div>
                                 <div className='flex w-fit items-center'>
-                                    <div className='w-fit px-4 py-1 flex items-center gap-1 rounded bg-[#232323]'>
+                                    <div className='w-fit px-4 py-1 flex items-center gap-1 rounded bg-[#181A1E]'>
                                         <IoSearch className='text-xl mt-0.5' />
                                         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search...' className='border-none outline-none p-1' />
                                     </div>
@@ -224,7 +215,7 @@ function Library() {
                                 const purchase = libraryData?.find(
                                     item => item.gameId === val.id
                                 )
-                                return (<div key={val.id} className='bg-[#232323] w-full p-2 rounded-md flex flex-col gap-1.5'>
+                                return (<div key={val.id} className='bg-[#181A1E] w-full p-2 rounded-md flex flex-col gap-1.5'>
                                     <div onClick={() => libraryGameDetail(val.id)} className='flex cursor-pointer items-center justify-between'>
                                         <div className='flex items-center gap-4'>
                                             <LazyLoadImage
@@ -281,7 +272,7 @@ function Library() {
                     }
                 </div>
                 {library?.length !== 0 &&
-                    <div className="w-[23%] p-5 h-fit mt-17 bg-[#18181872] border-2 border-[#292b26]/50 rounded-xl">
+                    <div className="w-[23%] p-5 h-fit mt-17 bg-[#18181872] border-2 border-[#2f354494] rounded-xl">
                         <div className='w-full h-full flex flex-col gap-4'>
                             <LazyLoadImage
                                 src={gameDetail?.image?.[0]}
@@ -290,7 +281,7 @@ function Library() {
                             />
                             <div className='flex flex-col gap-3'>
                                 <div className='flex items-center flex-wrap gap-2'>
-                                    {gameDetail?.tags?.map((val, index) => <div key={index} className='w-fit px-2 text-[13px] rounded font-semibold bg-[#232323] text-gray-400'><span>{val}</span></div>)}
+                                    {gameDetail?.tags?.map((val, index) => <div key={index} className='w-fit px-2 text-[13px] rounded font-semibold bg-[#181A1E] text-gray-400'><span>{val}</span></div>)}
                                 </div>
                                 <div className='text-[1.6rem] font-semibold w-full text-center'>
                                     <span>{gameDetail?.title}</span>
@@ -335,21 +326,6 @@ function Library() {
 
                     </div>}
             </div >
-            <div className={`${library?.length === 0 ? 'w-[100%]' : 'w-[76%]'}bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex gap-5 items-center justify-between`}>
-                {games.length > 0 && random.length > 0 && games[random[0]] && (
-                    <>
-                        {random.map((val, index) => (
-                            <LazyLoadImage
-                                key={index}
-                                effect="blur"
-                                src={games[val]?.image[0]}
-                                onClick={() => nav(`/details/${games[val]?.id}`)}
-                                className="w-full h-50 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
-                            />
-                        ))}
-                    </>
-                )}
-            </div>
         </div>
     )
 }

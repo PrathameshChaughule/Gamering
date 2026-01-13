@@ -3,12 +3,16 @@ import { lazy, Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import OrdersDetails from "./Admin/AdminOrders/OrdersDetails";
-import CustomerDetails from "./Admin/AdminCustomer/CustomerDetails";
-import AdminMedia from "./Admin/AdminMedia"
-import AdminFeaturedGames from "./Admin/AdminFeaturedGames"
-import AdminReviews from "./Admin/AdminReviews"
-
+const OrdersDetails = lazy(() => import("./Admin/AdminOrders/OrdersDetails"));
+const CustomerDetails = lazy(() => import("./Admin/AdminCustomer/CustomerDetails"));
+const AdminMedia = lazy(() => import("./Admin/AdminMedia"))
+const AdminFeaturedGames = lazy(() => import("./Admin/AdminFeaturedGames"))
+const AdminReviews = lazy(() => import("./Admin/AdminReviews"))
+const UserDetailsLayout = lazy(() => import("./Layout/UserDetailsLayout"));
+const MyAccount = lazy(() => import("./pages/MyAccount"))
+const OrderHistory = lazy(() => import("./pages/OrderHistory"))
+const Wishlist = lazy(() => import("./pages/Wishlist"))
+const Settings = lazy(() => import("./pages/Settings"))
 const Loading = lazy(() => import("./components/Loading"));
 const AdminDashboard = lazy(() => import("./Admin/AdminDashboard"))
 const AdminCustomer = lazy(() => import("./Admin/AdminCustomer/AdminCustomer"))
@@ -29,6 +33,7 @@ const PS5 = lazy(() => import("./pages/PS5"));
 const PS4 = lazy(() => import("./pages/PS4"));
 const XBOX = lazy(() => import("./pages/XBOX"));
 const Details = lazy(() => import("./pages/Details"));
+const Downloads = lazy(() => import("./pages/Downloads"))
 
 function App() {
   return (
@@ -64,12 +69,19 @@ function App() {
               <Route path="/xboxGames" element={<XBOX />} />
               <Route path="/details/:id" element={<Details />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/library" element={<Library />} />
               <Route path="*" element={<Home />} />
             </Route>
 
             <Route element={<UserLayout />}>
               <Route path="/checkout" element={<Checkout />} />
+              <Route element={<UserDetailsLayout />}>
+                <Route path="/userAccount" element={<MyAccount />} />
+                <Route path="/userOrder" element={<OrderHistory />} />
+                <Route path="/userWishlist" element={<Wishlist />} />
+                <Route path="/userSettings" element={<Settings />} />
+                <Route path="/userDownloads" element={<Downloads />} />
+                <Route path="/library" element={<Library />} />
+              </Route>
             </Route>
 
             <Route element={<AdminLayout />}>

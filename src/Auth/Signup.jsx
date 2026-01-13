@@ -51,6 +51,16 @@ function Signup() {
         lastLogin: new Date().toISOString(),
         lastOrder: null,
         totalOrders: 0,
+        address: [
+          {
+            address: "",
+            city: "",
+            country: "India",
+            state: "",
+            zipCode: ""
+          }
+        ],
+        mobileNumber: "",
       });
 
       const auth = {
