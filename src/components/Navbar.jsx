@@ -9,6 +9,7 @@ import { MdMonitor } from "react-icons/md";
 import Profile from "./Profile";
 import { IoLogoPlaystation, IoLogoXbox, IoSearch } from "react-icons/io5";
 import axios from "axios";
+import { BsTriangleFill } from "react-icons/bs";
 
 function Navbar() {
   const { cartCount } = useContext(GameContext);
@@ -42,7 +43,7 @@ function Navbar() {
 
 
   return (
-    <div className="bg-[#181A1E] relative py-4">
+    <div className="bg-[#181A1E] py-4">
       <div className="flex items-center justify-around w-[85vw] m-auto">
         <LazyLoadImage src="/assets/logo.webp" className="w-[15vw]" alt="" />
         <ul className="flex text-sm md:text-xl items-center justify-around w-100">
@@ -95,7 +96,7 @@ function Navbar() {
             XBOX
           </NavLink>
         </ul>
-        <div className="flex items-center gap-3">
+        <div className="flex relative items-center gap-3">
           <div className="flex md:block items-center gap-2 p-2 px-4 font-semibold bg-[#0190FF] rounded cursor-pointer hover:bg-blue-700">
             <span className="flex items-center gap-2">
               <FaWindows />
@@ -143,6 +144,13 @@ function Navbar() {
                 className="w-11 cursor-pointer h-11 border-4 shadow hover:shadow-md shadow-blue-500 border-blue-500 rounded-full"
                 alt=""
               />}
+            <div
+              className="absolute flex flex-col items-end right-0 top-15 z-100"
+              onMouseEnter={() => setProfileOpen(true)}
+              onMouseLeave={() => setProfileOpen(false)}
+            >
+              {profileOpen && <>{userData?.isAuth && <Profile />}</>}
+            </div>
           </div>
         </div>
       </div>
@@ -152,14 +160,6 @@ function Navbar() {
           onClick={() => { setProfileOpen(false), setSearchOpen(false), setSearch("") }}
         />
       )}
-
-      <div
-        className="absolute right-32 top-26 z-100"
-        onMouseEnter={() => setProfileOpen(true)}
-        onMouseLeave={() => setProfileOpen(false)}
-      >
-        {profileOpen && <>{userData?.isAuth && <Profile />}</>}
-      </div>
       {searchOpen &&
         <div className="absolute mt-6 right-[16%] z-100 w-120">
           <div className="px-4 border-2 bg-[#0f131a] border-blue-400/30 p-2 rounded-lg flex items-center">

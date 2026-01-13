@@ -122,12 +122,12 @@ function AdminMedia() {
             {filter === "All Games" ? <span className='font-bold'>All Games</span> : filter === "pcGames" ? <span className='font-bold'>PC Games</span> : filter === "ps4Games" ? <span className='font-bold'>PS4 Games</span> : filter === "ps5Games" ? <span className='font-bold'>PS5 Games</span> : filter === "xboxGames" && <span className='font-bold'>XBOX Games</span>}
             <GoTriangleDown className={`mt-1 text-2xl transition-all ${filterOpen ? "rotate-180" : "rotate-0"}`} />
             {filterOpen &&
-              <div className='absolute top-9.5 right-0 z-100 bg-[#080B2C] text-center w-40 p-2 px-4 flex flex-col gap-1'>
-                <p onClick={() => { setFilter("All Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-[#030318]'>All Games</p>
-                <p onClick={() => { setFilter("pcGames"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-[#030318]'>PC Games</p>
-                <p onClick={() => { setFilter("ps4Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-[#030318]'>PS4 Games</p>
-                <p onClick={() => { setFilter("xboxGames"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-[#030318]'>XBOX Games</p>
-                <p onClick={() => { setFilter("ps5Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-[#030318]'>PS5 Games</p>
+              <div className='absolute top-9.5 right-0 z-100 dak:bg-[#080B2C] bg-gray-100 text-center w-40 p-2 px-4 flex flex-col gap-1'>
+                <p onClick={() => { setFilter("All Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>All Games</p>
+                <p onClick={() => { setFilter("pcGames"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>PC Games</p>
+                <p onClick={() => { setFilter("ps4Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>PS4 Games</p>
+                <p onClick={() => { setFilter("xboxGames"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>XBOX Games</p>
+                <p onClick={() => { setFilter("ps5Games"); setFilterOpen(false); }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>PS5 Games</p>
               </div>}
           </div>
           <div onMouseEnter={() => setSortOpen(true)} onMouseLeave={() => setSortOpen(false)} className='flex relative items-center gap-2 w-fit px-4 py-1 rounded dark:bg-[#080B2C] bg-gray-200'>
@@ -135,9 +135,9 @@ function AdminMedia() {
             <span className='font-bold'>{sortBy}</span>
             <GoTriangleDown className={`mt-1 text-2xl transition-all ${sortOpen ? "rotate-180" : "rotate-0"}`} />
             {sortOpen &&
-              <div className='absolute top-9.5 right-0 z-100 bg-[#080B2C] text-center w-40 p-2 px-4 flex flex-col gap-1'>
-                <p onClick={() => { setSortBy("Newest"), setSortOpen(false) }} className='p-2 cursor-pointer hover:bg-[#030318]'>Newest</p>
-                <p onClick={() => { setSortBy("Oldest"), setSortOpen(false) }} className='p-2 cursor-pointer hover:bg-[#030318]'>Oldest</p>
+              <div className='absolute top-9.5 right-0 z-100 dark:bg-[#080B2C] bg-gray-100 text-center w-40 p-2 px-4 flex flex-col gap-1'>
+                <p onClick={() => { setSortBy("Newest"), setSortOpen(false) }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>Newest</p>
+                <p onClick={() => { setSortBy("Oldest"), setSortOpen(false) }} className='p-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-[#030318]'>Oldest</p>
               </div>}
           </div>
         </div>

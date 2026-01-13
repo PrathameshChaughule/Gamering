@@ -138,9 +138,9 @@ function CustomerDetails() {
                                 </div>
                                 <div>
                                     <p className='text-xl font-semibold text-gray-500 dark:text-gray-400'>Last Order</p>
-                                    <span className='text-2xl font-bold'>{new Date(user?.lastOrder).toLocaleDateString("en-IN", {
+                                    <span className='text-2xl font-bold'>{user?.lastOrder ? new Date(user?.lastOrder).toLocaleDateString("en-IN", {
                                         day: "2-digit", month: "short", year: "numeric",
-                                    })}</span>
+                                    }) : <span>--/--/----</span>}</span>
                                 </div>
                             </div>
                             <div className='flex gap-4 w-[22%] justify-center p-3 px-5 items-center border-2 border-gray-300 dark:bg-[#080B2C] dark:border-[#080B2C] rounded-lg'>
@@ -224,7 +224,7 @@ function CustomerDetails() {
                                     <IoBagCheck className='text-3xl' />
                                     <div className='flex flex-col'>
                                         <span className='text-lg'>Order Placed</span>
-                                        <span className='text-sm text-gray-500'>{new Date(user?.lastOrder).toLocaleDateString()}, {new Date(user?.lastOrder).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hour12: true }).toUpperCase()}</span>
+                                        <span className='text-sm text-gray-500'>{user?.lastOrder ? <span>{new Date(user?.lastOrder).toLocaleDateString()}, {new Date(user?.lastOrder).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hour12: true }).toUpperCase()}</span> : <span>--/--/----, --:-- AM/PM</span>}</span>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +246,7 @@ function CustomerDetails() {
                                 <tbody>
                                     {orders?.filter((order, i) => !orders.slice(0, i).some(o => o.orderId === order.orderId))?.map((val, index) =>
                                         <tr key={index} className='text-center border-t-2 dark:border-[#011743] border-gray-300'>
-                                            <td className='py-2.5'>{val?.orderId}</td>
+                                            <td className='py-3.5'>{val?.orderId}</td>
                                             <td>{new Date(val?.createdAt).toLocaleDateString()}</td>
                                             <td>{val?.games?.length}</td>
                                             <td>₹{val?.total?.toFixed(2)}</td>
@@ -327,7 +327,7 @@ function CustomerDetails() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             }
         </>
     )

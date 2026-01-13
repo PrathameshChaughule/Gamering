@@ -29,6 +29,8 @@
       "popularity": 97,
       "addedDate": "2025-01-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1240,
       "reviewsPercent": {
@@ -68,6 +70,8 @@
       "popularity": 92,
       "addedDate": "2025-10-12T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.4,
       "totalReviews": 298300,
       "reviewsPercent": {
@@ -110,6 +114,8 @@
       "popularity": 95,
       "addedDate": "2025-02-13T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.7,
       "totalReviews": 1820,
       "reviewsPercent": {
@@ -149,6 +155,8 @@
       "popularity": 98,
       "addedDate": "2025-01-02T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 1580,
       "reviewsPercent": {
@@ -188,6 +196,8 @@
       "popularity": 95,
       "addedDate": "2025-01-03T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-02",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1120,
       "reviewsPercent": {
@@ -227,6 +237,8 @@
       "popularity": 92,
       "addedDate": "2025-01-04T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 740,
       "reviewsPercent": {
@@ -266,6 +278,8 @@
       "popularity": 93,
       "addedDate": "2025-01-05T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 980,
       "reviewsPercent": {
@@ -305,6 +319,8 @@
       "popularity": 97,
       "addedDate": "2025-01-06T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 1620,
       "reviewsPercent": {
@@ -344,6 +360,8 @@
       "popularity": 94,
       "addedDate": "2025-01-07T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-03",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1050,
       "reviewsPercent": {
@@ -383,6 +401,8 @@
       "popularity": 90,
       "addedDate": "2025-01-08T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 1180,
       "reviewsPercent": {
@@ -422,6 +442,8 @@
       "popularity": 91,
       "addedDate": "2025-01-09T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 910,
       "reviewsPercent": {
@@ -461,6 +483,8 @@
       "popularity": 89,
       "addedDate": "2025-01-10T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-04",
+      "featuredStatus": "Featured",
       "rating": 4.4,
       "totalReviews": 860,
       "reviewsPercent": {
@@ -500,6 +524,8 @@
       "popularity": 88,
       "addedDate": "2025-01-11T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 690,
       "reviewsPercent": {
@@ -539,6 +565,8 @@
       "popularity": 87,
       "addedDate": "2025-01-12T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 540,
       "reviewsPercent": {
@@ -578,6 +606,8 @@
       "popularity": 92,
       "addedDate": "2025-01-13T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.4,
       "totalReviews": 1320,
       "reviewsPercent": {
@@ -617,6 +647,8 @@
       "popularity": 86,
       "addedDate": "2025-01-14T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-06",
+      "featuredStatus": "Featured",
       "rating": 4.5,
       "totalReviews": 820,
       "reviewsPercent": {
@@ -656,6 +688,8 @@
       "popularity": 85,
       "addedDate": "2025-01-15T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 610,
       "reviewsPercent": {
@@ -695,6 +729,8 @@
       "popularity": 83,
       "addedDate": "2025-01-16T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.1,
       "totalReviews": 940,
       "reviewsPercent": {
@@ -734,6 +770,8 @@
       "popularity": 90,
       "addedDate": "2025-01-17T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 770,
       "reviewsPercent": {
@@ -773,6 +811,8 @@
       "popularity": 84,
       "addedDate": "2025-01-18T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 830,
       "reviewsPercent": {
@@ -812,6 +852,8 @@
       "popularity": 88,
       "addedDate": "2025-01-19T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.1,
       "totalReviews": 560,
       "reviewsPercent": {
@@ -851,6 +893,8 @@
       "popularity": 87,
       "addedDate": "2025-01-20T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-07",
+      "featuredStatus": "Featured",
       "rating": 4.3,
       "totalReviews": 880,
       "reviewsPercent": {
@@ -890,6 +934,8 @@
       "popularity": 82,
       "addedDate": "2025-01-21T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 1010,
       "reviewsPercent": {
@@ -929,6 +975,8 @@
       "popularity": 95,
       "addedDate": "2025-01-22T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1840,
       "reviewsPercent": {
@@ -968,6 +1016,8 @@
       "popularity": 97,
       "addedDate": "2025-01-23T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 2120,
       "reviewsPercent": {
@@ -1007,6 +1057,8 @@
       "popularity": 93,
       "addedDate": "2025-01-24T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-08",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1560,
       "reviewsPercent": {
@@ -1046,6 +1098,8 @@
       "popularity": 94,
       "addedDate": "2025-01-25T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1780,
       "reviewsPercent": {
@@ -1085,6 +1139,8 @@
       "popularity": 92,
       "addedDate": "2025-01-26T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.7,
       "totalReviews": 1490,
       "reviewsPercent": {
@@ -1122,6 +1178,8 @@
       "popularity": 96,
       "addedDate": "2025-01-27T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 2010,
       "reviewsPercent": {
@@ -1161,6 +1219,8 @@
       "popularity": 91,
       "addedDate": "2025-01-28T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-09",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1320,
       "reviewsPercent": {
@@ -1200,6 +1260,8 @@
       "popularity": 93,
       "addedDate": "2025-01-29T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1680,
       "reviewsPercent": {
@@ -1239,6 +1301,8 @@
       "popularity": 97,
       "addedDate": "2025-01-30T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 2240,
       "reviewsPercent": {
@@ -1276,6 +1340,8 @@
       "popularity": 98,
       "addedDate": "2025-01-31T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 2360,
       "reviewsPercent": {
@@ -1315,6 +1381,8 @@
       "popularity": 87,
       "addedDate": "2025-02-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 840,
       "reviewsPercent": {
@@ -1354,6 +1422,8 @@
       "popularity": 89,
       "addedDate": "2025-02-02T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-010",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1290,
       "reviewsPercent": {
@@ -1393,6 +1463,8 @@
       "popularity": 88,
       "addedDate": "2025-02-03T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 1180,
       "reviewsPercent": {
@@ -1432,6 +1504,8 @@
       "popularity": 86,
       "addedDate": "2025-02-04T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.1,
       "totalReviews": 910,
       "reviewsPercent": {
@@ -1471,6 +1545,8 @@
       "popularity": 92,
       "addedDate": "2025-02-05T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 1430,
       "reviewsPercent": {
@@ -1510,6 +1586,8 @@
       "popularity": 80,
       "addedDate": "2025-02-06T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-011",
+      "featuredStatus": "Featured",
       "rating": 4,
       "totalReviews": 760,
       "reviewsPercent": {
@@ -1549,6 +1627,8 @@
       "popularity": 90,
       "addedDate": "2025-02-07T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.7,
       "totalReviews": 1340,
       "reviewsPercent": {
@@ -1588,6 +1668,8 @@
       "popularity": 94,
       "addedDate": "2025-02-08T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 1960,
       "reviewsPercent": {
@@ -1627,6 +1709,8 @@
       "popularity": 91,
       "addedDate": "2025-02-09T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-012",
+      "featuredStatus": "Featured",
       "rating": 4.4,
       "totalReviews": 1410,
       "reviewsPercent": {
@@ -1666,6 +1750,8 @@
       "popularity": 83,
       "addedDate": "2025-02-10T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 980,
       "reviewsPercent": {
@@ -1705,6 +1791,8 @@
       "popularity": 89,
       "addedDate": "2025-02-11T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1370,
       "reviewsPercent": {
@@ -1747,6 +1835,8 @@
       "popularity": 92,
       "addedDate": "2025-02-12T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 1580,
       "reviewsPercent": {
@@ -1789,6 +1879,8 @@
       "popularity": 88,
       "addedDate": "2025-02-14T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 1120,
       "reviewsPercent": {
@@ -1828,6 +1920,8 @@
       "popularity": 90,
       "addedDate": "2025-02-15T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-013",
+      "featuredStatus": "Featured",
       "rating": 4.3,
       "totalReviews": 1360,
       "reviewsPercent": {
@@ -1869,6 +1963,8 @@
       "popularity": 85,
       "addedDate": "2025-02-16T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.4,
       "totalReviews": 1240,
       "reviewsPercent": {
@@ -1911,6 +2007,8 @@
       "popularity": 96,
       "addedDate": "2025-02-17T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 2140,
       "reviewsPercent": {
@@ -1953,6 +2051,8 @@
       "popularity": 97,
       "addedDate": "2025-02-18T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-014",
+      "featuredStatus": "Featured",
       "rating": 4.9,
       "totalReviews": 2380,
       "reviewsPercent": {
@@ -1994,6 +2094,8 @@
       "popularity": 89,
       "addedDate": "2025-02-19T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 1310,
       "reviewsPercent": {
@@ -2035,6 +2137,8 @@
       "popularity": 88,
       "addedDate": "2025-02-20T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.4,
       "totalReviews": 1470,
       "reviewsPercent": {
@@ -2077,6 +2181,8 @@
       "popularity": 91,
       "addedDate": "2025-02-21T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 1390,
       "reviewsPercent": {
@@ -2119,6 +2225,8 @@
       "popularity": 90,
       "addedDate": "2025-04-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 1520,
       "reviewsPercent": {
@@ -2160,6 +2268,8 @@
       "popularity": 86,
       "addedDate": "2025-05-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-015",
+      "featuredStatus": "Featured",
       "rating": 4.1,
       "totalReviews": 980,
       "reviewsPercent": {
@@ -2201,6 +2311,8 @@
       "popularity": 98,
       "addedDate": "2025-06-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 2260,
       "reviewsPercent": {
@@ -2242,6 +2354,8 @@
       "popularity": 87,
       "addedDate": "2025-07-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 1440,
       "reviewsPercent": {
@@ -2281,6 +2395,8 @@
       "popularity": 94,
       "addedDate": "2025-08-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-016",
+      "featuredStatus": "Featured",
       "rating": 4.4,
       "totalReviews": 1670,
       "reviewsPercent": {
@@ -2320,6 +2436,8 @@
       "popularity": 96,
       "addedDate": "2025-09-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.5,
       "totalReviews": 2090,
       "reviewsPercent": {
@@ -2359,6 +2477,8 @@
       "popularity": 84,
       "addedDate": "2025-10-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4,
       "totalReviews": 860,
       "reviewsPercent": {
@@ -2400,6 +2520,8 @@
       "popularity": 83,
       "addedDate": "2025-10-02T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.1,
       "totalReviews": 910,
       "reviewsPercent": {
@@ -2439,6 +2561,8 @@
       "popularity": 89,
       "addedDate": "2025-10-03T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-017",
+      "featuredStatus": "Featured",
       "rating": 4.3,
       "totalReviews": 1180,
       "reviewsPercent": {
@@ -2480,6 +2604,8 @@
       "popularity": 91,
       "addedDate": "2025-10-04T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 1860,
       "reviewsPercent": {
@@ -2521,6 +2647,8 @@
       "popularity": 88,
       "addedDate": "2025-10-05T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.4,
       "totalReviews": 184250,
       "reviewsPercent": {
@@ -2562,6 +2690,8 @@
       "popularity": 96,
       "addedDate": "2025-10-06T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 256400,
       "reviewsPercent": {
@@ -2604,6 +2734,8 @@
       "popularity": 95,
       "addedDate": "2025-10-07T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-018",
+      "featuredStatus": "Featured",
       "rating": 4.8,
       "totalReviews": 312780,
       "reviewsPercent": {
@@ -2646,6 +2778,8 @@
       "popularity": 99,
       "addedDate": "2025-10-08T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.8,
       "totalReviews": 520900,
       "reviewsPercent": {
@@ -2688,6 +2822,8 @@
       "popularity": 100,
       "addedDate": "2025-10-09T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 1045800,
       "reviewsPercent": {
@@ -2728,6 +2864,8 @@
       "popularity": 94,
       "addedDate": "2025-10-10T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 342600,
       "reviewsPercent": {
@@ -2767,6 +2905,8 @@
       "popularity": 98,
       "addedDate": "2025-10-11T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-019",
+      "featuredStatus": "Featured",
       "rating": 4.5,
       "totalReviews": 689400,
       "reviewsPercent": {
@@ -2806,6 +2946,8 @@
       "popularity": 97,
       "addedDate": "2025-10-13T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.7,
       "totalReviews": 912700,
       "reviewsPercent": {
@@ -2845,6 +2987,8 @@
       "popularity": 93,
       "addedDate": "2025-10-14T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 865200,
       "reviewsPercent": {
@@ -2885,6 +3029,8 @@
       "popularity": 85,
       "addedDate": "2025-10-15T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-020",
+      "featuredStatus": "Featured",
       "rating": 4.1,
       "totalReviews": 156900,
       "reviewsPercent": {
@@ -2927,6 +3073,8 @@
       "popularity": 90,
       "addedDate": "2025-10-18T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.3,
       "totalReviews": 224500,
       "reviewsPercent": {
@@ -2969,6 +3117,8 @@
       "popularity": 98,
       "addedDate": "2025-10-20T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 478600,
       "reviewsPercent": {
@@ -3009,6 +3159,8 @@
       "popularity": 99,
       "addedDate": "2025-11-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-021",
+      "featuredStatus": "Featured",
       "rating": 4.7,
       "totalReviews": 1284300,
       "reviewsPercent": {
@@ -3050,6 +3202,8 @@
       "popularity": 86,
       "addedDate": "2025-11-06T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.2,
       "totalReviews": 198700,
       "reviewsPercent": {
@@ -3091,6 +3245,8 @@
       "popularity": 82,
       "addedDate": "2025-11-10T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.1,
       "totalReviews": 142300,
       "reviewsPercent": {
@@ -3132,6 +3288,8 @@
       "popularity": 91,
       "addedDate": "2025-11-16T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.6,
       "totalReviews": 265800,
       "reviewsPercent": {
@@ -3173,6 +3331,8 @@
       "popularity": 84,
       "addedDate": "2025-11-19T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4,
       "totalReviews": 116900,
       "reviewsPercent": {
@@ -3214,6 +3374,8 @@
       "popularity": 97,
       "addedDate": "2025-12-01T10:30:45.123Z",
       "status": "Active",
+      "requestId": "REQ-022",
+      "featuredStatus": "Featured",
       "rating": 4.8,
       "totalReviews": 734500,
       "reviewsPercent": {
@@ -3253,6 +3415,8 @@
       "popularity": 78,
       "addedDate": "2025-12-04T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 3.8,
       "totalReviews": 187400,
       "reviewsPercent": {
@@ -3295,6 +3459,8 @@
       "popularity": 96,
       "addedDate": "2025-12-08T10:30:45.123Z",
       "status": "Active",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 392600,
       "reviewsPercent": {
@@ -3337,6 +3503,8 @@
       "popularity": 96,
       "addedDate": "2025-12-08T10:30:45.123Z",
       "status": "Inactive",
+      "requestId": null,
+      "featuredStatus": "Not Featured",
       "rating": 4.9,
       "totalReviews": 392600,
       "reviewsPercent": {
@@ -3589,10 +3757,74 @@
       "customerId": "CUS-007325",
       "createdAt": "2026-01-09T04:13:27.325Z",
       "lastOrder": "2026-01-09T04:13:27.325Z",
-      "lastLogin": "2026-01-11T05:44:12.169Z",
+      "lastLogin": "2026-01-13T02:56:45.004Z",
       "status": "Active",
       "totalOrders": 2,
       "id": 2
+    },
+    {
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "email": "parth@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "totalSpend": 0,
+      "library": [],
+      "customerId": "CUS-651053",
+      "createdAt": "2026-01-12T07:57:31.053Z",
+      "lastLogin": "2026-01-12T07:57:31.053Z",
+      "lastOrder": null,
+      "totalOrders": 0,
+      "status": "Inactive",
+      "id": 3
+    },
+    {
+      "firstName": "Vilas",
+      "lastName": "Chaughule",
+      "email": "v@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "totalSpend": 0,
+      "library": [],
+      "customerId": "CUS-708770",
+      "createdAt": "2026-01-12T07:58:28.770Z",
+      "lastLogin": "2026-01-12T07:58:28.770Z",
+      "lastOrder": null,
+      "totalOrders": 0,
+      "status": "Inactive",
+      "id": 4
+    },
+    {
+      "firstName": "Savita",
+      "lastName": "Chaughule",
+      "email": "s@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "totalSpend": 0,
+      "library": [],
+      "customerId": "CUS-922806",
+      "createdAt": "2026-01-12T08:02:02.806Z",
+      "lastLogin": "2026-01-12T08:02:02.806Z",
+      "lastOrder": null,
+      "totalOrders": 0,
+      "status": "Inactive",
+      "id": 5
+    },
+    {
+      "firstName": "Aniket",
+      "lastName": "Potale",
+      "email": "aniket@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "totalSpend": 0,
+      "library": [],
+      "customerId": "CUS-970970",
+      "createdAt": "2026-01-12T08:02:50.970Z",
+      "lastLogin": "2026-01-12T08:02:50.970Z",
+      "lastOrder": null,
+      "totalOrders": 0,
+      "status": "Inactive",
+      "id": 6
     }
   ],
   "orders": [
@@ -3682,6 +3914,339 @@
       "total": 6015.64,
       "id": 3,
       "orderId": "ORD-000003"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "requestId": "REQ-01",
+      "customerId": "CUS-922806",
+      "firstName": "Savita",
+      "lastName": "Chaughule",
+      "gameTitle": "GTA 6",
+      "platform": [
+        "pcGames",
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-10T10:31:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Rejected",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 2,
+      "requestId": "REQ-02",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Horizon Forbidden West",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-08T10:32:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 3,
+      "requestId": "REQ-03",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "The Last of Us Part I",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-11T10:33:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
+    },
+    {
+      "id": 4,
+      "requestId": "REQ-04",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Resident Evil Village",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-12T10:34:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 5,
+      "requestId": "REQ-05",
+      "customerId": "CUS-708770",
+      "firstName": "Vilas",
+      "lastName": "Chaughule",
+      "gameTitle": "Resident Evil Village",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-13T10:35:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Rejected",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 6,
+      "requestId": "REQ-06",
+      "customerId": "CUS-007325",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Returnal",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-14T10:36:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 7,
+      "requestId": "REQ-07",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Star Wars Jedi: Survivor",
+      "platform": [
+        "ps5Games"
+      ],
+      "requestDate": "2025-12-15T10:37:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
+    },
+    {
+      "id": 8,
+      "requestId": "REQ-08",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Uncharted 4: A Thief’s End",
+      "platform": [
+        "ps4Games"
+      ],
+      "requestDate": "2025-12-16T10:38:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 9,
+      "requestId": "REQ-09",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Bloodborne",
+      "platform": [
+        "ps4Games"
+      ],
+      "requestDate": "2025-12-17T10:39:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 10,
+      "requestId": "REQ-010",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Sekiro: Shadows Die Twice",
+      "platform": [
+        "ps4Games"
+      ],
+      "requestDate": "2025-12-18T10:40:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 11,
+      "requestId": "REQ-011",
+      "customerId": "CUS-007325",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Cyberpunk 2077 (PS4)",
+      "platform": [
+        "ps4Games"
+      ],
+      "requestDate": "2025-12-19T10:31:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
+    },
+    {
+      "id": 12,
+      "requestId": "REQ-012",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Apex Legends",
+      "platform": [
+        "ps4Games"
+      ],
+      "requestDate": "2025-12-16T20:32:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 13,
+      "requestId": "REQ-013",
+      "customerId": "CUS-007325",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Sea of Thieves",
+      "platform": [
+        "xboxGames"
+      ],
+      "requestDate": "2025-12-17T20:33:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 14,
+      "requestId": "REQ-014",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Elden Ring",
+      "platform": [
+        "xboxGames"
+      ],
+      "requestDate": "2025-12-18T20:34:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 15,
+      "requestId": "REQ-015",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Starfield",
+      "platform": [
+        "xboxGames"
+      ],
+      "requestDate": "2025-12-19T20:35:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 16,
+      "requestId": "REQ-016",
+      "customerId": "CUS-708770",
+      "firstName": "Vilas",
+      "lastName": "Chaughule",
+      "gameTitle": "Mortal Kombat 1",
+      "platform": [
+        "xboxGames"
+      ],
+      "requestDate": "2025-12-20T20:36:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
+    },
+    {
+      "id": 17,
+      "requestId": "REQ-017",
+      "customerId": "CUS-398913",
+      "firstName": "Aaryan",
+      "lastName": "Chaughule",
+      "gameTitle": "Apex Legends",
+      "platform": [
+        "xboxGames"
+      ],
+      "requestDate": "2026-01-01T20:37:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 18,
+      "requestId": "REQ-018",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Red Dead Redemption 2",
+      "platform": [
+        "pcGames"
+      ],
+      "requestDate": "2025-12-23T20:38:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 19,
+      "requestId": "REQ-019",
+      "customerId": "CUS-007325",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Fortnite",
+      "platform": [
+        "pcGames"
+      ],
+      "requestDate": "2025-12-24T20:39:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 20,
+      "requestId": "REQ-020",
+      "customerId": "CUS-651053",
+      "firstName": "Parth",
+      "lastName": "Mayekar",
+      "gameTitle": "Overwatch 2",
+      "platform": [
+        "pcGames"
+      ],
+      "requestDate": "2026-01-01T20:40:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
+    },
+    {
+      "id": 21,
+      "requestId": "REQ-021",
+      "customerId": "CUS-708770",
+      "firstName": "Vilas",
+      "lastName": "Chaughule",
+      "gameTitle": "League of Legends",
+      "platform": [
+        "pcGames"
+      ],
+      "requestDate": "2025-12-26T20:31:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Unstared"
+    },
+    {
+      "id": 22,
+      "requestId": "REQ-022",
+      "customerId": "CUS-922806",
+      "firstName": "Savita",
+      "lastName": "Chaughule",
+      "gameTitle": "The Elder Scrolls V",
+      "platform": [
+        "pcGames"
+      ],
+      "requestDate": "2025-12-28T20:32:45.123Z",
+      "readStatus": "Unread",
+      "requestStatus": "Accepted",
+      "staredStatus": "Stared"
     }
   ]
 }

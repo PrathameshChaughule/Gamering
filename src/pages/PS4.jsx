@@ -1,7 +1,7 @@
-import { lazy, useContext, useMemo, useState } from "react";
+import axios from "axios";
+import { lazy, useEffect, useMemo, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "../Context/GameContext";
 
 const News = lazy(() => import("../components/News"));
 const Card = lazy(() => import("../components/Card"));
@@ -9,18 +9,29 @@ const Filter = lazy(() => import("../components/Filter"));
 
 function PS4() {
   const [filter, setFilter] = useState("Newest");
-  const { games, news, loading } = useContext(GameContext);
+  const [games, setGames] = useState([])
+  const [news, setNews] = useState([])
 
-  const filteredNews = news.filter((item) => item.category === "ps4News");
+  const fetchData = async () => {
+    try {
+      const [game, news] = await Promise.all([
+        axios.get("http://localhost:3000/games?category=ps4Games&status=Active"),
+        axios.get("http://localhost:3000/news?category=ps4News")
+      ])
+      setGames(game.data)
+      setNews(news.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  const sortGame = (games, filter, category) => {
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+
+  const sortGame = (games, filter) => {
     let filtered = [...games];
-
-    filtered = filtered.filter((val) => val.status === "Active")
-
-    filtered = filtered.filter((game) =>
-      category === "all" ? true : game.category === category
-    );
 
     filtered.sort((a, b) => {
       switch (filter) {
@@ -51,7 +62,7 @@ function PS4() {
   };
 
   const filteredGames = useMemo(() => {
-    return sortGame(games, filter, "ps4Games");
+    return sortGame(games, filter);
   }, [games, filter]);
 
   return (
@@ -113,44 +124,13 @@ function PS4() {
           <div className="flex flex-col items-start gap-4 my-10 w-fit m-auto">
             <span className="text-xl md:text-2xl">Suggest games</span>
             <div className="flex gap-3 flex-wrap justify-center">
-              {games.length > 81 && (
+              {games?.filter((val) => val.featuredStatus === "Featured")?.map((val, index) =>
                 <LazyLoadImage
+                  key={index}
                   effect="blur"
-                  src={games[25].image[0]}
                   className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                  alt={games[25].title}
-                />
-              )}
-              {games.length > 81 && (
-                <LazyLoadImage
-                  effect="blur"
-                  src={games[28].image[0]}
-                  className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                  alt={games[28].title}
-                />
-              )}
-              {games.length > 81 && (
-                <LazyLoadImage
-                  effect="blur"
-                  src={games[31].image[0]}
-                  className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                  alt={games[31].title}
-                />
-              )}
-              {games.length > 81 && (
-                <LazyLoadImage
-                  effect="blur"
-                  src={games[34].image[0]}
-                  className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                  alt={games[34].title}
-                />
-              )}
-              {games.length > 81 && (
-                <LazyLoadImage
-                  effect="blur"
-                  src={games[39].image[0]}
-                  className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                  alt={games[39].title}
+                  src={val?.image?.[0]}
+                  alt={val?.title}
                 />
               )}
 
@@ -189,7 +169,7 @@ function PS4() {
             </span>
           </div>
           <div className="flex gap-4 items-center flex-wrap justify-center">
-            {filteredNews.map((index) => (
+            {news.map((index) => (
               <News
                 key={index.id}
                 title={index.title}

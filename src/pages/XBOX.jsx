@@ -1,7 +1,8 @@
-import { lazy, useContext, useMemo, useState } from "react";
+import { lazy, useContext, useEffect, useMemo, useState } from "react";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { GameContext } from "../Context/GameContext";
+import axios from "axios";
 
 const News = lazy(() => import("../components/News"));
 const Card = lazy(() => import("../components/Card"));
@@ -9,18 +10,28 @@ const Filter = lazy(() => import("../components/Filter"));
 
 function XBOX() {
   const [filter, setFilter] = useState("Newest");
-  const { games, news, loading } = useContext(GameContext);
+  const [games, setGames] = useState([])
+  const [news, setNews] = useState([])
 
-  const filteredNews = news.filter((item) => item.category === "xboxNews");
+  const fetchData = async () => {
+    try {
+      const [game, news] = await Promise.all([
+        axios.get("http://localhost:3000/games?category=xboxGames&status=Active"),
+        axios.get("http://localhost:3000/news?category=xboxNews")
+      ])
+      setGames(game.data)
+      setNews(news.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  const sortGame = (games, filter, category) => {
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const sortGame = (games, filter) => {
     let filtered = [...games];
-
-    filtered = filtered.filter((val) => val.status === "Active")
-
-    filtered = filtered.filter((game) =>
-      category === "all" ? true : game.category === category
-    );
 
     filtered.sort((a, b) => {
       switch (filter) {
@@ -51,7 +62,7 @@ function XBOX() {
   };
 
   const filteredGames = useMemo(() => {
-    return sortGame(games, filter, "xboxGames");
+    return sortGame(games, filter);
   }, [games, filter]);
 
   return (
@@ -114,44 +125,13 @@ function XBOX() {
             <div className="flex flex-col items-start gap-4 my-10 w-fit m-auto">
               <span className="text-xl md:text-2xl">Suggest games</span>
               <div className="flex gap-3 flex-wrap justify-center">
-                {games.length > 81 && (
+                {games?.filter((val) => val.featuredStatus === "Featured")?.map((val, index) =>
                   <LazyLoadImage
+                    key={index}
                     effect="blur"
-                    src={games[45].image[0]}
                     className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                    alt={games[45].title}
-                  />
-                )}
-                {games.length > 81 && (
-                  <LazyLoadImage
-                    effect="blur"
-                    src={games[49].image[0]}
-                    className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                    alt={games[49].title}
-                  />
-                )}
-                {games.length > 81 && (
-                  <LazyLoadImage
-                    effect="blur"
-                    src={games[53].image[0]}
-                    className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                    alt={games[53].title}
-                  />
-                )}
-                {games.length > 81 && (
-                  <LazyLoadImage
-                    effect="blur"
-                    src={games[58].image[0]}
-                    className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                    alt={games[58].title}
-                  />
-                )}
-                {games.length > 81 && (
-                  <LazyLoadImage
-                    effect="blur"
-                    src={games[61].image[0]}
-                    className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                    alt={games[61].title}
+                    src={val?.image?.[0]}
+                    alt={val?.title}
                   />
                 )}
 
@@ -190,7 +170,7 @@ function XBOX() {
               </span>
             </div>
             <div className="flex gap-4 items-center flex-wrap justify-center">
-              {filteredNews.map((index) => (
+              {news?.map((index) => (
                 <News
                   key={index.id}
                   title={index.title}

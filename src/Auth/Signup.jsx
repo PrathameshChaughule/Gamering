@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { TbLoader } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -46,7 +47,10 @@ function Signup() {
         ...data,
         customerId: `CUS-${Date.now().toString().slice(-6)}`,
         createdAt: new Date().toISOString(),
-        status: "Active"
+        status: "Active",
+        lastLogin: new Date().toISOString(),
+        lastOrder: null,
+        totalOrders: 0,
       });
 
       const auth = {
