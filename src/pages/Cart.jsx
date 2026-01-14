@@ -6,15 +6,15 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { GameContext } from "../Context/GameContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Cart() {
+  const { userId } = JSON.parse(localStorage.getItem("auth"))
   const [cart, setCart] = useState([]);
   const [random, setRandom] = useState([]);
   const [show, setShow] = useState(false);
   const { games, updateCartCount } = useContext(GameContext);
   const nav = useNavigate();
-
-  console.log(cart);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -41,6 +41,24 @@ function Cart() {
     (sum, item) => sum + item.discountPrice * item.quantity,
     0
   );
+  const addToWishlist = async (gameId) => {
+    try {
+      const { data } = await axios.get(`http://localhost:3000/users/${userId}`);
+      const wishlist = data.wishlist || [];
+      if (wishlist.includes(gameId)) {
+        toast.warning("Already added to wishlist");
+        return;
+      }
+      const updatedWishlist = [...wishlist, gameId];
+      await axios.patch(`http://localhost:3000/users/${userId}`, {
+        wishlist: updatedWishlist
+      });
+      toast.success("Added to wishlist");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to add to wishlist");
+    }
+  };
 
   return (
     <div className="w-[90vw] my-8 m-auto h-fit flex justify-between">
@@ -72,7 +90,7 @@ function Cart() {
               >
                 <div className="flex gap-8 p-5 rounded-xl bg-[#212121c8]/60">
                   <LazyLoadImage
-                    src={item.image[0]}
+                    src={item?.image[0]}
                     effect="blur"
                     className="w-90 h-70 rounded-xl"
                   />
@@ -136,7 +154,7 @@ function Cart() {
                     </div>
                     <div className="flex justify-end">
                       <div className="flex gap-5 text-gray-400 ">
-                        <span className="cursor-pointer flex items-center gap-1 hover:text-gray-400/60">
+                        <span onClick={() => addToWishlist(item.id)} className="cursor-pointer flex items-center gap-1 hover:text-gray-400/60">
                           <LuCircleFadingPlus />
                           Move to wishlist
                         </span>

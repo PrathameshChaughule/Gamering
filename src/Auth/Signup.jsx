@@ -60,6 +60,7 @@ function Signup() {
             zipCode: ""
           }
         ],
+        wishlist: [],
         mobileNumber: "",
       });
 
@@ -67,6 +68,7 @@ function Signup() {
         token: crypto.randomUUID(),
         isAuth: true,
         role: res.data.role,
+        customerId: `CUS-${Date.now().toString().slice(-6)}`,
         userId: res.data.id,
         firstName: res.data.firstName,
         lastName: res.data.lastName,

@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminProductsForm from "./Admin/AdminProducts/AdminProductsForm";
+import FeaturedGameAddedForm from "./Admin/AdminFeaturedGames/FeaturedGameAddedForm";
 
 const OrdersDetails = lazy(() => import("./Admin/AdminOrders/OrdersDetails"));
 const CustomerDetails = lazy(() => import("./Admin/AdminCustomer/CustomerDetails"));
 const AdminMedia = lazy(() => import("./Admin/AdminMedia"))
-const AdminFeaturedGames = lazy(() => import("./Admin/AdminFeaturedGames"))
+const AdminFeaturedGames = lazy(() => import("./Admin/AdminFeaturedGames/AdminFeaturedGames"))
 const AdminReviews = lazy(() => import("./Admin/AdminReviews"))
 const UserDetailsLayout = lazy(() => import("./Layout/UserDetailsLayout"));
 const MyAccount = lazy(() => import("./pages/MyAccount"))
@@ -92,8 +94,10 @@ function App() {
               <Route path="/adminOrders/:id" element={<OrdersDetails />} />
               <Route path="/adminProducts" element={<AdminProducts />} />
               <Route path="/adminProducts/:id" element={<ProductsDetails />} />
+              <Route path="/adminProductsForm" element={<AdminProductsForm />} />
               <Route path="/adminMedia" element={<AdminMedia />} />
               <Route path="/adminFeaturedGames" element={<AdminFeaturedGames />} />
+              <Route path="/featuredGameAddedForm/:requestId" element={<FeaturedGameAddedForm />} />
               <Route path="/adminReviews" element={<AdminReviews />} />
             </Route>
           </Routes>

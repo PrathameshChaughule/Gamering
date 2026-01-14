@@ -9,7 +9,7 @@ import { MdMonitor } from 'react-icons/md';
 import { TbLoader } from 'react-icons/tb';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { toast } from 'react-toastify';
+import AdminRequest from './AdminRequest';
 
 function AdminFeaturedGames() {
   const [requests, setRequests] = useState([])
@@ -20,6 +20,7 @@ function AdminFeaturedGames() {
   const [editOpen, setEditOpen] = useState(null)
   const [page, setPage] = useState(1)
   const [totalPage, setTotalPage] = useState()
+  const [requestDetail, setRequestDetail] = useState(null)
   const limit = 6;
 
   const fetchData = async () => {
@@ -43,7 +44,6 @@ function AdminFeaturedGames() {
 
   const requestUpdate = async (id, status, value) => {
     if (loadingId === id) return;
-
     try {
       setLoadingId(id);
       const res = await axios.patch(
@@ -173,7 +173,7 @@ function AdminFeaturedGames() {
 
 
   return (
-    <div className='p-5 px-7 m-3 bg-[#FFFFFF] dark:bg-[#030318] rounded-lg w-[98%] flex flex-col gap-5 h-[88vh]'>
+    <div className='p-5 px-7 relative m-3 bg-[#FFFFFF] dark:bg-[#030318] rounded-lg w-[98%] flex flex-col gap-5 h-[88vh]'>
       <h3 className='text-2xl font-bold'>Requests & Featured</h3>
       <p className='-mt-4 text-gray-500 text-lg'>View user game requests and manage featured games.</p>
       <hr className='border border-gray-400 dark:border-[#011743]' />
@@ -196,7 +196,7 @@ function AdminFeaturedGames() {
                 <div className='min-h-135'>
                   {requests?.filter((item) => item.readStatus === "Unread")?.map((val, index) =>
                     <>
-                      <div key={index} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743]'>
+                      <div key={index} onClick={() => setRequestDetail(val)} className='p-3 px-5 cursor-pointer flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743] dark:hover:bg-[#011743] hover:bg-gray-200'>
                         <div className={`border mt-2 w-10 h-10 text-xl rounded-full flex items-center justify-center ${avatarColors[val?.firstName.at(0)]}`}><span>{val?.firstName.at(0)}</span></div>
                         <div className='w-[90%]'>
                           <div className='overflow-hidden'>
@@ -207,9 +207,7 @@ function AdminFeaturedGames() {
                             <div className='flex items-center justify-between'>
                               <p className='text-[19px] font-semibold w-56 -mt-2'>{val?.gameTitle}</p>
                               <div className='flex items-center gap-1 mt-1'>
-                                <button onClick={() => { val?.requestStatus === "Rejected" && requestUpdate(val?.id, "requestStatus", "Accepted") }} className={`p-1.5 rounded-full ${val?.requestStatus === "Accepted" ? "bg-green-500 text-white" : "bg-green-500/30 text-green-500 cursor-pointer hover:bg-green-500 hover:text-white"}`}><FaCheck /></button>
-                                <button onClick={() => { val?.requestStatus === "Accepted" && requestUpdate(val?.id, "requestStatus", "Rejected") }} className={`p-[7px] rounded-full ${val?.requestStatus === "Rejected" ? "bg-red-500 text-white" : "bg-red-500/30 text-red-500 cursor-pointer hover:bg-red-500 hover:text-white"}`}><ImCross className='text-[15px]' /></button>
-                                <button onClick={() => requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared")} className={`p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white`}>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
+                                <button onClick={(e) => { requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared"), e.stopPropagation() }} className={`p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white`}>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
                               </div>
                             </div>
                           </div>
@@ -222,7 +220,7 @@ function AdminFeaturedGames() {
                   <div>
                     {requests?.filter((item) => item.requestStatus === "Accepted")?.map((val, index) =>
                       <>
-                        <div key={index} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743]'>
+                        <div key={index} onClick={() => setRequestDetail(val)} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743] dark:hover:bg-[#011743] hover:bg-gray-200'>
                           <div className={`border mt-2 w-10 h-10 text-xl rounded-full flex items-center justify-center ${avatarColors[val?.firstName.at(0)]}`}><span>{val?.firstName.at(0)}</span></div>
                           <div className='w-[90%]'>
                             <div className='overflow-hidden'>
@@ -233,9 +231,7 @@ function AdminFeaturedGames() {
                               <div className='flex items-center justify-between'>
                                 <p className='text-[19px] font-semibold w-56 -mt-2'>{val?.gameTitle}</p>
                                 <div className='flex items-center gap-1 mt-1'>
-                                  <button className='p-1.5 rounded-full bg-green-500 text-white'><FaCheck /></button>
-                                  <button onClick={() => requestUpdate(val?.id, "requestStatus", "Rejected")} className='p-[7px] rounded-full bg-red-500/30 text-red-500 cursor-pointer hover:bg-red-500 hover:text-white'><ImCross className='text-[15px]' /></button>
-                                  <button onClick={() => requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared")} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
+                                  <button onClick={(e) => { requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared"), e.stopPropagation() }} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
                                 </div>
                               </div>
                             </div>
@@ -249,7 +245,7 @@ function AdminFeaturedGames() {
                     <div>
                       {requests?.filter((item) => item.requestStatus === "Rejected")?.map((val, index) =>
                         <>
-                          <div key={index} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743]'>
+                          <div key={index} onClick={() => setRequestDetail(val)} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743] dark:hover:bg-[#011743] hover:bg-gray-200'>
                             <div className={`border mt-2 w-10 h-10 text-xl rounded-full flex items-center justify-center ${avatarColors[val?.firstName.at(0)]}`}><span>{val?.firstName.at(0)}</span></div>
                             <div className='w-[90%]'>
                               <div className='overflow-hidden'>
@@ -260,15 +256,12 @@ function AdminFeaturedGames() {
                                 <div className='flex items-center justify-between'>
                                   <p className='text-[19px] font-semibold w-56 -mt-2'>{val?.gameTitle}</p>
                                   <div className='flex items-center gap-1 mt-1'>
-                                    <button onClick={() => requestUpdate(val?.id, "requestStatus", "Accepted")} className='p-1.5 rounded-full bg-green-500/30 text-green-500 cursor-pointer hover:bg-green-500 hover:text-white'><FaCheck /></button>
-                                    <button className='p-[7px] rounded-full bg-red-500 text-white'><ImCross className='text-[15px]' /></button>
-                                    <button onClick={() => requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared")} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
+                                    <button onClick={(e) => { requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared"), e.stopPropagation() }} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-
                         </>
                       )}
                     </div>
@@ -276,7 +269,7 @@ function AdminFeaturedGames() {
                       <div>
                         {requests?.filter((item) => item.staredStatus === "Stared")?.map((val, index) =>
                           <>
-                            <div key={index} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743]'>
+                            <div key={index} onClick={() => setRequestDetail(val)} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743] dark:hover:bg-[#011743] hover:bg-gray-200'>
                               <div className={`border mt-2 w-10 h-10 text-xl rounded-full flex items-center justify-center ${avatarColors[val?.firstName.at(0)]}`}><span>{val?.firstName.at(0)}</span></div>
                               <div className='w-[90%]'>
                                 <div className='overflow-hidden'>
@@ -287,9 +280,7 @@ function AdminFeaturedGames() {
                                   <div className='flex items-center justify-between'>
                                     <p className='text-[19px] font-semibold w-56 -mt-2'>{val?.gameTitle}</p>
                                     <div className='flex items-center gap-1 mt-1'>
-                                      <button onClick={() => { val?.requestStatus === "Rejected" && requestUpdate(val?.id, "requestStatus", "Accepted") }} className={`p-1.5 rounded-full ${val?.requestStatus === "Accepted" ? "bg-green-500 text-white" : "bg-green-500/30 text-green-500 cursor-pointer hover:bg-green-500 hover:text-white"}`}><FaCheck /></button>
-                                      <button onClick={() => { val?.requestStatus === "Accepted" && requestUpdate(val?.id, "requestStatus", "Rejected") }} className={`p-[7px] rounded-full ${val?.requestStatus === "Rejected" ? "bg-red-500 text-white" : "bg-red-500/30 text-red-500 cursor-pointer hover:bg-red-500 hover:text-white"}`}><ImCross className='text-[15px]' /></button>
-                                      <button onClick={() => requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared")} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
+                                      <button onClick={(e) => { requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared"), e.stopPropagation() }} className='p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white'>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
                                     </div>
                                   </div>
                                 </div>
@@ -304,7 +295,7 @@ function AdminFeaturedGames() {
                       <div className='min-h-135'>
                         {requests?.filter((item) => item.readStatus === "Read")?.map((val, index) =>
                           <>
-                            <div key={index} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743]'>
+                            <div key={index} onClick={() => setRequestDetail(val)} className='p-3 px-5 flex items-start gap-3 border-b border-r border-gray-400 dark:border-[#011743] dark:hover:bg-[#011743] hover:bg-gray-200'>
                               <div className={`border mt-2 w-10 h-10 text-xl rounded-full flex items-center justify-center ${avatarColors[val?.firstName.at(0)]}`}><span>{val?.firstName.at(0)}</span></div>
                               <div className='w-[90%]'>
                                 <div className='overflow-hidden'>
@@ -315,9 +306,7 @@ function AdminFeaturedGames() {
                                   <div className='flex items-center justify-between'>
                                     <p className='text-[19px] font-semibold w-56 -mt-2'>{val?.gameTitle}</p>
                                     <div className='flex items-center gap-1 mt-1'>
-                                      <button onClick={() => { val?.requestStatus === "Rejected" && requestUpdate(val?.id, "requestStatus", "Accepted") }} className={`p-1.5 rounded-full ${val?.requestStatus === "Accepted" ? "bg-green-500 text-white" : "bg-green-500/30 text-green-500 cursor-pointer hover:bg-green-500 hover:text-white"}`}><FaCheck /></button>
-                                      <button onClick={() => { val?.requestStatus === "Accepted" && requestUpdate(val?.id, "requestStatus", "Rejected") }} className={`p-[7px] rounded-full ${val?.requestStatus === "Rejected" ? "bg-red-500 text-white" : "bg-red-500/30 text-red-500 cursor-pointer hover:bg-red-500 hover:text-white"}`}><ImCross className='text-[15px]' /></button>
-                                      <button onClick={() => requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared")} className={`p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white`}>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
+                                      <button onClick={(e) => { requestUpdate(val.id, "staredStatus", val.staredStatus === "Stared" ? "Unstared" : "Stared"), e.stopPropagation() }} className={`p-1.5 rounded-full bg-yellow-500/30 text-yellow-500 cursor-pointer hover:bg-yellow-500 hover:text-white`}>{val?.staredStatus === "Stared" ? <FaStar /> : <FaRegStar />}</button>
                                     </div>
                                   </div>
                                 </div>
@@ -395,6 +384,10 @@ function AdminFeaturedGames() {
           </div>
         </div>
       </div>
+      {requestDetail !== null &&
+        <div className='absolute w-full h-full left-0 top-0 bg-[#030318cc]'>
+          <AdminRequest request={requestDetail} setRequestDetail={setRequestDetail} setRequests={setRequests} />
+        </div>}
     </div>
   )
 }

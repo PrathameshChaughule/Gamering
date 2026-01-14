@@ -22,15 +22,14 @@ function Checkout() {
     city: "",
     state: "",
     zipCode: "",
-    total: 0,
   });
-  const [order, setOrder] = useState({ userId: userData.userId, userFirstName: userData.firstName, userLastName: userData.lastName, email: userData.email, games: [], paymentStatus: "Paid", orderStatus: "Processing", paymentMethod: "", createdAt: new Date().toISOString(), total: null })
+  const [order, setOrder] = useState({ userId: userData.userId, userFirstName: userData.firstName, userLastName: userData.lastName, email: userData.email, games: [], paymentStatus: "Paid", orderStatus: "Processing", createdAt: new Date().toISOString(), total: null })
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setData(storedCart);
-    const gameIds = storedCart.map((val) => ({ gameId: val.id, title: val.title, price: val.price, discountPrice: val.discountPrice }));
-    setOrder({ ...order, games: gameIds, total: total })
+    const gameIds = storedCart.map((val) => ({ gameId: val.id, title: val.title, price: val.price, discountPrice: val.discountPrice, image: val.image[0], category: val.category }));
+    setOrder({ ...order, games: gameIds, total: total, paymentData: paymentData })
   }, [paymentData]);
 
   const removeItem = (id) => {
@@ -52,10 +51,6 @@ function Checkout() {
 
   const formHandle = (e) => {
     setPaymentData({ ...paymentData, [e.target.name]: e.target.value });
-
-    if (e.target.name === "paymentMethod") {
-      setOrder(prev => ({ ...prev, paymentMethod: e.target.value }));
-    }
   };
 
   const formSubmit = async (e) => {
@@ -106,7 +101,6 @@ function Checkout() {
         city: "",
         state: "",
         zipCode: "",
-        total: 0,
       });
       localStorage.removeItem("cart");
       updateCartCount();

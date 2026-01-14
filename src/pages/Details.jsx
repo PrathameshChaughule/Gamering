@@ -4,7 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, useParams } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { IoIosTimer } from "react-icons/io";
-import { FaOpencart } from "react-icons/fa";
+import { FaOpencart, FaRegHeart } from "react-icons/fa";
 import {
   FaArrowRightLong,
   FaEarthAmericas,
@@ -19,8 +19,10 @@ import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { PiBuildingsFill } from "react-icons/pi";
 import { GameContext } from "../Context/GameContext";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 function Details() {
+  const { userId } = JSON.parse(localStorage.getItem("auth"))
   const { id } = useParams();
   const [game, setGame] = useState(null);
   const [screenshot, setScreenshot] = useState(null);
@@ -67,13 +69,36 @@ function Details() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const exists = cart.find((item) => item.id === game.id);
     if (exists) {
-      exists.quantity += 1;
+      return
     } else {
       cart.push({ ...game, quantity: 1 });
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     toast.success("Added to cart");
     updateCartCount();
+  };
+
+  const addToWishlist = async (gameId) => {
+    try {
+      const { data } = await axios.get(`http://localhost:3000/users/${userId}`);
+      const wishlist = data.wishlist || [];
+
+      if (wishlist.includes(gameId)) {
+        toast.warning("Already added to wishlist");
+        return;
+      }
+
+      const updatedWishlist = [...wishlist, gameId];
+
+      await axios.patch(`http://localhost:3000/users/${userId}`, {
+        wishlist: updatedWishlist
+      });
+
+      toast.success("Added to wishlist");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to add to wishlist");
+    }
   };
 
   const videoId = getYouTubeId(game.youtube);
@@ -135,7 +160,6 @@ function Details() {
                       className="w-60 h-25 rounded-xl cursor-pointer active:blur-[2px]"
                       onClick={() => setScreenshot(null)}
                     />
-
                     <div className="border-2 bg-black/40 z-100 text-2xl w-fit p-1.5 rounded-full text-center absolute top-[32%] left-[36%] cursor-pointer">
                       <CiPlay1 className="" />
                     </div>
@@ -166,7 +190,7 @@ function Details() {
                     onClick={() => setScreenshot(game.image[4])}
                   />
                 </div>
-                <div className="rounded-xl w-full">
+                <div className="rounded-xl relative w-full">
                   {screenshot === null ? (
                     <iframe
                       src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&controls=0&modestbranding=1`}
@@ -199,10 +223,10 @@ function Details() {
                     <div className="flex justify-between">
                       <div className="flex flex-col gap-2">
                         <s className="text-gray-400 text-lg">
-                          ₹{game.price.toFixed(2)}
+                          ₹{game.price?.toFixed(2)}
                         </s>
                         <span className="text-3xl font-semibold">
-                          ₹{game.discountPrice.toFixed(2)}
+                          ₹{game.discountPrice?.toFixed(2)}
                         </span>
                       </div>
                       <div className="flex flex-col gap-5">
@@ -238,6 +262,14 @@ function Details() {
                       >
                         <span className="flex text-[#C6E258] items-center gap-2 text-lg">
                           Add to cart <FaOpencart />
+                        </span>
+                      </div>
+                      <div
+                        onClick={() => addToWishlist(game.id)}
+                        className="border border-pink-800/20 bg-pink-800/25 hover:bg-pink-900/35 rounded-lg flex justify-center p-1 cursor-pointer"
+                      >
+                        <span className="flex text-pink-600 items-center gap-2 text-lg">
+                          Add to wishlist <FaRegHeart />
                         </span>
                       </div>
                     </div>
@@ -432,13 +464,19 @@ function Details() {
                 src={game.image[0]}
                 className="w-full h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
               />
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                {game?.tags?.map((val, index) =>
+                  <div key={index} className="text-sm w-fit px-2 rounded pb-0.5 bg-blue-800/30 font-semibold text-blue-400">
+                    <span>{val}</span>
+                  </div>)}
+              </div>
               <div className="flex justify-between">
                 <div className="flex flex-col">
                   <s className="text-gray-400 text-lg">
-                    ₹{game.price.toFixed(2)}
+                    ₹{game.price?.toFixed(2)}
                   </s>
                   <span className="text-3xl font-semibold">
-                    ₹{game.discountPrice.toFixed(2)}
+                    ₹{game.discountPrice?.toFixed(2)}
                   </span>
                 </div>
                 <div className="flex flex-col gap-3">
@@ -474,6 +512,14 @@ function Details() {
                 >
                   <span className="flex text-[#C6E258] items-center gap-2 text-lg">
                     Add to cart <FaOpencart />
+                  </span>
+                </div>
+                <div
+                  onClick={() => addToWishlist(game.id)}
+                  className="border border-pink-800/20 bg-pink-800/25 hover:bg-pink-900/35 rounded-lg flex justify-center p-1 cursor-pointer"
+                >
+                  <span className="flex text-pink-600 items-center gap-2 text-lg">
+                    Add to wishlist <FaRegHeart />
                   </span>
                 </div>
               </div>

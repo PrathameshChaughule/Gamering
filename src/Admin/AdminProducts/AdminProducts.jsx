@@ -160,8 +160,8 @@ function AdminProducts() {
             className="outline-none border-none"
           />
         </div>
-        <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} className="relative flex gap-3 flex-wrap justify-center">
-          <div className="flex items-center p-1 px-2 border dark:border-[#011743] border-gray-400 rounded gap-1 hover:bg-gray-100 dark:hover:bg-[#080B2C] cursor-pointer">
+        <div className="relative flex gap-3 flex-wrap justify-center">
+          <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} className="flex items-center p-1 px-2 border dark:border-[#011743] border-gray-400 rounded gap-1 hover:bg-gray-100 dark:hover:bg-[#080B2C] cursor-pointer">
             <TbSortDescending2 className="text-[25px]" />
             <div className="outline-none border-none text-[17px] appearance-none cursor-pointer">
               <span>{filter}</span>
@@ -174,7 +174,7 @@ function AdminProducts() {
                 <p onClick={() => setFilter("Oldest Added")} className="p-0.5 rounded dark:hover:bg-[#030318] hover:bg-white">Sort By : Oldest Added</p>
               </div>}
           </div>
-          <div className="flex h-9 items-center gap-2 border px-3 dark:border-[#011743] rounded text-white bg-blue-600 cursor-pointer hover:bg-blue-700">
+          <div onClick={() => nav("/adminProductsForm")} className="flex h-9 items-center gap-2 border px-3 dark:border-[#011743] rounded text-white bg-blue-600 cursor-pointer hover:bg-blue-700">
             <FaPlus />
             <span className="font-semibold">Add New</span>
           </div>

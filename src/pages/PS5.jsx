@@ -1,9 +1,10 @@
-import { lazy, useContext, useEffect, useMemo, useState } from "react";
+import { lazy, useEffect, useMemo, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "../Context/GameContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
+const RequestForm = lazy(() => import("../components/RequestForm"));
 const News = lazy(() => import("../components/News"));
 const Card = lazy(() => import("../components/Card"));
 const Filter = lazy(() => import("../components/Filter"));
@@ -12,6 +13,8 @@ function PS5() {
   const [filter, setFilter] = useState("Newest");
   const [games, setGames] = useState([])
   const [news, setNews] = useState([])
+  const [showRequestForm, setShowRequestForm] = useState(false);
+  const nav = useNavigate()
 
   const fetchData = async () => {
     try {
@@ -29,6 +32,14 @@ function PS5() {
   useEffect(() => {
     fetchData()
   }, [])
+
+  const scrollHandle = () => {
+    if (showRequestForm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }
 
   const sortGame = (games, filter) => {
     let filtered = [...games];
@@ -103,14 +114,14 @@ function PS5() {
 
               <span className={`text-red-400 md:text-xl mt-4`}>₹ 2,799</span>
 
-              <div className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">
+              <div onClick={() => nav("/details/13")} className="p-2 px-3 w-fit mt-4 rounded-md bg-white/10 flex gap-2">
                 <span
                   className={`text-[16px] md:text-xl p-2.5 px-4 bg-red-400 text-black rounded font-bold cursor-pointer`}
                 >
                   Purchase
                 </span>
                 <span
-                  className={`text-[16px] md:text-xl p-2.5 px-3 rounded text-red-400 font-bold cursor-pointer hover:bg-white/20`}
+                  className={`text-[16px] md:text-xl p-2.5 px-3 rounded text-red-400 font-bold cursor-pointer `}
                 >
                   Add To Cart
                 </span>
@@ -121,17 +132,22 @@ function PS5() {
         <div className="flex flex-col items-start gap-4 my-10 w-fit m-auto">
           <span className="text-xl md:text-2xl">Suggest games</span>
           <div className="flex gap-3 flex-wrap justify-center">
-            {games?.filter((val) => val.featuredStatus === "Featured")?.map((val, index) =>
-              <LazyLoadImage
-                key={index}
-                effect="blur"
-                className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                src={val?.image?.[0]}
-                alt={val?.title}
-              />
-            )}
-
-            <div className="flex flex-col bg-white/5 md:w-40 items-center w-[25vw] h-25 rounded-2xl border-dotted border-3 border-gray-700 cursor-pointer text-gray-400/50 ">
+            <div className="flex gap-3 flex-wrap justify-center flex-row-reverse">
+              {games
+                ?.filter((val) => val.featuredStatus === "Featured")
+                ?.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
+                ?.slice(0, 5)
+                ?.map((val, index) => (
+                  <LazyLoadImage
+                    key={val.id || index}
+                    effect="blur"
+                    className="w-[25vw] md:w-40 h-25 rounded-2xl"
+                    src={val?.image?.[0]}
+                    alt={val?.title}
+                  />
+                ))}
+            </div>
+            <div onClick={() => { setShowRequestForm(true), scrollHandle() }} className="flex flex-col bg-white/5 md:w-40 items-center w-[24vw] h-25 rounded-2xl border-dotted border-3 border-gray-700 cursor-pointer text-gray-400/50 ">
               <span className="text-3xl">+</span>
               <span className="text-center font-semibold">
                 Propose
@@ -178,6 +194,16 @@ function PS5() {
           ))}
         </div>
       </div>
+      {showRequestForm && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            onClick={() => setShowRequestForm(false)}
+          ></div>
+          <div className="absolute left-0 top-0 w-[99vw] z-100">
+            <RequestForm setShowRequestForm={setShowRequestForm} scrollHandle={scrollHandle} />
+          </div>
+        </div>)}
     </div>
   );
 }

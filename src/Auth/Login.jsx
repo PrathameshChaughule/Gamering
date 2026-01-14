@@ -65,6 +65,7 @@ function Login() {
         token: crypto.randomUUID(),
         isAuth: true,
         role: user.role,
+        customerId: user.customerId,
         userId: user.id,
         firstName: user.firstName,
         lastName: user.lastName,

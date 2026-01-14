@@ -97,9 +97,7 @@
       "price": 3499,
       "discountPrice": 2799,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -1818,9 +1816,7 @@
       "price": 2999,
       "discountPrice": 2299,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -1862,9 +1858,7 @@
       "price": 2199,
       "discountPrice": 1699,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -1947,9 +1941,7 @@
       "price": 3999,
       "discountPrice": 3199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "Simulation",
@@ -1990,9 +1982,7 @@
       "price": 4599,
       "discountPrice": 3599,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2034,9 +2024,7 @@
       "price": 3999,
       "discountPrice": 3199,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2078,9 +2066,7 @@
       "price": 2999,
       "discountPrice": 2299,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2121,9 +2107,7 @@
       "price": 2999,
       "discountPrice": 2199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2164,9 +2148,7 @@
       "price": 2799,
       "discountPrice": 1999,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2208,9 +2190,7 @@
       "price": 4999,
       "discountPrice": 3999,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2252,9 +2232,7 @@
       "price": 4999,
       "discountPrice": 3799,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2295,9 +2273,7 @@
       "price": 1499,
       "discountPrice": 1099,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2338,9 +2314,7 @@
       "price": 2499,
       "discountPrice": 1999,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "Action",
@@ -2504,9 +2478,7 @@
       "price": 2499,
       "discountPrice": 1899,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "Shooter",
@@ -2588,9 +2560,7 @@
       "price": 1499,
       "discountPrice": 1199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2631,9 +2601,7 @@
       "price": 2999,
       "discountPrice": 2199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2674,9 +2642,7 @@
       "price": 1499,
       "discountPrice": 1099,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -2717,9 +2683,7 @@
       "price": 4599,
       "discountPrice": 3499,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2761,9 +2725,7 @@
       "price": 1999,
       "discountPrice": 1499,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -2805,9 +2767,7 @@
       "price": 1999,
       "discountPrice": 1499,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -3056,9 +3016,7 @@
       "price": 4999,
       "discountPrice": 3999,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -3100,9 +3058,7 @@
       "price": 3999,
       "discountPrice": 3199,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -3186,9 +3142,7 @@
       "price": 2999,
       "discountPrice": 2299,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -3229,9 +3183,7 @@
       "price": 2999,
       "discountPrice": 2199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "FPS",
@@ -3272,9 +3224,7 @@
       "price": 2499,
       "discountPrice": 1899,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "Action RPG",
@@ -3315,9 +3265,7 @@
       "price": 4999,
       "discountPrice": 3799,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -3358,9 +3306,7 @@
       "price": 1499,
       "discountPrice": 1199,
       "mode": [
-        [
-          "Single Player"
-        ]
+        "Single Player"
       ],
       "tags": [
         "RPG",
@@ -3442,9 +3388,7 @@
       "price": 3499,
       "discountPrice": 2999,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -3486,9 +3430,7 @@
       "price": 3499,
       "discountPrice": 2999,
       "mode": [
-        [
-          "Single Player"
-        ],
+        "Single Player",
         " Multi Player"
       ],
       "tags": [
@@ -3514,6 +3456,48 @@
         "4": 7,
         "5": 90
       }
+    },
+    {
+      "title": "Black Myth: Wukong",
+      "company": "Game Science",
+      "category": "ps5Games",
+      "image": [
+        "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/black-myth-wukong-file-84439423e.jpg.webp",
+        "https://wichitalinemanwasasongionceheard.com/wp-content/uploads/2025/09/black-myth-wukong-header.jpg",
+        "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Farticle%2F2024%2F08%2F29%2Fwukong-1_feature.jpg&width=1032&sign=_9pN1LeILDOAt7uOPkgVLlxcmMyuYIFLeHAThPC8vek",
+        "https://i.ytimg.com/vi/lRWfjP5KOV8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBhTWdi9hcttCWBpxS3AZO7Td6QKg",
+        "https://preview.redd.it/that-opening-bro-v0-c4fcl6a634kd1.jpeg?width=640&crop=smart&auto=webp&s=0614d13ee0e67cb0632a2e45eab947f735ef1a9c"
+      ],
+      "price": 4200,
+      "discountPrice": 3500,
+      "mode": [
+        "Single Player"
+      ],
+      "tags": [
+        "Adventure",
+        "Action",
+        "Action RPG",
+        "Fantasy",
+        "Story Rich"
+      ],
+      "description": "Black Myth: Wukong is a 2024 action role-playing game developed and published by Game Science. The player assumes the role of the Destined One, a staff-wielding monkey, who embarks on a journey to recover six relics corresponding to Sun Wukong's six senses. The game is inspired by the classical Chinese novel Journey to the West. It is the first installment in the Black Myth series.",
+      "youtube": "https://www.youtube.com/embed/u83VdXAVq08?si=nFnzNxGK4ZjvjCGy",
+      "releaseDate": "2025-08-20",
+      "popularity": 0,
+      "addedDate": "2026-01-15T14:37:21.456Z",
+      "status": "Active",
+      "requestId": "undefined",
+      "featuredStatus": "Featured",
+      "rating": 0,
+      "totalReviews": 0,
+      "reviewsPercent": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "id": 85
     }
   ],
   "news": [
@@ -3686,29 +3670,7 @@
       "password": "12345678",
       "role": "user",
       "totalSpend": 8020.46,
-      "library": [
-        {
-          "gameId": 56,
-          "orderId": 1,
-          "purchasedAt": "2026-01-09T04:11:53.346Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 19,
-          "orderId": 1,
-          "purchasedAt": "2026-01-09T04:11:53.346Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 14,
-          "orderId": 1,
-          "purchasedAt": "2026-01-09T04:11:53.346Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Completed"
-        }
-      ],
+      "library": [],
       "customerId": "CUS-398913",
       "createdAt": "2026-01-09T03:46:38.913Z",
       "lastOrder": "2026-01-09T03:46:38.913Z",
@@ -3733,41 +3695,42 @@
       "email": "p@gmail.com",
       "password": "12345678",
       "role": "admin",
-      "totalSpend": 8610.460000000001,
+      "totalSpend": 45648.299999999996,
       "library": [
         {
-          "gameId": 51,
-          "orderId": 2,
-          "purchasedAt": "2026-01-09T04:14:12.305Z",
-          "installStatus": "Installed",
-          "orderStatus": "Completed"
-        },
-        {
-          "gameId": 76,
-          "orderId": 2,
-          "purchasedAt": "2026-01-09T04:14:12.305Z",
-          "installStatus": "Installed",
-          "orderStatus": "Completed"
-        },
-        {
           "gameId": 53,
-          "orderId": 3,
-          "purchasedAt": "2026-01-09T06:41:34.796Z",
+          "orderId": 1,
+          "purchasedAt": "2026-01-13T15:52:39.657Z",
           "installStatus": "Not Installed",
           "orderStatus": "Processing"
         },
         {
-          "gameId": 64,
-          "orderId": 3,
-          "purchasedAt": "2026-01-09T06:41:34.796Z",
+          "gameId": 29,
+          "orderId": 1,
+          "purchasedAt": "2026-01-13T15:52:39.657Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Processing"
+        },
+        {
+          "gameId": 23,
+          "orderId": 1,
+          "purchasedAt": "2026-01-13T15:52:39.657Z",
+          "installStatus": "Not Installed",
+          "orderStatus": "Processing"
+        },
+        {
+          "gameId": 53,
+          "orderId": 2,
+          "purchasedAt": "2026-01-13T18:44:43.847Z",
           "installStatus": "Not Installed",
           "orderStatus": "Processing"
         }
       ],
+      "wishlist": [],
       "customerId": "CUS-007325",
       "createdAt": "2026-01-09T04:13:27.325Z",
-      "lastOrder": "2026-01-09T04:13:27.325Z",
-      "lastLogin": "2026-01-13T02:56:45.004Z",
+      "lastOrder": "2026-01-13T18:44:43.848Z",
+      "lastLogin": "2026-01-14T08:24:31.119Z",
       "address": [
         {
           "address": "Ratnagiri, Maharashtra",
@@ -3779,7 +3742,7 @@
       ],
       "mobileNumber": "1234567890",
       "status": "Active",
-      "totalOrders": 2,
+      "totalOrders": 7,
       "id": 2
     },
     {
@@ -3790,6 +3753,7 @@
       "role": "user",
       "totalSpend": 0,
       "library": [],
+      "wishlist": [],
       "customerId": "CUS-651053",
       "createdAt": "2026-01-12T07:57:31.053Z",
       "lastLogin": "2026-01-12T07:57:31.053Z",
@@ -3816,6 +3780,7 @@
       "role": "user",
       "totalSpend": 0,
       "library": [],
+      "wishlist": [],
       "customerId": "CUS-708770",
       "createdAt": "2026-01-12T07:58:28.770Z",
       "lastLogin": "2026-01-12T07:58:28.770Z",
@@ -3842,6 +3807,7 @@
       "role": "user",
       "totalSpend": 0,
       "library": [],
+      "wishlist": [],
       "customerId": "CUS-922806",
       "createdAt": "2026-01-12T08:02:02.806Z",
       "lastLogin": "2026-01-12T08:02:02.806Z",
@@ -3868,6 +3834,7 @@
       "role": "user",
       "totalSpend": 0,
       "library": [],
+      "wishlist": [],
       "customerId": "CUS-970970",
       "createdAt": "2026-01-12T08:02:50.970Z",
       "lastLogin": "2026-01-12T08:02:50.970Z",
@@ -3889,66 +3856,6 @@
   ],
   "orders": [
     {
-      "userId": 1,
-      "userFirstName": "Aaryan",
-      "userLastName": "Chaughule",
-      "email": "a@gmail.com",
-      "games": [
-        {
-          "gameId": 56,
-          "title": "Resident Evil 4 Remake",
-          "price": 2499,
-          "discountPrice": 1999
-        },
-        {
-          "gameId": 19,
-          "title": "FIFA 23",
-          "price": 2799,
-          "discountPrice": 2299
-        },
-        {
-          "gameId": 14,
-          "title": "Returnal",
-          "price": 2999,
-          "discountPrice": 2499
-        }
-      ],
-      "paymentStatus": "Paid",
-      "orderStatus": "Completed",
-      "paymentMethod": "Credit Card",
-      "createdAt": "2026-01-09T04:11:37.511Z",
-      "total": 8020.46,
-      "id": 1,
-      "orderId": "ORD-000001"
-    },
-    {
-      "userId": 2,
-      "userFirstName": "Prathamesh",
-      "userLastName": "Chaughule",
-      "email": "p@gmail.com",
-      "games": [
-        {
-          "gameId": 51,
-          "title": "Cyberpunk 2077",
-          "price": 2999,
-          "discountPrice": 2199
-        },
-        {
-          "gameId": 76,
-          "title": "League of Legends",
-          "price": 1300,
-          "discountPrice": 0
-        }
-      ],
-      "paymentStatus": "Paid",
-      "orderStatus": "Completed",
-      "paymentMethod": "Credit Card",
-      "createdAt": "2026-01-09T04:14:00.722Z",
-      "total": 2594.82,
-      "id": 2,
-      "orderId": "ORD-000002"
-    },
-    {
       "userId": 2,
       "userFirstName": "Prathamesh",
       "userLastName": "Chaughule",
@@ -3958,22 +3865,44 @@
           "gameId": 53,
           "title": "Call of Duty II",
           "price": 4999,
-          "discountPrice": 3999
+          "discountPrice": 3999,
+          "image": "/assets/images/Call of Duty II 5.webp",
+          "category": "xboxGames"
         },
         {
-          "gameId": 64,
-          "title": "The Witcher 3: Wild Hunt",
-          "price": 1499,
-          "discountPrice": 1099
+          "gameId": 29,
+          "title": "Ghost of Tsushima",
+          "price": 2999,
+          "discountPrice": 2399,
+          "image": "/assets/images/ghost-of-tsushima-5.webp",
+          "category": "ps4Games"
+        },
+        {
+          "gameId": 23,
+          "title": "God of War (2018)",
+          "price": 1999,
+          "discountPrice": 1499,
+          "image": "/assets/images/god-of-war-2018-5.webp",
+          "category": "ps4Games"
         }
       ],
       "paymentStatus": "Paid",
       "orderStatus": "Processing",
-      "paymentMethod": "NetBanking",
-      "createdAt": "2026-01-09T06:41:26.132Z",
-      "total": 6015.64,
-      "id": 3,
-      "orderId": "ORD-000003"
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-01-13T15:52:30.518Z",
+      "total": 9318.46,
+      "paymentData": {
+        "paymentMethod": "Credit Card",
+        "firstName": "Prathamesh",
+        "lastName": "Chaughule",
+        "address": "Ratnagiri, Maharashtra",
+        "country": "India",
+        "city": "Ratnagiri",
+        "state": "Maharashtra",
+        "zipCode": "415612"
+      },
+      "id": 1,
+      "orderId": "ORD-000001"
     }
   ],
   "requests": [
@@ -3981,6 +3910,7 @@
       "id": 1,
       "requestId": "REQ-01",
       "customerId": "CUS-922806",
+      "email": "s@gmail.com",
       "firstName": "Savita",
       "lastName": "Chaughule",
       "gameTitle": "GTA 6",
@@ -3989,7 +3919,7 @@
         "ps5Games"
       ],
       "requestDate": "2025-12-10T10:31:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Rejected",
       "staredStatus": "Unstared"
     },
@@ -3997,14 +3927,13 @@
       "id": 2,
       "requestId": "REQ-02",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Horizon Forbidden West",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-08T10:32:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4012,14 +3941,13 @@
       "id": 3,
       "requestId": "REQ-03",
       "customerId": "CUS-651053",
+      "email": "p@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "The Last of Us Part I",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-11T10:33:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
     },
@@ -4027,14 +3955,13 @@
       "id": 4,
       "requestId": "REQ-04",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Resident Evil Village",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-12T10:34:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4042,14 +3969,13 @@
       "id": 5,
       "requestId": "REQ-05",
       "customerId": "CUS-708770",
+      "email": "v@gmail.com",
       "firstName": "Vilas",
       "lastName": "Chaughule",
       "gameTitle": "Resident Evil Village",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-13T10:35:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Rejected",
       "staredStatus": "Unstared"
     },
@@ -4057,14 +3983,13 @@
       "id": 6,
       "requestId": "REQ-06",
       "customerId": "CUS-007325",
+      "email": "p@gmail.com",
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "gameTitle": "Returnal",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-14T10:36:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4072,14 +3997,13 @@
       "id": 7,
       "requestId": "REQ-07",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Star Wars Jedi: Survivor",
-      "platform": [
-        "ps5Games"
-      ],
+      "platform": "ps5Games",
       "requestDate": "2025-12-15T10:37:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
     },
@@ -4087,14 +4011,13 @@
       "id": 8,
       "requestId": "REQ-08",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Uncharted 4: A Thief’s End",
-      "platform": [
-        "ps4Games"
-      ],
+      "platform": "ps4Games",
       "requestDate": "2025-12-16T10:38:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4102,14 +4025,13 @@
       "id": 9,
       "requestId": "REQ-09",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Bloodborne",
-      "platform": [
-        "ps4Games"
-      ],
+      "platform": "ps4Games",
       "requestDate": "2025-12-17T10:39:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4117,14 +4039,13 @@
       "id": 10,
       "requestId": "REQ-010",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Sekiro: Shadows Die Twice",
-      "platform": [
-        "ps4Games"
-      ],
+      "platform": "ps4Games",
       "requestDate": "2025-12-18T10:40:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4132,14 +4053,13 @@
       "id": 11,
       "requestId": "REQ-011",
       "customerId": "CUS-007325",
+      "email": "p@gmail.com",
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "gameTitle": "Cyberpunk 2077 (PS4)",
-      "platform": [
-        "ps4Games"
-      ],
+      "platform": "ps4Games",
       "requestDate": "2025-12-19T10:31:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
     },
@@ -4147,14 +4067,13 @@
       "id": 12,
       "requestId": "REQ-012",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Apex Legends",
-      "platform": [
-        "ps4Games"
-      ],
+      "platform": "ps4Games",
       "requestDate": "2025-12-16T20:32:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4162,14 +4081,13 @@
       "id": 13,
       "requestId": "REQ-013",
       "customerId": "CUS-007325",
+      "email": "p@gmail.com",
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "gameTitle": "Sea of Thieves",
-      "platform": [
-        "xboxGames"
-      ],
+      "platform": "xboxGames",
       "requestDate": "2025-12-17T20:33:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4177,14 +4095,13 @@
       "id": 14,
       "requestId": "REQ-014",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Elden Ring",
-      "platform": [
-        "xboxGames"
-      ],
+      "platform": "xboxGames",
       "requestDate": "2025-12-18T20:34:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4192,14 +4109,13 @@
       "id": 15,
       "requestId": "REQ-015",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Starfield",
-      "platform": [
-        "xboxGames"
-      ],
+      "platform": "xboxGames",
       "requestDate": "2025-12-19T20:35:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4207,14 +4123,13 @@
       "id": 16,
       "requestId": "REQ-016",
       "customerId": "CUS-708770",
+      "email": "v@gmail.com",
       "firstName": "Vilas",
       "lastName": "Chaughule",
       "gameTitle": "Mortal Kombat 1",
-      "platform": [
-        "xboxGames"
-      ],
+      "platform": "xboxGames",
       "requestDate": "2025-12-20T20:36:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
     },
@@ -4222,14 +4137,13 @@
       "id": 17,
       "requestId": "REQ-017",
       "customerId": "CUS-398913",
+      "email": "a@gmail.com",
       "firstName": "Aaryan",
       "lastName": "Chaughule",
       "gameTitle": "Apex Legends",
-      "platform": [
-        "xboxGames"
-      ],
+      "platform": "xboxGames",
       "requestDate": "2026-01-01T20:37:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4237,14 +4151,13 @@
       "id": 18,
       "requestId": "REQ-018",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Red Dead Redemption 2",
-      "platform": [
-        "pcGames"
-      ],
+      "platform": "pcGames",
       "requestDate": "2025-12-23T20:38:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4252,14 +4165,13 @@
       "id": 19,
       "requestId": "REQ-019",
       "customerId": "CUS-007325",
+      "email": "p@gmail.com",
       "firstName": "Prathamesh",
       "lastName": "Chaughule",
       "gameTitle": "Fortnite",
-      "platform": [
-        "pcGames"
-      ],
+      "platform": "pcGames",
       "requestDate": "2025-12-24T20:39:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4267,14 +4179,13 @@
       "id": 20,
       "requestId": "REQ-020",
       "customerId": "CUS-651053",
+      "email": "parth@gmail.com",
       "firstName": "Parth",
       "lastName": "Mayekar",
       "gameTitle": "Overwatch 2",
-      "platform": [
-        "pcGames"
-      ],
+      "platform": "pcGames",
       "requestDate": "2026-01-01T20:40:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
     },
@@ -4282,14 +4193,13 @@
       "id": 21,
       "requestId": "REQ-021",
       "customerId": "CUS-708770",
+      "email": "v@gmail.com",
       "firstName": "Vilas",
       "lastName": "Chaughule",
       "gameTitle": "League of Legends",
-      "platform": [
-        "pcGames"
-      ],
+      "platform": "pcGames",
       "requestDate": "2025-12-26T20:31:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Unstared"
     },
@@ -4297,16 +4207,43 @@
       "id": 22,
       "requestId": "REQ-022",
       "customerId": "CUS-922806",
+      "email": "s@gmail.com",
       "firstName": "Savita",
       "lastName": "Chaughule",
       "gameTitle": "The Elder Scrolls V",
-      "platform": [
-        "pcGames"
-      ],
+      "platform": "pcGames",
       "requestDate": "2025-12-28T20:32:45.123Z",
-      "readStatus": "Unread",
+      "readStatus": "Read",
       "requestStatus": "Accepted",
       "staredStatus": "Stared"
+    },
+    {
+      "requestId": "REQ-831",
+      "customerId": "CUS-007325",
+      "email": "p@gmail.com",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Black Myth: Wukong",
+      "platform": "ps5Games",
+      "requestDate": "2026-01-14T08:43:29.561Z",
+      "readStatus": "Read",
+      "requestStatus": "Pending",
+      "staredStatus": "Unstared",
+      "id": 23
+    },
+    {
+      "requestId": "REQ-579",
+      "customerId": "CUS-007325",
+      "email": "p@gmail.com",
+      "firstName": "Prathamesh",
+      "lastName": "Chaughule",
+      "gameTitle": "Black Myth: Wukong ",
+      "platform": "pcGames",
+      "requestDate": "2026-01-14T08:55:27.441Z",
+      "readStatus": "Read",
+      "requestStatus": "Pending",
+      "staredStatus": "Stared",
+      "id": 24
     }
   ]
 }

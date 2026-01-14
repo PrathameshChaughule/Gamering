@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FaBell, FaHeart, FaUser, FaUserSecret } from "react-icons/fa";
+import { FaBell, FaHeart, FaShoppingCart, FaUser, FaUserSecret } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { GiPowerButton } from "react-icons/gi";
 import { IoGameController } from "react-icons/io5";
@@ -58,12 +58,15 @@ function Profile() {
           <p onClick={() => nav("/userWishlist")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FaHeart /> Wishlist
           </p>
-          <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
+          <p onClick={() => nav("/userOrder")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
+            <FaShoppingCart /> Order History
+          </p>
+          {/* <p className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FaBell /> Notifications
           </p>
           <p onClick={() => nav("/userDownloads")} className="px-4 flex items-center gap-3 py-2 rounded hover:bg-[#111315] cursor-pointer">
             <FiDownload /> Downloads
-          </p>
+          </p> */}
           <hr className="border border-white/10 my-2" />
           <div
             onClick={logOut}

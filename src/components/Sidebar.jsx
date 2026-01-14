@@ -44,9 +44,9 @@ function Sidebar() {
                     <NavLink to={"/userOrder"} className={({ isActive }) => `px-7 flex items-center gap-3 py-2 mt-1 rounded cursor-pointer ${isActive ? "bg-sky-700/15 border-l-6 text-sky-500" : "hover:bg-sky-700/15"}`}>
                         <FaShoppingCart /> Order History
                     </NavLink>
-                    <NavLink to={"/userSettings"} className={({ isActive }) => `px-7 flex items-center gap-3 py-2 mt-1 rounded cursor-pointer ${isActive ? "bg-sky-700/15 border-l-6 text-sky-500" : "hover:bg-sky-700/15"}`}>
+                    {/* <NavLink to={"/userSettings"} className={({ isActive }) => `px-7 flex items-center gap-3 py-2 mt-1 rounded cursor-pointer ${isActive ? "bg-sky-700/15 border-l-6 text-sky-500" : "hover:bg-sky-700/15"}`}>
                         <IoSettingsSharp />Settings
-                    </NavLink>
+                    </NavLink> */}
                     <div
                         onClick={logOut}
                         className="text-center mx-auto flex items-center gap-3 justify-center w-60 p-2 mt-7 bg-[#ff04043c]/60 hover:bg-[#ff04043c] font-semibold cursor-pointer text-red-600 rounded-xl pb-1.5"
