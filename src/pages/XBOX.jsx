@@ -163,7 +163,7 @@ function XBOX() {
               </div>
             </div>
             <div className="flex justify-between items-center mb-2 flex-row">
-              <span className="text-sm hidden sm:block sm:text-xl text-center md:text-2xl font-bold">
+              <span className="text-sm block sm:text-xl text-center md:text-2xl font-bold">
                 Available for acceleration
               </span>
               <div className="flex gap-4 items-center">

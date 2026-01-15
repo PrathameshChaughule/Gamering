@@ -6,6 +6,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root[data-theme="dark"] {
+  --legend-color: #cbd5e1;
+}
+
+:root[data-theme="light"] {
+  --legend-color: #334155;
+}
+
+
 @import "tailwindcss";
 @plugin "daisyui";
 @tailwind utilities;

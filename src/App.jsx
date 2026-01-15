@@ -16,7 +16,7 @@ const OrderHistory = lazy(() => import("./pages/OrderHistory"))
 const Wishlist = lazy(() => import("./pages/Wishlist"))
 const Settings = lazy(() => import("./pages/Settings"))
 const Loading = lazy(() => import("./components/Loading"));
-const AdminDashboard = lazy(() => import("./Admin/AdminDashboard"))
+const AdminDashboard = lazy(() => import("./Admin/AdminDashboard/AdminDashboard"))
 const AdminCustomer = lazy(() => import("./Admin/AdminCustomer/AdminCustomer"))
 const AdminOrders = lazy(() => import("./Admin/AdminOrders/AdminOrders"))
 const AdminProducts = lazy(() => import("../src/Admin/AdminProducts/AdminProducts"))

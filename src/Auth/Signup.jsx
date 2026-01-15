@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Signup() {
+  const lastPage = localStorage.getItem("lastPage") || "/";
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -86,7 +87,7 @@ function Signup() {
       });
 
       toast.success("Account created successfully 🎉");
-      nav("/checkout");
+      nav(lastPage);
 
     } catch (error) {
       console.error(error);
@@ -110,8 +111,8 @@ function Signup() {
 
       <div className="absolute inset-0 bg-black/30 h-screen w-screen" />
       <div className="relative z-10 flex items-center justify-center h-full w-full">
-        <div className="w-[70%] h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
-          <div className="flex w-[50%] h-full overflow-hidden relative">
+        <div className="w-[85%] md:w-[70%] lg:h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
+          <div className="hidden lg:flex w-[50%] h-full overflow-hidden relative">
             <video
               src="/assets/video/Mortal-Kombat.webm"
               poster="/assets/images/mk.webp"
@@ -123,7 +124,7 @@ function Signup() {
             />
           </div>
 
-          <div className="w-[50%] h-full px-17 py-10 flex flex-col gap-10 justify-center text-center text-black">
+          <div className="w-full lg:w-[50%] h-full px-5 lg:px-17 py-10 flex flex-col lg:gap-10 justify-center text-center text-black">
             <div>
               <span className="font-semibold text-4xl">SIGN UP</span>
               <form
@@ -133,7 +134,7 @@ function Signup() {
               >
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between gap-3">
-                    <div className="flex flex-col gap-1">
+                    <div className="flex w-full flex-col gap-1">
                       <label htmlFor="" className="font-medium">
                         First Name
                       </label>
@@ -148,7 +149,7 @@ function Signup() {
                         required
                       />
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex w-full flex-col gap-1">
                       <label htmlFor="" className="font-medium">
                         Last Name
                       </label>
@@ -178,8 +179,8 @@ function Signup() {
                     required
                   />
                 </div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex flex-col gap-1">
+                <div className="flex items-end justify-between gap-3">
+                  <div className="flex w-full flex-col gap-1">
                     <label htmlFor="" className="font-medium">
                       Password
                     </label>
@@ -195,7 +196,7 @@ function Signup() {
                       required
                     />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex w-full flex-col gap-1">
                     <label htmlFor="" className="font-medium">
                       Confirm Password
                     </label>

@@ -3675,6 +3675,7 @@
       "createdAt": "2026-01-09T03:46:38.913Z",
       "lastOrder": "2026-01-09T03:46:38.913Z",
       "lastLogin": "2026-01-09T04:13:27.325Z",
+      "wishlist": [],
       "address": [
         {
           "address": "",
@@ -3695,42 +3696,43 @@
       "email": "p@gmail.com",
       "password": "12345678",
       "role": "admin",
-      "totalSpend": 45648.299999999996,
+      "totalSpend": 84218.95999999999,
       "library": [
         {
-          "gameId": 53,
+          "gameId": 63,
           "orderId": 1,
-          "purchasedAt": "2026-01-13T15:52:39.657Z",
+          "purchasedAt": "2026-01-15T18:47:47.243Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Processing",
+          "starRating": 0
         },
         {
-          "gameId": 29,
+          "gameId": 5,
           "orderId": 1,
-          "purchasedAt": "2026-01-13T15:52:39.657Z",
+          "purchasedAt": "2026-01-15T18:47:47.243Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Processing",
+          "starRating": 3
         },
         {
-          "gameId": 23,
+          "gameId": 34,
           "orderId": 1,
-          "purchasedAt": "2026-01-13T15:52:39.657Z",
+          "purchasedAt": "2026-01-15T18:47:47.243Z",
           "installStatus": "Not Installed",
-          "orderStatus": "Processing"
-        },
-        {
-          "gameId": 53,
-          "orderId": 2,
-          "purchasedAt": "2026-01-13T18:44:43.847Z",
-          "installStatus": "Not Installed",
-          "orderStatus": "Processing"
+          "orderStatus": "Processing",
+          "starRating": 0
         }
       ],
-      "wishlist": [],
+      "wishlist": [
+        51,
+        53,
+        85,
+        27
+      ],
       "customerId": "CUS-007325",
       "createdAt": "2026-01-09T04:13:27.325Z",
-      "lastOrder": "2026-01-13T18:44:43.848Z",
-      "lastLogin": "2026-01-14T08:24:31.119Z",
+      "lastOrder": "2026-01-15T18:47:47.243Z",
+      "lastLogin": "2026-01-15T15:04:23.050Z",
       "address": [
         {
           "address": "Ratnagiri, Maharashtra",
@@ -3742,7 +3744,7 @@
       ],
       "mobileNumber": "1234567890",
       "status": "Active",
-      "totalOrders": 7,
+      "totalOrders": 11,
       "id": 2
     },
     {
@@ -3862,37 +3864,36 @@
       "email": "p@gmail.com",
       "games": [
         {
-          "gameId": 53,
-          "title": "Call of Duty II",
-          "price": 4999,
-          "discountPrice": 3999,
-          "image": "/assets/images/Call of Duty II 5.webp",
-          "category": "xboxGames"
-        },
-        {
-          "gameId": 29,
-          "title": "Ghost of Tsushima",
+          "gameId": 63,
+          "title": "Cyberpunk 2077",
           "price": 2999,
-          "discountPrice": 2399,
-          "image": "/assets/images/ghost-of-tsushima-5.webp",
-          "category": "ps4Games"
+          "discountPrice": 2199,
+          "image": "/assets/images/Cyberpunk 2077 5.webp",
+          "category": "pcGames"
         },
         {
-          "gameId": 23,
-          "title": "God of War (2018)",
-          "price": 1999,
-          "discountPrice": 1499,
-          "image": "/assets/images/god-of-war-2018-5.webp",
+          "gameId": 5,
+          "title": "Final Fantasy XVI",
+          "price": 4499,
+          "discountPrice": 3599,
+          "image": "/assets/images/Final-Fantasy-5.webp",
+          "category": "ps5Games"
+        },
+        {
+          "gameId": 34,
+          "title": "Assassin’s Creed Odyssey",
+          "price": 2499,
+          "discountPrice": 1999,
+          "image": "/assets/images/Assassin’s Creed Odyssey 5.webp",
           "category": "ps4Games"
         }
       ],
       "paymentStatus": "Paid",
-      "orderStatus": "Processing",
-      "paymentMethod": "Credit Card",
-      "createdAt": "2026-01-13T15:52:30.518Z",
-      "total": 9318.46,
+      "orderStatus": "Completed",
+      "createdAt": "2026-01-15T18:47:33.394Z",
+      "total": 9200.46,
       "paymentData": {
-        "paymentMethod": "Credit Card",
+        "paymentMethod": "NetBanking",
         "firstName": "Prathamesh",
         "lastName": "Chaughule",
         "address": "Ratnagiri, Maharashtra",

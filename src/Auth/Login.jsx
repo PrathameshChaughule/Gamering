@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Login() {
+  const lastPage = localStorage.getItem("lastPage") || "/";
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -81,7 +82,7 @@ function Login() {
       toast.success("Login Successful!");
       setLoading(true);
       setTimeout(() => {
-        nav("/checkout");
+        nav(lastPage);
         setLoading(false);
       }, 1000);
     } catch (error) {
@@ -103,8 +104,8 @@ function Login() {
 
       <div className="absolute inset-0 bg-black/30 h-screen w-screen" />
       <div className="relative z-10 flex items-center justify-center h-full w-full">
-        <div className="w-[70%] h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
-          <div className="flex w-[50%] h-full overflow-hidden relative">
+        <div className="w-[85%] md:w-[70%] lg:h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
+          <div className="hidden lg:flex w-[50%] h-full overflow-hidden relative">
             <video
               src={videos[currentIndex].src}
               poster={videos[currentIndex].poster}
@@ -117,7 +118,7 @@ function Login() {
             />
           </div>
 
-          <div className="w-[50%] h-full px-17 py-10 flex flex-col gap-10 justify-center text-center text-black">
+          <div className="w-full lg:w-[50%] h-full px-5 lg:px-17 py-10 flex flex-col lg:gap-10 justify-center text-center text-black">
             <div>
               <span className="font-semibold text-4xl">SIGN IN</span>
               <form

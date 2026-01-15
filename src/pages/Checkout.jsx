@@ -78,7 +78,8 @@ function Checkout() {
         orderId: res.data.id,
         purchasedAt: new Date().toISOString(),
         installStatus: "Not Installed",
-        orderStatus: "Processing"
+        orderStatus: "Processing",
+        starRating: 0
       }))
 
       const updateLibrary = [...(userRes.data.library || []), ...library]

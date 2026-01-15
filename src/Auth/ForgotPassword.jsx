@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function ForgotPassword() {
+  const lastPage = localStorage.getItem("lastPage") || "/";
   const [page, setPage] = useState("email");
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
@@ -125,7 +126,7 @@ function ForgotPassword() {
       await axios.patch(`http://localhost:3000/users/${res.id}`, { password });
       toast.success("Password reset successful");
       setTimeout(() => {
-        nav("/login");
+        nav(lastPage);
       }, 1000);
     } catch (error) {
       console.log(error);
@@ -152,8 +153,8 @@ function ForgotPassword() {
 
       <div className="absolute inset-0 bg-black/30 h-screen w-screen" />
       <div className="relative z-10 flex items-center justify-center h-full w-full">
-        <div className="w-[70%] h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
-          <div className="flex w-[50%] h-full overflow-hidden relative">
+        <div className="w-[85%] md:w-[70%] lg:h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
+          <div className="hidden lg:flex w-[50%] h-full overflow-hidden relative">
             <video
               src={
                 page === "email"
@@ -181,7 +182,7 @@ function ForgotPassword() {
             />
           </div>
 
-          <div className="w-[50%] h-full px-17 py-10 flex flex-col gap-10 justify-center text-center text-black">
+          <div className="w-full lg:w-[50%] h-full px-5 lg:px-17 py-10 flex flex-col lg:gap-10 justify-center text-center text-black">
             <div>
               <form
                 onSubmit={(e) => formSubmit(e)}
@@ -191,8 +192,8 @@ function ForgotPassword() {
                 {page === "email" ? (
                   <div className="text-start flex flex-col gap-4">
                     <div className="flex flex-col justify-center items-center">
-                      <span className="font-semibold text-4xl">
-                        Reset your password
+                      <span className="font-semibold text-center text-[1.85rem] md:text-4xl">
+                        Reset Your Password
                       </span>
                       <p className="mt-2 text-center">
                         Forgot your password? Please enter your email and we'll
@@ -225,8 +226,8 @@ function ForgotPassword() {
                 ) : page === "otp" ? (
                   <div className="text-start flex flex-col gap-4">
                     <div className="flex flex-col justify-center items-center">
-                      <span className="font-semibold text-4xl">
-                        Enter confirmation code
+                      <span className="font-semibold text-center text-[1.85rem] md:text-4xl">
+                        Enter Confirmation Code
                       </span>
                       <p className="mt-2 text-center">
                         We sent a code to{" "}
@@ -275,8 +276,8 @@ function ForgotPassword() {
                 ) : (
                   <div className="text-start flex flex-col gap-4">
                     <div className="flex flex-col justify-center items-center">
-                      <span className="font-semibold text-4xl">
-                        Create a new password
+                      <span className="font-semibold text-center text-[1.85rem] md:text-4xl">
+                        Create a New Password
                       </span>
                       <p className="mt-2 text-center">
                         Please choose a password that hasn't been used before.

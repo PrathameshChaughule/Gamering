@@ -22,7 +22,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 function Details() {
-  const { userId } = JSON.parse(localStorage.getItem("auth"))
+  const user = JSON.parse(localStorage.getItem("auth"))
   const { id } = useParams();
   const [game, setGame] = useState(null);
   const [screenshot, setScreenshot] = useState(null);
@@ -79,8 +79,12 @@ function Details() {
   };
 
   const addToWishlist = async (gameId) => {
+    if (!user) {
+      toast.warning("LogIn Required")
+      return
+    }
     try {
-      const { data } = await axios.get(`http://localhost:3000/users/${userId}`);
+      const { data } = await axios.get(`http://localhost:3000/users/${user.userId}`);
       const wishlist = data.wishlist || [];
 
       if (wishlist.includes(gameId)) {
@@ -90,7 +94,7 @@ function Details() {
 
       const updatedWishlist = [...wishlist, gameId];
 
-      await axios.patch(`http://localhost:3000/users/${userId}`, {
+      await axios.patch(`http://localhost:3000/users/${user.userId}`, {
         wishlist: updatedWishlist
       });
 
@@ -110,7 +114,7 @@ function Details() {
         <Loading />
       ) : (
         <>
-          <div className="xl:w-[73%] w-[100%] flex flex-col gap-6">
+          <div className="xl:w-[73%] w-[100%] flex flex-col md:gap-6">
             <div className="flex flex-col gap-4.5">
               <p className="border-2 text-gray-500 border-[#292b26] bg-[#131313]/30 w-fit px-3 rounded-xl">
                 <span onClick={() => nav("/")} className="cursor-pointer">
@@ -130,7 +134,7 @@ function Details() {
                 &#62; <span className="text-white/80">{game.title}</span>
               </p>
               <h1 className="text-4xl font-semibold">{game.title}</h1>
-              <div className="flex gap-5 items-center text-gray-400">
+              <div className="flex flex-wrap mb-3 gap-2 md:gap-5 items-center text-gray-400">
                 <span className="flex items-center gap-2">
                   <CgSun />
                   Releases Date :{" "}
@@ -149,18 +153,17 @@ function Details() {
                 </span>
               </div>
             </div>
-            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl">
-              {/* <span className="font-semibold m-2 text-lg">Screenshots</span> */}
-              <div className="gap-5 flex items-center justify-between">
-                <div className="flex flex-col gap-3">
+            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-2 sm:p-4 sm:px-7 rounded-xl">
+              <div className=" lg:gap-5 flex flex-col lg:flex-row items-center justify-between">
+                <div className="flex lg:flex-col gap-1.5 sm:gap-3">
                   <div className="relative hover:scale-103 transition-all">
                     <LazyLoadImage
                       effect="blur"
                       src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                      className="w-60 h-25 rounded-xl cursor-pointer active:blur-[2px]"
+                      className="w-60 h-17 sm:h-25 rounded md:rounded-xl cursor-pointer active:blur-[2px]"
                       onClick={() => setScreenshot(null)}
                     />
-                    <div className="border-2 bg-black/40 z-100 text-2xl w-fit p-1.5 rounded-full text-center absolute top-[32%] left-[36%] cursor-pointer">
+                    <div onClick={() => setScreenshot(null)} className="border-2 bg-black/40 z-100 sm:text-2xl w-fit p-1.5 rounded-full text-center absolute top-4 sm:top-[32%] left-4 sm:left-[36%] cursor-pointer">
                       <CiPlay1 className="" />
                     </div>
                   </div>
@@ -168,58 +171,73 @@ function Details() {
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[1]}
-                    className="w-60 h-24 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                    className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot(game.image[1])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[2]}
-                    className="w-60 h-24 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                    className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot(game.image[2])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[3]}
-                    className="w-60 h-24  rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                    className="w-60 h-16 sm:h-24  rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot(game.image[3])}
                   />
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[4]}
-                    className="w-60 h-24 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                    className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     onClick={() => setScreenshot(game.image[4])}
                   />
                 </div>
-                <div className="rounded-xl relative w-full">
+                <div className="rounded sm:rounded-xl mt-1 sm:mt-3 md:mt-0 relative w-full">
                   {screenshot === null ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&controls=0&modestbranding=1`}
-                      title="Game Trailer"
-                      allow="autoplay; fullscreen"
-                      allowFullScreen
-                      width="100%"
-                      height="540"
-                      className="rounded-xl"
-                    />
+                    <>
+                      <div className="hidden md:block">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&controls=0&modestbranding=1`}
+                          title="Game Trailer"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          width="100%"
+                          height="540"
+                          className="rounded-xl"
+                        />
+                      </div>
+                      <div className="md:hidden block">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&controls=0&modestbranding=1`}
+                          title="Game Trailer"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          width="100%"
+                          height="340"
+                          className="rounded-xl"
+                        />
+                      </div>
+                    </>
                   ) : (
                     <LazyLoadImage
                       effect="blur"
                       src={screenshot}
-                      className="w-full h-132 rounded-xl"
+                      className="w-full md:h-132 rounded-xl"
                     />
                   )}
                 </div>
               </div>
             </div>
-            <div className="xl:hidden w-full p-5 flex gap-6">
-              <div className="bg-[#18181872] w-[70%] border-2 border-[#292b26]/50 rounded-xl p-5 flex flex-col gap-3 justify-between">
-                <div className="flex justify-between gap-4">
+            <div className="xl:hidden w-full flex-wrap sm:flex-nowrap py-3 sm:p-5 flex gap-6">
+              <div className="bg-[#18181872] w-full sm:w-[70%] border-2 border-[#292b26]/50 rounded-xl p-5 flex flex-col gap-3 justify-between">
+                <div className="flex flex-col justify-between gap-4">
                   <LazyLoadImage
                     effect="blur"
                     src={game.image[0]}
                     className="w-full h-60 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                   />
-                  <div className="w-[42%] flex flex-col justify-center gap-9">
+                  <div className="w-full flex flex-col justify-center gap-3">
                     <div className="flex justify-between">
                       <div className="flex flex-col gap-2">
                         <s className="text-gray-400 text-lg">
@@ -275,22 +293,8 @@ function Details() {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-between">
-                  <div className="p-4 w-[48%] rounded-xl text-center flex flex-col items-center gap-2 bg-[#212121c8]">
-                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
-                      <FaRegCircleCheck className="text-lg" />
-                      Can activate in India
-                    </span>
-                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
-                      <BiSolidDiscount className="text-lg" />
-                      EARN 9% CASHBACK
-                    </span>
-                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
-                      <HiShoppingBag className="text-lg" />
-                      Currently in Stock
-                    </span>
-                  </div>
-                  <div className="flex w-[48%] items-center justify-center gap-2 p-3 py-2 bg-[#212121c8] rounded-xl">
+                <div className="flex flex-col gap-3 justify-between">
+                  <div className="flex w-full items-center justify-center gap-2 p-3 py-2 bg-[#212121c8] rounded-xl">
                     <div className="p-2.5 text-xl rounded-xl bg-[#373636]">
                       <SlEarphonesAlt />
                     </div>
@@ -303,8 +307,8 @@ function Details() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-3">
-                <div className="bg-[#18181872] border-2 border-[#292b26]/50 h-fit rounded-xl p-5 flex flex-col gap-2">
+              <div className="flex flex-wrap sm:flex-col gap-3">
+                <div className="bg-[#18181872] w-full border-2 border-[#292b26]/50 h-fit rounded-xl p-5 flex flex-col gap-2">
                   <div className="flex items-center gap-4 py-2 rounded-xl px-5 bg-[#212121c8]/60 justify-center">
                     <span className="text-6xl font-bold text-white/70">
                       {game.rating}
@@ -413,16 +417,33 @@ function Details() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-[#18181872] border-2 border-[#292b26]/50 h-fit rounded-xl px-5 py-2 flex flex-col">
-                  <h1 className="text-2xl pl-2 font-semibold text-gray-300">Popularity :</h1>
-                  <div className="flex items-end justify-center">
-                    <span className='text-7xl font-bold text-green-500'>{game.popularity}</span>
-                    <span className='text-3xl font-semibold'>/ 100</span>
+                <div className="flex w-full flex-col gap-3">
+                  <div className="bg-[#18181872] border-2 border-[#292b26]/50 h-fit rounded-xl px-5 py-2 flex flex-col">
+                    <h1 className="text-2xl pl-2 font-semibold text-gray-300">Popularity :</h1>
+                    <div className="flex items-end justify-center">
+                      <span className='text-7xl font-bold text-green-500'>{game.popularity}</span>
+                      <span className='text-3xl font-semibold'>/ 100</span>
+                    </div>
+                  </div>
+                  <div className="p-4 w-full rounded-xl text-center flex flex-col items-center gap-2 bg-[#18181872] border-2 border-[#292b26]/50">
+                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
+                      <FaRegCircleCheck className="text-lg" />
+                      Can activate in India
+                    </span>
+                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
+                      <BiSolidDiscount className="text-lg" />
+                      EARN 9% CASHBACK
+                    </span>
+                    <span className="text-[#FFFDF6] text-md flex items-center gap-2">
+                      <HiShoppingBag className="text-lg" />
+                      Currently in Stock
+                    </span>
                   </div>
                 </div>
+
               </div>
             </div>
-            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl">
+            <div className="bg-[#18181872] mb-5 sm:mb-0 border-2 border-[#292b26]/50 p-4 px-7 rounded-xl">
               <span className="font-semibold m-2 text-lg">Description</span>
               <hr className="my-3 border-[#292b26]" />
               <div className="mx-2">
@@ -441,7 +462,7 @@ function Details() {
                 )}
               </div>
             </div>
-            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-4 px-7 rounded-xl flex gap-5 items-center justify-between">
+            <div className="bg-[#18181872] border-2 border-[#292b26]/50 p-2 sm:p-4 sm:px-7 rounded-xl flex gap-2 sm:gap-5 items-center justify-between">
               {games.length > 0 && random.length > 0 && games[random[0]] && (
                 <>
                   {random.map((val, index) => (
@@ -450,7 +471,7 @@ function Details() {
                       effect="blur"
                       src={games[val]?.image[0]}
                       onClick={() => nav(`/details/${games[val]?.id}`)}
-                      className="w-full h-50 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
+                      className="w-full h-25 sm:h-30 lg:h-50 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     />
                   ))}
                 </>

@@ -202,8 +202,8 @@ function AdminProducts() {
                   <td className='py-3'>{item.id}</td>
                   <td>{item.title}</td>
                   <td>{item.company}</td>
-                  <td>{item.price}</td>
-                  <td>{item.discountPrice}</td>
+                  <td>₹{item.price}</td>
+                  <td>₹{item.discountPrice}</td>
                   <td>{item.rating}</td>
                   <td className='flex items-center justify-center text-2xl py-3'>{item.category === "pcGames" ? <MdMonitor /> : item.category === "xboxGames" ? <FaXbox /> : <FaPlaystation />}</td>
                   <td><span className={`px-2 py-0.5 rounded font-semibold ${item.status === "Active" ? "bg-green-600/20 text-green-600" : "bg-red-500/20 text-red-600"}`}>{item.status}</span></td>

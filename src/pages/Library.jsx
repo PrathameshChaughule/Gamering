@@ -5,17 +5,19 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { GameContext } from '../Context/GameContext'
 import { FiDownload } from 'react-icons/fi';
-import { PiPlayBold } from 'react-icons/pi';
+import { PiPlayBold, PiStarBold, PiStarFill } from 'react-icons/pi';
 import { TbLoader2 } from 'react-icons/tb';
 import axios from 'axios';
 import Loading from '../components/Loading'
 import { useNavigate } from 'react-router-dom';
 import { LuLockKeyhole } from 'react-icons/lu';
+import { SlStar } from 'react-icons/sl';
 
 function Library() {
     const { games } = useContext(GameContext);
     const { userId } = JSON.parse(localStorage.getItem("auth"))
     const [progress, setProgress] = useState({});
+    const [user, setUser] = useState({})
     const [libraryData, setLibraryData] = useState([])
     const [gameDetail, setGameDetail] = useState([])
     const [library, setLibrary] = useState()
@@ -25,6 +27,8 @@ function Library() {
     const [sortOpen, setSortOpen] = useState(false)
     const [filterOpen, setFilterOpen] = useState(false)
     const [search, setSearch] = useState("");
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
     const nav = useNavigate()
 
     useEffect(() => {
@@ -34,6 +38,7 @@ function Library() {
             try {
                 const res = await axios.get(`http://localhost:3000/users/${userId}`)
                 const userData = res.data
+                setUser(userData)
                 setLibraryData(userData.library)
                 if (userData.library) {
                     const libraryGameId = userData.library.map((val) => val.gameId)
@@ -52,9 +57,6 @@ function Library() {
 
     const statusUpdate = async (gameId, newStatus) => {
         try {
-            const res = await axios.get(`http://localhost:3000/users/${userId}`);
-            const user = res.data;
-
             const updatedLibrary = user.library.map(item =>
                 item.gameId === gameId
                     ? { ...item, installStatus: newStatus }
@@ -70,6 +72,24 @@ function Library() {
             console.log(error);
         }
     };
+
+    const ratingUpdate = async (gameId, rating) => {
+        try {
+            const updatedLibrary = user.library.map(item =>
+                item.gameId === gameId
+                    ? { ...item, starRating: rating }
+                    : item
+            );
+
+            await axios.patch(`http://localhost:3000/users/${userId}`, {
+                library: updatedLibrary
+            });
+
+            setLibraryData(updatedLibrary);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const startInstall = (gameId) => {
         let value = 0;
@@ -319,7 +339,15 @@ function Library() {
                                     {libraryData?.find(item => item.gameId === gameDetail?.id)?.orderStatus === "Processing" &&
                                         <div className='absolute top-0.5 right-0.5 text-red-600 bg-red-600/50 rounded-full p-1 text-[18px]'><LuLockKeyhole /></div>}
                                 </button>
-
+                                <div className='flex items-center justify-between bg-[#18181872] border-2 border-[#2f354494] p-3 rounded'>
+                                    {[1, 2, 3, 4, 5].map((val) =>
+                                        <button disabled={libraryData?.find(item => item.gameId === gameDetail?.id)?.starRating > 0} key={val} onClick={() => ratingUpdate(gameDetail?.id, val)}
+                                            onMouseEnter={() => setHover(val)}
+                                            onMouseLeave={() => setHover(0)} className='text-4xl'>
+                                            {val <= (libraryData?.find(item => item.gameId === gameDetail?.id)?.starRating === 0 && hover || libraryData?.find(item => item.gameId === gameDetail?.id)?.starRating) ? <PiStarFill className='text-yellow-400 cursor-pointer' /> : <PiStarBold className='text-yellow-400 cursor-pointer' />}
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
 

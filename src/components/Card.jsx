@@ -13,13 +13,13 @@ function Card({ id, name, com, img }) {
       <LazyLoadImage
         src={img[0]}
         effect="blur"
-        className="h-[100px] md:w-50 md:h-40 lg:rounded-3xl"
+        className="h-[100px] md:w-50 md:h-40 lg:rounded-lg"
         alt={name}
       />
       <span className="mt-1.5 text-sm lg:text-xl font-semibold text-center">
         {name}
       </span>
-      <span className="text-sm text-center text-gray-500 font-semibold">
+      <span className="hidden sm:block text-sm text-center text-gray-500 font-semibold">
         {com}
       </span>
     </div>
