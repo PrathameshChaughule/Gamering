@@ -212,20 +212,10 @@ This project was built to:
 
 ---
 
-## ⭐ Final Project Rating
-
-**Overall Rating:** ⭐⭐⭐⭐⭐ (9/10)
-
-Highly suitable for:
-
-* Frontend Developer roles
-* Junior Full Stack / MERN roles (with backend explanation)
-
----
-
 ## 👨‍💻 Author
 
 **Prathamesh Chaughule**
+**prathameshChaughule21@gmail.com**
 Frontend Developer | React Enthusiast
 
 ---
