@@ -119,13 +119,18 @@ function Signup() {
 
   return (
     <div className="flex items-center justify-center h-[100vh] w-[100vw]">
-
       <video
         src="/assets/video/Mortal-Kombat.webm"
         autoPlay
         muted
         playsInline
-        className="absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
+        className="hidden md:block absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
+      />
+      <img
+        src="/assets/video/mk.webp"
+        effect="blur"
+        className="block md:hidden absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
+        alt=""
       />
 
       <div className="absolute inset-0 bg-black/30 h-screen w-screen" />

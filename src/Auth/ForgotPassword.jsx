@@ -171,9 +171,20 @@ function ForgotPassword() {
         autoPlay
         muted
         playsInline
-        className="absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
+        className="hidden md:block absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
       />
-
+      <img
+        src={
+          page === "email"
+            ? videos[0].poster
+            : page === "otp"
+              ? videos[1].poster
+              : videos[2].poster
+        }
+        effect="blur"
+        className="block md:hidden absolute inset-0 w-[95.1%] h-[95%] object-cover scale-110 blur-xl opacity-100 transition-all duration-700"
+        alt=""
+      />
       <div className="absolute inset-0 bg-black/30 h-screen w-screen" />
       <div className="relative z-10 flex items-center justify-center h-full w-full">
         <div className="w-[85%] md:w-[70%] lg:h-[80%] flex rounded-xl justify-between  overflow-hidden bg-white">
