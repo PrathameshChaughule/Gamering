@@ -2,16 +2,23 @@ import { FaRegEye } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { getOptimizedImage } from "../supabaseClient/supabaseClient";
 
 function News({ title, date, view, img, desc }) {
+  const imageUrl = getOptimizedImage(img, {
+    width: 350,
+    height: 480,
+    quality: 55,
+    resize: "contain"
+  });
   return (
     <div>
-      <div className="flex h-90 flex-col gap-2 cursor-pointer md:w-80 rounded-2xl bg-gray-400/10">
+      <div className="flex h-90 flex-col gap-2 cursor-pointer md:w-78 rounded-2xl bg-gray-400/10">
         <LazyLoadImage
           effect="blur"
           className="h-43 w-full rounded-t-2xl"
           alt={title}
-          src={img}
+          src={imageUrl}
         />
         <div className="px-4 py-3">
           <span>{title}</span>

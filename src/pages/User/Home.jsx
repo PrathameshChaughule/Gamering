@@ -178,9 +178,9 @@ function Home() {
 
                 setShowRequestForm(true);
                 scrollHandle();
-              }} className="flex flex-col bg-white/5 md:w-40 items-center w-[24vw] h-25 rounded-2xl border-dotted border-3 border-gray-700 cursor-pointer text-gray-400/50 ">
+              }} className="flex flex-col justify-center bg-white/5 md:w-40 items-center w-[24vw] h-25 rounded-2xl border-dotted border-3 border-gray-700 cursor-pointer text-gray-400/50 ">
                 <span className="text-3xl">+</span>
-                <span className="text-center font-semibold">
+                <span className="text-sm sm:text-lg text-center font-semibold">
                   Propose
                   <br />
                   Your Game

@@ -147,7 +147,7 @@ function Navbar() {
                   <FaAngleDown />
                 </div>
                 <div className="md:hidden bg-white w-4 h-4 flex items-center justify-center lg:w-5 lg:h-5 text-center text-black font-bold rounded-2xl lg:text-[13px] absolute -top-0.5 lg:top-1 right-3 border border-black">
-                  <p className="mt-[-3px] md:text-sm lg:mt-[-1px]">{cartCount}</p>
+                  <p className="md:text-sm mt-[-1px]">{cartCount}</p>
                 </div>
               </div>
               :

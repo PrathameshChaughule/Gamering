@@ -15,7 +15,7 @@ function Card({ id, name, com, img, discountPrice }) {
   return (
     <div
       onClick={() => nav(`/details/${id}`)}
-      className="flex flex-col items-center w-42 h-40 lg:h-fit lg:w-fit cursor-pointer hover:bg-white/10 p-3 rounded-xl"
+      className="flex flex-col items-center w-39 h-40 md:h-55 overflow-hidden lg:h-fit lg:w-fit cursor-pointer hover:bg-white/10 p-3 rounded-xl"
     >
       <div className="relative">
         <LazyLoadImage

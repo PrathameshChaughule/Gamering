@@ -254,12 +254,12 @@ function Signup() {
               </span>
               <p className="text-gray-500 mt-1">
                 Already have an account?{" "}
-                <span
+                <button
                   onClick={() => nav("/login")}
                   className="text-black font-semibold cursor-pointer underline hover:text-black/60"
                 >
                   Log In
-                </span>
+                </button>
               </p>
             </div>
           </div>

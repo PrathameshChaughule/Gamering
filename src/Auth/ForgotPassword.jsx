@@ -370,32 +370,32 @@ function ForgotPassword() {
               {page === "email" ? (
                 <p className="text-gray-500 mt-1">
                   Don't have an account?{" "}
-                  <span
+                  <button
                     onClick={() => nav("/signup")}
                     className="text-black underline font-semibold cursor-pointer hover:text-black/60"
                   >
                     Sign Up
-                  </span>
+                  </button>
                 </p>
               ) : page === "code" ? (
                 <p className="text-gray-500 mt-1">
                   Don't receive the email?{" "}
-                  <span
+                  <button
                     onClick={() => otpGenerate()}
                     className="text-black underline font-semibold cursor-pointer hover:text-black/60"
                   >
                     Click to resend
-                  </span>
+                  </button>
                 </p>
               ) : (
                 <p className="text-gray-500 mt-1">
                   Don't have an account?{" "}
-                  <span
+                  <button
                     onClick={() => nav("/login")}
                     className="text-black underline font-semibold cursor-pointer hover:text-black/60"
                   >
                     Log In
-                  </span>
+                  </button>
                 </p>
               )}
             </div>

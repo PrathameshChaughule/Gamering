@@ -200,12 +200,12 @@ function Login() {
                     />
                     Remember me
                   </label> */}
-                  <span
+                  <button
                     onClick={() => nav("/forgot")}
                     className="cursor-pointer underline hover:text-gray-500/80"
                   >
                     Forgot Your Password
-                  </span>
+                  </button>
                 </div>
                 <button
                   type="submit"
@@ -225,12 +225,12 @@ function Login() {
               </span>
               <p className="text-gray-500 mt-1">
                 Don't have an account?{" "}
-                <span
+                <button
                   onClick={() => nav("/signup")}
                   className="text-black font-semibold cursor-pointer underline hover:text-black/60"
                 >
                   Sign Up
-                </span>
+                </button>
               </p>
             </div>
           </div>
