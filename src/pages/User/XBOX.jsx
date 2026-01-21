@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import Loading from '../../components/Loading'
 import { toast } from "react-toastify";
-import { supabase } from "../../supabaseClient/supabaseClient";
+import { getOptimizedImage, supabase } from "../../supabaseClient/supabaseClient";
 
 const RequestForm = lazy(() => import("../../components/RequestForm"));
 const News = lazy(() => import("../../components/News"));
@@ -167,15 +167,24 @@ function XBOX() {
                     ?.filter((val) => val.featuredStatus === "Featured")
                     ?.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
                     ?.slice(0, 5)
-                    ?.map((val, index) => (
-                      <LazyLoadImage
-                        key={val.id || index}
-                        effect="blur"
-                        className="w-[25vw] md:w-40 h-25 rounded-2xl"
-                        src={val?.image?.[0]}
-                        alt={val?.title}
-                      />
-                    ))}
+                    ?.map((val, index) => {
+                      const imageUrl = getOptimizedImage(val?.image?.[0], {
+                        width: 250,
+                        height: 160,
+                        quality: 30,
+                        resize: "contain"
+                      });
+
+                      return (
+                        <LazyLoadImage
+                          key={val.id || index}
+                          src={imageUrl}
+                          effect="blur"
+                          className="w-[25vw] md:w-40 h-25 rounded-2xl object-contain bg-black/30"
+                          alt={val?.title}
+                        />
+                      );
+                    })}
                   <div onClick={() => {
                     if (!isAuth) {
                       toast.error("Login required");

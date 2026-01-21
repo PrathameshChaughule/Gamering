@@ -8,7 +8,7 @@ function News({ title, date, view, img, desc }) {
   const imageUrl = getOptimizedImage(img, {
     width: 350,
     height: 480,
-    quality: 55,
+    quality: 50,
     resize: "contain"
   });
   return (

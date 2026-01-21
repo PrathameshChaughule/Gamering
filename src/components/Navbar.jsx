@@ -53,7 +53,7 @@ function Navbar() {
 
 
   return (
-    <div className="bg-[#181A1E] py-3 sm:py-4">
+    <div className="bg-transparent py-3 sm:py-4 ">
       <div className="flex items-center justify-between md:justify-around w-[95vw] sm:w-[85vw] m-auto">
         <LazyLoadImage src="/assets/logo.webp" className="w-20 h-9 sm:h-fit sm:w-[15vw]" alt="" />
         <ul className="hidden md:flex mx-1 text-sm md:text-xl items-center justify-around w-100">
