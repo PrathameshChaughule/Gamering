@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { addGame } from "./supabaseClient/addGame";
 
 
+const ResetPassword = lazy(() => import("./Auth/ResetPassword"));
 const AdminFeaturedNews = lazy(() => import("./pages/Admin/AdminFeaturedNews/AdminFeaturedNews"));
 const NewsDetails = lazy(() => import("./pages/Admin/AdminFeaturedNews/NewsDetails"));
 const AdminFeaturedNewsForm = lazy(() => import("./pages/Admin/AdminFeaturedNews/AdminFeaturedNewsForm"));
@@ -72,6 +73,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgot" element={<ForgotPassword />} />
+            <Route path="/resetPassword" element={<ResetPassword />} />
 
             <Route element={<PublicLayout />}>
               <Route path="/" element={<Home />} />
