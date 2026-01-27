@@ -31,8 +31,13 @@ function ForgotPassword() {
     e.preventDefault();
     setLoading(true)
     try {
+      const redirectURL =
+        (import.meta.env.VITE_REDIRECT_URL
+          ? import.meta.env.VITE_REDIRECT_URL + "/resetPassword"
+          : window.location.origin + "/resetPassword");
+
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/resetPassword`,
+        redirectTo: redirectURL,
       });
 
       toast.success(

@@ -22,12 +22,14 @@ function Signup() {
   const handleGoogleSignup = async () => {
     try {
       sessionStorage.setItem("google_login", "true");
+      const redirectURL =
+        (import.meta.env.VITE_REDIRECT_URL
+          ? import.meta.env.VITE_REDIRECT_URL + "/login"
+          : window.location.origin + "/login");
 
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: {
-          redirectTo: window.location.origin + "/login",
-        },
+        options: { redirectTo: redirectURL },
       });
 
       if (error) throw error;
