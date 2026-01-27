@@ -250,7 +250,7 @@ function Login() {
             />
           </div>
 
-          <div className="w-full lg:w-[50%] h-full px-5 lg:px-17 py-10 flex flex-col lg:gap-10 justify-center text-center text-black">
+          <div className="w-full lg:w-[50%] h-full px-5 lg:px-17 py-10 flex flex-col gap-3 lg:gap-10 justify-center text-center text-black">
             <div>
               <span className="font-semibold text-4xl">SIGN IN</span>
               <form
