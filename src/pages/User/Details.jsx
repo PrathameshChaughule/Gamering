@@ -153,7 +153,7 @@ function Details() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <img
+      {/* <img
         src={screenshot === null ? game.image[0] : screenshot}
         className="
       md:absolute inset-0
@@ -164,7 +164,7 @@ function Details() {
       z-0
     " style={{ filter: "blur(4px)" }}
         alt=""
-      />
+      /> */}
       <div className="w-[90vw] my-8 m-auto h-fit flex justify-between">
         {loading ? (
           <Loading />

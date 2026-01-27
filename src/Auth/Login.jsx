@@ -95,7 +95,7 @@ function Login() {
         .from("users")
         .update({
           status: "Active",
-          last_login: new Date().toISOString(),
+          lastLogin: new Date().toISOString(),
         })
         .eq("id", user.id);
 
