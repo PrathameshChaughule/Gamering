@@ -7,6 +7,8 @@ function AdminProfile() {
 
   const logOut = () => {
     localStorage.removeItem("auth", "cart");
+    localStorage.removeItem("sb-kgmtgimpocouatucimhn-auth-token");
+    sessionStorage.clear();
     nav("/");
     return;
   };

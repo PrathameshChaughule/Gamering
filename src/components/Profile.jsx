@@ -25,7 +25,8 @@ function Profile() {
 
       localStorage.removeItem("auth");
       localStorage.removeItem("cart");
-
+      localStorage.removeItem("sb-kgmtgimpocouatucimhn-auth-token");
+      sessionStorage.clear();
       nav("/");
     } catch (error) {
       console.log(error);
