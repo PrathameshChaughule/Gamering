@@ -52,7 +52,7 @@ function Login() {
 
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: redirectURL },
+        options: { redirectTo: "https://gamering-nu.vercel.app/login" },
       });
 
       if (error) throw error;

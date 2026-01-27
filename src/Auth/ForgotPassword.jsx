@@ -37,7 +37,7 @@ function ForgotPassword() {
           : window.location.origin + "/resetPassword");
 
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: redirectURL,
+        redirectTo: "https://gamering-nu.vercel.app/resetPassword",
       });
 
       toast.success(
