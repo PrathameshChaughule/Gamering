@@ -68,14 +68,19 @@ function Login() {
     const runAfterGoogleRedirect = async () => {
       const isGooglelogin = sessionStorage.getItem("google_login");
       if (!isGooglelogin) return;
-      setLoader(true)
+
+      setLoader(true);
+
       try {
         const {
           data: { session },
           error: sessionError,
         } = await supabase.auth.getSession();
 
-        if (sessionError || !session?.user) return;
+        if (sessionError || !session?.user) {
+          setLoader(false);
+          return;
+        }
 
         const user = session.user;
 
@@ -85,50 +90,49 @@ function Login() {
         const lastName =
           user.user_metadata?.lastName || fullName.split(" ")[1] || "";
 
-        const { data: existingUser } = await supabase
+        const { data, error } = await supabase
           .from("users")
-          .select("*")
-          .eq("authid", user.id)
-          .maybeSingle();
+          .upsert(
+            {
+              authid: user.id,
+              email: user.email,
+              firstName,
+              lastName,
+              role: "user",
+              customerId: `CUS-${Date.now().toString().slice(-6)}`,
+              status: "Active",
+              totalSpend: 0,
+              totalOrders: 0,
+              library: [],
+              address: [
+                {
+                  address: "",
+                  city: "",
+                  state: "",
+                  country: "India",
+                  zipCode: "",
+                },
+              ],
+              wishlist: [],
+              mobileNumber: "",
+              createdAt: new Date().toISOString(),
+              lastLogin: new Date().toISOString(),
+              lastOrder: null,
+            },
+            {
+              onConflict: "authid",
+              returning: "representation",
+            }
+          );
 
-        if (!existingUser) {
-          const { error: insertError } = await supabase.from("users").insert({
-            authid: user.id,
-            email: user.email,
-            firstName,
-            lastName,
-            role: "user",
-            customerId: `CUS-${Date.now().toString().slice(-6)}`,
-            status: "Active",
-            totalSpend: 0,
-            totalOrders: 0,
-            library: [],
-            address: [
-              { address: "", city: "", state: "", country: "India", zipCode: "" },
-            ],
-            wishlist: [],
-            mobileNumber: "",
-            createdAt: new Date().toISOString(),
-            lastLogin: new Date().toISOString(),
-            lastOrder: null
-          });
-
-          if (insertError) {
-            console.error(insertError);
-            return;
-          }
-        }
-        const { data: dbUser, error: fetchError } = await supabase
-          .from("users")
-          .select("*")
-          .eq("authid", user.id)
-          .single();
-
-        if (fetchError || !dbUser) {
-          toast.error(fetchError)
+        if (error || !data?.[0]) {
+          toast.error(error)
           toast.error("Failed to load user data");
+          setLoader(false);
           return;
         }
+
+        const dbUser = data[0];
 
         const auth = {
           isAuth: true,
@@ -142,19 +146,21 @@ function Login() {
         };
 
         localStorage.setItem("auth", JSON.stringify(auth));
-
         sessionStorage.removeItem("google_login");
+
         toast.success(`Welcome ${dbUser.firstName}!`);
+        setLoader(false);
         nav(lastPage);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoader(false)
+
+      } catch (err) {
+        console.error(err);
+        setLoader(false);
       }
     };
 
     runAfterGoogleRedirect();
   }, [nav, lastPage]);
+
 
   const formHandle = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
