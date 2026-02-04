@@ -6,10 +6,11 @@ import { toast } from 'react-toastify';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { IoCartSharp } from 'react-icons/io5';
-import { GameContext } from '../../Context/GameContext';
 import { FaHeart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from "../../supabaseClient/supabaseClient"
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/cart/cartSlice';
 
 function Wishlist() {
   const { userId } = JSON.parse(localStorage.getItem("auth"));
@@ -17,8 +18,8 @@ function Wishlist() {
   const [filter, setFilter] = useState("Newest Added")
   const [loading, setLoading] = useState(false)
   const [games, setGames] = useState([])
-  const { updateCartCount } = useContext(GameContext);
   const nav = useNavigate()
+  const dispatch = useDispatch()
 
   const fetchData = async () => {
     setLoading(true);
@@ -58,22 +59,13 @@ function Wishlist() {
     }
   };
 
-
   useEffect(() => {
     fetchData()
   }, [])
 
-  const addToCart = (gameId, game) => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const exists = cart.find((item) => item.id === gameId);
-    if (exists) {
-      return
-    } else {
-      cart.push({ ...game, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
+  const handleAddToCart = (gameId, game) => {
+    dispatch(addToCart({ gameId, game }));
     toast.success("Added to cart");
-    updateCartCount();
   };
 
   const removeWishlist = async (gameId) => {
@@ -210,7 +202,7 @@ function Wishlist() {
                     <span className='text-xl ml-1'>₹{val?.discountPrice}.00</span>
                   </div>
                   <div className='flex gap-4 items-center'>
-                    <div onClick={() => addToCart(val?.id, val)} className='w-fit sm:text-lg p-1 px-5 rounded bg-sky-500 font-semibold cursor-pointer hover:bg-sky-600'>
+                    <div onClick={() => handleAddToCart(val?.id, val)} className='w-fit sm:text-lg p-1 px-5 rounded bg-sky-500 font-semibold cursor-pointer hover:bg-sky-600'>
                       <span className='flex items-center gap-2'> <IoCartSharp />Add to Cart</span>
                     </div>
                     <div onClick={() => removeWishlist(val?.id)} className='text-xl p-2 rounded cursor-pointer bg-sky-700/20 text-sky-600 hover:bg-sky-600 hover:text-white'>

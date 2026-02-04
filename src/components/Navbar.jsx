@@ -1,18 +1,17 @@
 import { FaAngleDown, FaPlaystation, FaSearch, FaWindows, FaXbox } from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useContext, useEffect, useState } from "react";
-import { GameContext } from "../Context/GameContext";
+import { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { MdMonitor } from "react-icons/md";
 import Profile from "./Profile";
 import { IoLogoPlaystation, IoLogoXbox, IoSearch } from "react-icons/io5";
-
 import { getOptimizedImage, supabase } from "../supabaseClient/supabaseClient";
+import { useSelector } from "react-redux";
 
 function Navbar() {
-  const { cartCount } = useContext(GameContext);
+  const cartCount = useSelector((state) => state.cart.cartCount)
   const [profileOpen, setProfileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false)
   const [search, setSearch] = useState("")

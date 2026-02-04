@@ -6,12 +6,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient/supabaseClient";
 import { MdMonitor } from "react-icons/md";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { GameContext } from "../Context/GameContext";
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 function Profile() {
   const userData = JSON.parse(localStorage.getItem("auth"));
-  const { cartCount } = useContext(GameContext);
+  const cartCount = useSelector((state) => state.cart.cartCount)
   const nav = useNavigate();
 
   const logOut = async () => {

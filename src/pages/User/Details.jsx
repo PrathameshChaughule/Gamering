@@ -17,9 +17,10 @@ import { CgSun } from "react-icons/cg";
 import { CiPlay1 } from "react-icons/ci";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { PiBuildingsFill } from "react-icons/pi";
-import { GameContext } from "../../Context/GameContext";
 import { toast } from "react-toastify";
 import { getOptimizedImage, supabase } from "../../supabaseClient/supabaseClient";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
 function Details() {
   const user = JSON.parse(localStorage.getItem("auth"))
@@ -31,9 +32,8 @@ function Details() {
   const [loading, setLoading] = useState(false);
   const [games, setGames] = useState([])
   const nav = useNavigate();
-  const { updateCartCount } = useContext(GameContext);
   const [loader, setLoader] = useState(false)
-
+  const dispatch = useDispatch()
 
   const fetchData = async () => {
     setLoading(true)
@@ -84,24 +84,14 @@ function Details() {
     return <div><Loading /></div>;
   }
 
-
-
   const getYouTubeId = (url) => {
     const reg = /(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([^?&/]+)/;
     return url.match(reg)?.[1];
   };
 
-  const addToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const exists = cart.find((item) => item.id === game.id);
-    if (exists) {
-      return
-    } else {
-      cart.push({ ...game, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
+  const handleAddToCart = (gameId) => {
+    dispatch(addToCart({ gameId, game }));
     toast.success("Added to cart");
-    updateCartCount();
   };
 
   const addToWishlist = async (gameId) => {
@@ -355,7 +345,7 @@ function Details() {
                         <div
                           onClick={() => {
                             nav("/checkout");
-                            addToCart(game.id);
+                            handleAddToCart(game.id);
                           }}
                           className="border border-[#F1BD38]/20 bg-[#362A11] hover:bg-[#362A11]/80 rounded-lg flex justify-center p-1 cursor-pointer"
                         >
@@ -365,7 +355,7 @@ function Details() {
                           </span>
                         </div>
                         <div
-                          onClick={() => addToCart(game.id)}
+                          onClick={() => handleAddToCart(game.id)}
                           className="border border-[#C6E258]/20 bg-[#21280F] hover:bg-[#21280F]/80 rounded-lg flex justify-center p-1 cursor-pointer"
                         >
                           <span className="flex text-[#C6E258] items-center gap-2 text-lg">
@@ -622,7 +612,7 @@ function Details() {
                   <div
                     onClick={() => {
                       nav("/checkout");
-                      addToCart(game.id);
+                      handleAddToCart(game.id);
                     }}
                     className="border border-[#F1BD38]/30 bg-[#604a1b] hover:bg-[#362A11] rounded-lg flex justify-center p-1 cursor-pointer"
                   >
@@ -632,7 +622,7 @@ function Details() {
                     </span>
                   </div>
                   <div
-                    onClick={() => addToCart(game.id)}
+                    onClick={() => handleAddToCart(game.id)}
                     className="border border-[#C6E258]/30 bg-[#39461a] hover:bg-[#21280F] rounded-lg flex justify-center p-1 cursor-pointer"
                   >
                     <span className="flex text-[#C6E258] items-center gap-2 text-lg">

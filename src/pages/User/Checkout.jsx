@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "../../Context/GameContext";
 import { toast } from "react-toastify";
-
 import Loading from "../../components/Loading"
 import { supabase } from "../../supabaseClient/supabaseClient";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../redux/features/cart/cartSlice";
 
 function Checkout() {
   const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ function Checkout() {
     JSON.parse(localStorage.getItem("auth"))
   );
   const [open, setOpen] = useState(false)
-  const { updateCartCount } = useContext(GameContext);
+  const dispatch = useDispatch()
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(false)
   const [paymentData, setPaymentData] = useState({
@@ -87,11 +87,10 @@ function Checkout() {
   if (loading) return <div className='w-full'><Loading /></div>
 
   const removeItem = (id) => {
+    dispatch(removeFromCart(id));
     const updatedCart = data.filter((item) => item.id !== id);
     setData(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
     toast.info("Item removed from cart");
-    updateCartCount();
   };
 
   const formHandle = (e) => {

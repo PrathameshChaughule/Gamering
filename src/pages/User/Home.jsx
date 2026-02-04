@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Loading from '../../components/Loading'
 import { toast } from "react-toastify";
 import { getOptimizedImage, supabase } from "../../supabaseClient/supabaseClient";
-
 const RequestForm = lazy(() => import("../../components/RequestForm"));
 const News = lazy(() => import("../../components/News"));
 const Card = lazy(() => import("../../components/Card"));

@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LuCircleFadingPlus } from "react-icons/lu";
 import { TbCircleDashedX } from "react-icons/tb";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { GameContext } from "../../Context/GameContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabaseClient/supabaseClient";
 import Loading from "../../components/Loading";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../redux/features/cart/cartSlice";
 
 function Cart() {
   const user = JSON.parse(localStorage.getItem("auth"))
@@ -16,7 +17,7 @@ function Cart() {
   const [show, setShow] = useState(false);
   const [games, setGames] = useState([])
   const [loading, setLoading] = useState(false)
-  const { updateCartCount } = useContext(GameContext);
+  const dispatch = useDispatch()
   const nav = useNavigate();
 
   const fetchData = async () => {
@@ -53,11 +54,10 @@ function Cart() {
   if (loading) return <div className='w-full'><Loading /></div>
 
   const removeItem = (id) => {
+    dispatch(removeFromCart(id));
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
     toast.info("Item removed from cart");
-    updateCartCount();
   };
 
   const total = cart.reduce(
