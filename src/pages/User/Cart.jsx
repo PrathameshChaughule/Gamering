@@ -58,7 +58,7 @@ function Cart() {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     toast.info("Item removed from cart");
-  };
+  }; 
 
   const total = cart.reduce(
     (sum, item) => sum + item.discountPrice * item.quantity,

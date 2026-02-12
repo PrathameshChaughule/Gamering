@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Loading from "../../components/Loading"
 import { supabase } from "../../supabaseClient/supabaseClient";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/features/cart/cartSlice";
+import { cartReset, removeFromCart } from "../../redux/features/cart/cartSlice";
 
 function Checkout() {
   const [data, setData] = useState([]);
@@ -144,11 +144,7 @@ function Checkout() {
 
       if (userUpdateError) throw userUpdateError;
 
-      toast.success("Order placed successfully!");
-      toast.info("Your purchased games have been added to your library.");
-
-      localStorage.removeItem("cart");
-      updateCartCount();
+      dispatch(cartReset())
 
       setPaymentData({
         paymentMethod: "",
@@ -161,6 +157,8 @@ function Checkout() {
         zipCode: user?.address?.[0]?.zipCode || ""
       });
 
+      toast.success("Order placed successfully!");
+      toast.info("Your purchased games have been added to your library.");
     } catch (error) {
       console.error(error);
       toast.error("Order failed");

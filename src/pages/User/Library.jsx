@@ -10,6 +10,7 @@ import Loading from '../../components/Loading'
 import { useNavigate } from 'react-router-dom';
 import { LuLockKeyhole } from 'react-icons/lu';
 import { supabase } from '../../supabaseClient/supabaseClient';
+import { toast } from 'react-toastify';
 
 function Library() {
     const [games, setGames] = useState([])
@@ -281,9 +282,9 @@ function Library() {
                                 </div>
                             </div>
                             {filteredLibrary?.map((val) => {
-                                const purchase = libraryData?.find(
+                                const purchase = libraryData?.filter(
                                     item => item.gameId === val.id
-                                )
+                                )?.slice(-1)[0]
                                 return (<div key={val.id} className='bg-[#181A1E] w-full p-2 rounded-md flex flex-col gap-1.5'>
                                     <div onClick={() => libraryGameDetail(val.id)} className='flex flex-col lg:flex-row gap-3 cursor-pointer items-center justify-between'>
                                         <div className='flex flex-col lg:flex-row items-center gap-4'>
@@ -294,7 +295,7 @@ function Library() {
                                             />
                                             <div className='flex gap-4 items-center'>
                                                 <span className='text-xl font-semibold w-fit'>{val?.title}</span>
-                                                <div className={`${purchase?.orderStatus === "Processing" ? `bg-blue-700/40 text-blue-500` : purchase?.orderStatus === "Completed" ? `bg-green-700/40 text-green-500` : `bg-red-900/40 text-red-500`}  border w-fit px-3 pb-0.5 rounded font-semibold mt-1`}><p className='text-sm'>{purchase?.orderStatus}</p></div>
+                                                <div className={`${purchase?.orderStatus === "Processing" ? `bg-blue-700/40 text-blue-500` : purchase?.orderStatus === "Completed" ? `bg-green-700/40 text-green-500` : purchase?.orderStatus === "Cancelled" && `bg-red-900/40 text-red-500`}  border w-fit px-3 pb-0.5 rounded font-semibold mt-1`}><p className='text-sm'>{purchase?.orderStatus}</p></div>
                                             </div>
                                         </div>
                                         <div className='flex w-full lg:w-fit justify-between items-center lg:gap-8 mx-7'>
@@ -323,7 +324,7 @@ function Library() {
                                                         <TbLoader2 className="animate-spin text-white" />
                                                     )} </span>
                                                     :
-                                                    <span><PiPlayBold /></span>
+                                                    <span onClick={() => toast.success("Game is already installed. Launching now...")}><PiPlayBold /></span>
                                                 }
 
                                             </button>
@@ -383,7 +384,7 @@ function Library() {
                                             <span>Installing...</span>
                                         )} </span>
                                         :
-                                        <span>Play</span>
+                                        <span onClick={() => toast.success("Game is already installed. Launching now...")}>Play</span>
                                     }
                                     {libraryData?.find(item => item.gameId === gameDetail?.id)?.orderStatus === "Processing" || libraryData?.find(item => item.gameId === gameDetail?.id)?.orderStatus === "Cancelled" ?
                                         <div className='absolute top-0.5 right-0.5 text-red-600 bg-red-600/50 rounded-full p-1 text-[18px]'><LuLockKeyhole /></div> : <></>}

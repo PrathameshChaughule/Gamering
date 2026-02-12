@@ -320,6 +320,20 @@ function AdminDashboard() {
     ]
   };
 
+  const formatRevenue = (amount) => {
+    const format = (num) =>
+      parseFloat(num.toFixed(2)).toString();
+
+    if (amount >= 10000000)
+      return format(amount / 10000000) + " Cr";
+    if (amount >= 100000)
+      return format(amount / 100000) + " L";
+    if (amount >= 1000)
+      return format(amount / 1000) + " K";
+
+    return amount;
+  };
+
 
 
   return (
@@ -374,7 +388,7 @@ function AdminDashboard() {
             </div>
             <div>
               <p className='text-lg font-semibold text-gray-500 dark:text-gray-300'>Total Revenue</p>
-              <span className='text-2xl font-bold'>₹{totalRevenue}</span>
+              <span className='text-2xl font-bold'>₹{formatRevenue(totalRevenue)}</span>
             </div>
           </div>
           <div className="text-sm font-semibold dark:text-gray-200/80 text-center">

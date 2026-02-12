@@ -102,6 +102,20 @@ function AdminOrders() {
     return filtered;
   };
 
+  const formatRevenue = (amount) => {
+    const format = (num) =>
+      parseFloat(num.toFixed(2)).toString();
+
+    if (amount >= 10000000)
+      return format(amount / 10000000) + " Cr";
+    if (amount >= 100000)
+      return format(amount / 100000) + " L";
+    if (amount >= 1000)
+      return format(amount / 1000) + " K";
+
+    return amount;
+  };
+
   const filteredOrders = useMemo(() => {
     return sortOrder(orders, filter);
   }, [orders, filter]);
@@ -152,7 +166,7 @@ function AdminOrders() {
           </div>
           <div>
             <p className='text-xl font-semibold text-gray-500 dark:text-gray-400'>Total Revenue</p>
-            <span className='text-2xl font-bold'>{totalRevenue}</span>
+            <span className='text-2xl font-bold'>₹{formatRevenue(totalRevenue)}</span>
           </div>
         </div>
 

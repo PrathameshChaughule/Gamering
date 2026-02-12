@@ -192,7 +192,7 @@ function OrderHistory() {
                   <div>
                     <div className='text-lg flex items-center justify-between'><span>Order ID :</span><span>{details?.orderId}</span></div>
                     <div className='text-lg flex items-center justify-between'><span>Status :</span><span className={`font-bold ${details?.orderStatus === "Processing" ? " text-yellow-500" : details?.orderStatus === "Rejected" ? ` text-red-500` : ` text-green-500`}`}>{details?.orderStatus}</span></div>
-                    <div className='text-lg flex items-center justify-between'><span>Total :</span><span>₹{details?.total}</span></div>
+                    <div className='text-lg flex items-center justify-between'><span>Total :</span><span>₹{details?.total.toFixed(2)}</span></div>
                   </div>
                   <hr className='border border-[#2f354494] my-2' />
                   <div onClick={() => setDetails(null)} className='text-2xl cursor-pointer hover:bg-blue-800 font-semibold rounded text-center py-1 bg-blue-700 my-5'>
