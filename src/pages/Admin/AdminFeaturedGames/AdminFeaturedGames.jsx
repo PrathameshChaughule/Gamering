@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { FaCheck, FaHourglassHalf, FaRegEdit, FaRegStar, FaStar } from 'react-icons/fa';
 import { HiOutlineTrash } from 'react-icons/hi';
@@ -11,7 +10,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import AdminRequest from './AdminRequest';
 import Loading from '../../../components/Loading'
-import { getOptimizedImage, supabase } from "../../../supabaseClient/supabaseClient"
+import { supabase } from "../../../supabaseClient/supabaseClient"
 
 function AdminFeaturedGames() {
   const [requests, setRequests] = useState([])
@@ -398,12 +397,7 @@ function AdminFeaturedGames() {
                   <tr key={index} className='text-center border-t border-r border-gray-400 dark:border-[#011743]'>
                     <td className='py-1.5 w-30 pl-3'>
                       <LazyLoadImage
-                        src={getOptimizedImage(val?.image?.[0], {
-                          width: 350,
-                          height: 480,
-                          quality: 20,
-                          resize: "contain"
-                        })}
+                        src={val?.image?.[0]}
                         effect="blur"
                         className="w-27"
                         alt={val?.title}

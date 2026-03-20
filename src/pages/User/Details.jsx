@@ -18,7 +18,7 @@ import { CiPlay1 } from "react-icons/ci";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { PiBuildingsFill } from "react-icons/pi";
 import { toast } from "react-toastify";
-import { getOptimizedImage, supabase } from "../../supabaseClient/supabaseClient";
+import { supabase } from "../../supabaseClient/supabaseClient";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
@@ -226,45 +226,25 @@ function Details() {
 
                     <LazyLoadImage
                       effect="blur"
-                      src={getOptimizedImage(game.image[1], {
-                        width: 350,
-                        height: 480,
-                        quality: 20,
-                        resize: "contain"
-                      })}
+                      src={game.image[1]}
                       className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                       onClick={() => setScreenshot(game.image[1])}
                     />
                     <LazyLoadImage
                       effect="blur"
-                      src={getOptimizedImage(game.image[2], {
-                        width: 350,
-                        height: 480,
-                        quality: 20,
-                        resize: "contain"
-                      })}
+                      src={game.image[2]}
                       className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                       onClick={() => setScreenshot(game.image[2])}
                     />
                     <LazyLoadImage
                       effect="blur"
-                      src={getOptimizedImage(game.image[3], {
-                        width: 350,
-                        height: 480,
-                        quality: 20,
-                        resize: "contain"
-                      })}
+                      src={game.image[3]}
                       className="w-60 h-16 sm:h-24  rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                       onClick={() => setScreenshot(game.image[3])}
                     />
                     <LazyLoadImage
                       effect="blur"
-                      src={getOptimizedImage(game.image[4], {
-                        width: 350,
-                        height: 480,
-                        quality: 20,
-                        resize: "contain"
-                      })}
+                      src={game.image[4]}
                       className="w-60 h-16 sm:h-24 rounded md:rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                       onClick={() => setScreenshot(game.image[4])}
                     />
@@ -310,12 +290,7 @@ function Details() {
                   <div className="flex flex-col justify-between gap-4">
                     <LazyLoadImage
                       effect="blur"
-                      src={getOptimizedImage(game.image[0], {
-                        width: 350,
-                        height: 480,
-                        quality: 80,
-                        resize: "contain"
-                      })}
+                      src={game.image[0]}
                       className="w-full h-60 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                     />
                     <div className="w-full flex flex-col justify-center gap-3">
@@ -548,12 +523,7 @@ function Details() {
                 {games.length > 0 && random.length > 0 && games[random[0]] && (
                   <>
                     {random.map((val, index) => {
-                      const imageUrl = getOptimizedImage(games[val]?.image[0], {
-                        width: 350,
-                        height: 480,
-                        quality: 50,
-                        resize: "contain"
-                      });
+                      const imageUrl = games[val]?.image[0];
                       return (
                         <LazyLoadImage
                           key={index}
@@ -572,12 +542,7 @@ function Details() {
               <div className="bg-[#131313]/60 border-2 border-[#292b26]/50  rounded-xl p-5 flex flex-col gap-3">
                 <LazyLoadImage
                   effect="blur"
-                  src={getOptimizedImage(game.image[0], {
-                    width: 350,
-                    height: 480,
-                    quality: 55,
-                    resize: "contain"
-                  })}
+                  src={game.image[0]}
                   className="w-full h-40 rounded-xl cursor-pointer hover:scale-103 transition-all active:blur-[2px]"
                 />
                 <div className="flex items-center justify-center gap-2 flex-wrap">

@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import Loading from '../../components/Loading'
 import { toast } from "react-toastify";
-import { getOptimizedImage, supabase } from "../../supabaseClient/supabaseClient";
+import { supabase } from "../../supabaseClient/supabaseClient";
 
 const RequestForm = lazy(() => import("../../components/RequestForm"));
 const News = lazy(() => import("../../components/News"));
@@ -178,12 +178,7 @@ function XBOX() {
                     ?.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
                     ?.slice(0, 5)
                     ?.map((val, index) => {
-                      const imageUrl = getOptimizedImage(val?.image?.[0], {
-                        width: 250,
-                        height: 160,
-                        quality: 30,
-                        resize: "contain"
-                      });
+                      const imageUrl = val?.image?.[0];
 
                       return (
                         <LazyLoadImage

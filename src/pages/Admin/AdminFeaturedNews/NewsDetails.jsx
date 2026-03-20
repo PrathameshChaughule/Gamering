@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loading from "../../../components/Loading"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { getOptimizedImage, supabase } from '../../../supabaseClient/supabaseClient';
+import { supabase } from '../../../supabaseClient/supabaseClient';
 import { FaRegCircleCheck } from 'react-icons/fa6';
 import { PiPencilSimpleLineLight } from 'react-icons/pi';
 import { MdMonitor } from 'react-icons/md';
@@ -168,12 +168,7 @@ function NewsDetails() {
                             {loader ? <div className='w-100 h-55 flex items-center justify-center'><TbLoader2 className="animate-spin text-white text-9xl" /></div> :
                                 <>
                                     <LazyLoadImage
-                                        src={getOptimizedImage(data?.image, {
-                                            width: 350,
-                                            height: 480,
-                                            quality: 50,
-                                            resize: "contain"
-                                        }) || "/assets/images/placeholder.webp"}
+                                        src={data?.image || "/assets/images/placeholder.webp"}
                                         effect="blur"
                                         className="h-55 w-100 rounded-lg"
                                         alt={data?.title || "Game Image"}

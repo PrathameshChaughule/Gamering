@@ -7,15 +7,9 @@ import { FaPlaystation, FaRegCircleCheck, FaXbox } from "react-icons/fa6";
 import { MdMonitor } from "react-icons/md";
 import { toast } from "react-toastify";
 import Loading from '../../../components/Loading'
-import { getOptimizedImage, supabase } from "../../../supabaseClient/supabaseClient";
+import { supabase } from "../../../supabaseClient/supabaseClient";
 
 function ProductOverview({ game, id }) {
-    if (!game) {
-        return (
-            <Loading />
-        );
-    }
-
     const [data, setData] = useState({
         title: "",
         status: "",
@@ -49,6 +43,12 @@ function ProductOverview({ game, id }) {
             description: game.description || "",
         });
     }, [game]);
+
+    if (!game) {
+        return (
+            <Loading />
+        );
+    }
 
     const addMode = (mode) => {
         setData((prev) => {
@@ -120,12 +120,7 @@ function ProductOverview({ game, id }) {
             <div className='flex flex-col gap-5 w-full border-4 dark:border-[#011743] border-gray-300 rounded-b p-5 relative'>
                 <div className='flex gap-10 w-full'>
                     <LazyLoadImage
-                        src={getOptimizedImage(game?.image?.[0], {
-                            width: 350,
-                            height: 480,
-                            quality: 50,
-                            resize: "contain"
-                        })}
+                        src={game?.image?.[0]}
                         effect="blur"
                         className="h-70 w-100 rounded-lg"
                         alt={game?.title || "Game Image"}

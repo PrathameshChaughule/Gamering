@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { MdMonitor } from "react-icons/md";
 import Profile from "./Profile";
 import { IoLogoPlaystation, IoLogoXbox, IoSearch } from "react-icons/io5";
-import { getOptimizedImage, supabase } from "../supabaseClient/supabaseClient";
+import { supabase } from "../supabaseClient/supabaseClient";
 import { useSelector } from "react-redux";
 
 function Navbar() {
@@ -188,12 +188,7 @@ function Navbar() {
             {searchResult && searchResult.length > 0 ? (searchResult?.map((val, index) =>
               <div onClick={() => nav(`/details/${val.id}`)} key={index} className="flex items-center gap-3 cursor-pointer hover:bg-blue-950 p-1">
                 <LazyLoadImage
-                  src={getOptimizedImage(val?.image?.[0], {
-                    width: 350,
-                    height: 480,
-                    quality: 20,
-                    resize: "contain"
-                  })}
+                  src={val?.image?.[0]}
                   effect="blur"
                   className="w-40 h-20 sm:w-40 sm:h-22 rounded"
                   alt={val?.title}
