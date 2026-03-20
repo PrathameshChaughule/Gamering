@@ -36,9 +36,8 @@ function ProductMedia({ game, id }) {
     if (!file) return;
     setLoading(true);
     try {
-      const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${file.name}`;
-      const { data, error: uploadError } = await supabase
+      const { error: uploadError } = await supabase
         .storage
         .from('game-images')
         .upload(fileName, file);

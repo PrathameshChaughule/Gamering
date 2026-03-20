@@ -94,7 +94,7 @@ function AdminSidebar() {
           }
         >
           <IoGameController />
-          Featured Games
+          Games Request
         </NavLink>
         <NavLink
           to="/adminFeaturedNews"

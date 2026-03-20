@@ -1,5 +1,5 @@
 import Loading from "../../components/Loading";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, useParams } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
